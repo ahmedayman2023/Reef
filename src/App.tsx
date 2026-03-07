@@ -5,6 +5,8 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import ProjectsPage from "./pages/Projects";
 import ContactPage from "./pages/Contact";
+import BlogList from "./pages/BlogList";
+import BlogPostPage from "./pages/BlogPost";
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -37,6 +39,8 @@ export default function App() {
             <Route path="/" element={<Home isAr={isAr} />} />
             <Route path="/projects" element={<ProjectsPage isAr={isAr} />} />
             <Route path="/contact" element={<ContactPage isAr={isAr} />} />
+            <Route path="/blog" element={<BlogList isAr={isAr} />} />
+            <Route path="/blog/:id" element={<BlogPostPage isAr={isAr} />} />
           </Routes>
         </main>
         <Footer isAr={isAr} />

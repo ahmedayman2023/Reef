@@ -6,7 +6,7 @@ import {
   Briefcase, 
   Lightbulb 
 } from "lucide-react";
-import { Service, Project } from "./types";
+import { Service, Project, BlogPost } from "./types";
 
 export const SERVICES: Service[] = [
   {
@@ -119,5 +119,53 @@ export const PROJECTS: Project[] = [
     image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800",
     description: "Efficient industrial facility with advanced logistics capabilities.",
     descriptionAr: "منشأة صناعية فعالة مع قدرات لوجستية متقدمة."
+  }
+];
+
+export const BLOG_POSTS: BlogPost[] = [
+  {
+    id: 1,
+    title: "The Future of Sustainable Architecture",
+    titleAr: "مستقبل العمارة المستدامة",
+    excerpt: "Exploring how green building practices are reshaping our urban environments.",
+    excerptAr: "استكشاف كيف تعيد ممارسات البناء الأخضر تشكيل بيئاتنا الحضرية.",
+    content: "Sustainable architecture is no longer a luxury but a necessity. As we face global climate challenges, the engineering and design community must pivot towards materials and methods that minimize environmental impact while maximizing human comfort...",
+    contentAr: "لم تعد العمارة المستدامة رفاهية بل ضرورة. وبينما نواجه تحديات المناخ العالمي، يجب على مجتمع الهندسة والتصميم التحول نحو المواد والأساليب التي تقلل من الأثر البيئي مع تعظيم الراحة البشرية...",
+    date: "2024-03-15",
+    author: "Eng. Ahmed Mansour",
+    authorAr: "م. أحمد منصور",
+    image: "https://images.unsplash.com/photo-1518005020250-6759229547b1?auto=format&fit=crop&q=80&w=800",
+    category: "Architecture",
+    categoryAr: "عمارة"
+  },
+  {
+    id: 2,
+    title: "Smart Cities: Integrating Technology in Urban Planning",
+    titleAr: "المدن الذكية: دمج التكنولوجيا في التخطيط العمراني",
+    excerpt: "How IoT and data analytics are making our cities more efficient and livable.",
+    excerptAr: "كيف تجعل إنترنت الأشياء وتحليلات البيانات مدننا أكثر كفاءة وقابلية للعيش.",
+    content: "The concept of smart cities is rapidly evolving. By integrating technology into every facet of urban planning, from traffic management to energy distribution, we can create environments that respond dynamically to the needs of their inhabitants...",
+    contentAr: "يتطور مفهوم المدن الذكية بسرعة. من خلال دمج التكنولوجيا في كل جانب من جوانب التخطيط العمراني، من إدارة المرور إلى توزيع الطاقة، يمكننا إنشاء بيئات تستجيب ديناميكياً لاحتياجات سكانها...",
+    date: "2024-03-10",
+    author: "Eng. Sarah Khalid",
+    authorAr: "م. سارة خالد",
+    image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&q=80&w=800",
+    category: "Urban Planning",
+    categoryAr: "تخطيط عمراني"
+  },
+  {
+    id: 3,
+    title: "Innovations in Structural Engineering",
+    titleAr: "ابتكارات في الهندسة الإنشائية",
+    excerpt: "New materials and computational tools are pushing the limits of what we can build.",
+    excerptAr: "المواد الجديدة والأدوات الحسابية تدفع حدود ما يمكننا بناؤه.",
+    content: "Structural engineering is undergoing a revolution. From carbon-fiber reinforced concrete to advanced structural analysis software, engineers today have an unprecedented toolkit for creating structures that are lighter, stronger, and more resilient...",
+    contentAr: "تشهد الهندسة الإنشائية ثورة. من الخرسانة المسلحة بألياف الكربون إلى برامج التحليل الإنشائي المتقدمة، يمتلك المهندسون اليوم مجموعة أدوات غير مسبوقة لإنشاء هياكل أخف وأقوى وأكثر مرونة...",
+    date: "2024-03-05",
+    author: "Eng. Mohammed Ali",
+    authorAr: "م. محمد علي",
+    image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=800",
+    category: "Engineering",
+    categoryAr: "هندسة"
   }
 ];

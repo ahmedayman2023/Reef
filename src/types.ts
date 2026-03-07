@@ -19,3 +19,19 @@ export interface Project {
   description?: string;
   descriptionAr?: string;
 }
+
+export interface BlogPost {
+  id: number;
+  title: string;
+  titleAr: string;
+  excerpt: string;
+  excerptAr: string;
+  content: string;
+  contentAr: string;
+  date: string;
+  author: string;
+  authorAr: string;
+  image: string;
+  category: string;
+  categoryAr: string;
+}
