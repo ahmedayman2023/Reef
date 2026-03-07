@@ -1,16 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-
-const Logo = ({ className = "h-12 w-auto" }: { className?: string }) => (
-  <div className={`flex items-center ${className}`}>
-    <img 
-      src="/ReefLogo3.png" 
-      alt="Reef Logo" 
-      className="h-full w-auto object-contain"
-      referrerPolicy="no-referrer"
-    />
-  </div>
-);
+import Logo from "./Logo";
 
 export default function Footer({ isAr }: { isAr: boolean }) {
   return (
@@ -19,7 +9,7 @@ export default function Footer({ isAr }: { isAr: boolean }) {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">
             <div className="flex items-center gap-3">
-              <Logo className="h-20" />
+              <Logo className="h-20" isAr={isAr} />
               <span className="font-bold text-xl tracking-tight">
                 {isAr ? "ريف الأمثل" : "Reef Al-Amthal"}
               </span>
