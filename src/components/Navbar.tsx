@@ -31,7 +31,7 @@ export default function Navbar({ isAr, setIsAr }: { isAr: boolean; setIsAr: (v: 
     { name: isAr ? "من نحن" : "About", href: isHomePage ? "#about" : "/#about" },
     { name: isAr ? "خدماتنا" : "Services", href: isHomePage ? "#services" : "/#services" },
     { name: isAr ? "مشاريعنا" : "Projects", href: "/projects" },
-    { name: isAr ? "اتصل بنا" : "Contact", href: isHomePage ? "#contact" : "/#contact" },
+    { name: isAr ? "اتصل بنا" : "Contact", href: "/contact" },
   ];
 
   const handleLinkClick = (href: string) => {

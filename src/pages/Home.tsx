@@ -52,10 +52,10 @@ const Hero = ({ isAr }: { isAr: boolean }) => {
               : "Reef Al-Amthal Engineering Consulting provides innovative and comprehensive solutions in architectural and structural design and project management."}
           </p>
           <div className="flex flex-wrap gap-4">
-            <a href="#contact" className="px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-bold transition-all shadow-lg shadow-emerald-600/20 flex items-center gap-2">
+            <Link to="/contact" className="px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-bold transition-all shadow-lg shadow-emerald-600/20 flex items-center gap-2">
               {isAr ? "ابدأ مشروعك" : "Start Your Project"}
               {isAr ? <ChevronLeft size={18} /> : <ChevronRight size={18} />}
-            </a>
+            </Link>
             <a href="#about" className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white border border-white/30 rounded-lg font-bold transition-all backdrop-blur-sm">
               {isAr ? "اكتشف المزيد" : "Discover More"}
             </a>
@@ -169,10 +169,10 @@ const Services = ({ isAr }: { isAr: boolean }) => {
               <p className="text-slate-600 leading-relaxed mb-6">
                 {isAr ? service.descriptionAr : service.description}
               </p>
-              <a href="#contact" className="text-emerald-600 font-bold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
+              <Link to="/contact" className="text-emerald-600 font-bold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
                 {isAr ? "اقرأ المزيد" : "Read More"}
                 {isAr ? <ChevronLeft size={16} /> : <ChevronRight size={16} />}
-              </a>
+              </Link>
             </motion.div>
           ))}
         </div>

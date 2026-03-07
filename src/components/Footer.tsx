@@ -38,6 +38,7 @@ export default function Footer({ isAr }: { isAr: boolean }) {
               <li><a href="/#about" className="hover:text-emerald-400 transition-colors">{isAr ? "من نحن" : "About"}</a></li>
               <li><a href="/#services" className="hover:text-emerald-400 transition-colors">{isAr ? "خدماتنا" : "Services"}</a></li>
               <li><Link to="/projects" className="hover:text-emerald-400 transition-colors">{isAr ? "مشاريعنا" : "Projects"}</Link></li>
+              <li><Link to="/contact" className="hover:text-emerald-400 transition-colors">{isAr ? "اتصل بنا" : "Contact"}</Link></li>
             </ul>
           </div>
 
