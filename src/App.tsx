@@ -130,7 +130,7 @@ const PROJECTS: Project[] = [
 const Logo = ({ className = "h-12 w-auto" }: { isScrolled?: boolean; className?: string }) => (
   <div className={`flex items-center ${className}`}>
     <img 
-      src="/src/images/ReefLogo3.png" 
+      src="/public/ReefLogo3.png" 
       alt="Reef Logo" 
       className="h-full w-auto object-contain"
       referrerPolicy="no-referrer"
