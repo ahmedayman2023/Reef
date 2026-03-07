@@ -1,3 +1,4 @@
+import { useState, ChangeEvent, FormEvent } from "react";
 import { motion } from "motion/react";
 import { 
   Building2, 
@@ -128,7 +129,7 @@ const About = ({ isAr }: { isAr: boolean }) => {
             ))}
           </div>
 
-          <button className="px-8 py-4 bg-slate-900 text-white rounded-lg font-bold hover:bg-slate-800 transition-all">
+          <button className="px-8 py-4 bg-slate-900 text-white rounded-lg font-bold hover:bg-slate-950 transition-all">
             {isAr ? "تعرف على فريقنا" : "Meet Our Team"}
           </button>
         </div>
@@ -169,7 +170,7 @@ const Services = ({ isAr }: { isAr: boolean }) => {
               <p className="text-slate-600 leading-relaxed mb-6">
                 {isAr ? service.descriptionAr : service.description}
               </p>
-              <Link to="/contact" className="text-emerald-600 font-bold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
+              <Link to={`/services/${service.id}`} className="text-emerald-600 font-bold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
                 {isAr ? "اقرأ المزيد" : "Read More"}
                 {isAr ? <ChevronLeft size={16} /> : <ChevronRight size={16} />}
               </Link>
@@ -201,7 +202,11 @@ const Portfolio = ({ isAr }: { isAr: boolean }) => {
 
         <div className="grid md:grid-cols-2 gap-8">
           {PROJECTS.slice(0, 4).map((project) => (
-            <div key={project.id} className="group relative overflow-hidden rounded-2xl aspect-[4/3]">
+            <Link 
+              key={project.id} 
+              to={`/projects/${project.id}`}
+              className="group relative overflow-hidden rounded-2xl aspect-[4/3] block"
+            >
               <img 
                 src={project.image} 
                 alt={project.title} 
@@ -213,9 +218,13 @@ const Portfolio = ({ isAr }: { isAr: boolean }) => {
                 <span className="text-emerald-400 text-xs font-bold uppercase tracking-widest mb-2 block">
                   {isAr ? project.categoryAr : project.category}
                 </span>
-                <h4 className="text-2xl font-bold">{isAr ? project.titleAr : project.title}</h4>
+                <h4 className="text-2xl font-bold mb-2">{isAr ? project.titleAr : project.title}</h4>
+                <div className="flex items-center gap-2 text-emerald-400 text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity">
+                  <span>{isAr ? "عرض المشروع" : "View Project"}</span>
+                  {isAr ? <ChevronLeft size={16} /> : <ChevronRight size={16} />}
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
@@ -224,6 +233,63 @@ const Portfolio = ({ isAr }: { isAr: boolean }) => {
 };
 
 const Contact = ({ isAr }: { isAr: boolean }) => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: ""
+  });
+  const [errors, setErrors] = useState<{ [key: string]: string }>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const validate = () => {
+    const newErrors: { [key: string]: string } = {};
+    if (!formData.name.trim()) {
+      newErrors.name = isAr ? "الاسم مطلوب" : "Name is required";
+    }
+    if (!formData.email.trim()) {
+      newErrors.email = isAr ? "البريد الإلكتروني مطلوب" : "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = isAr ? "البريد الإلكتروني غير صحيح" : "Invalid email format";
+    }
+    if (!formData.message.trim()) {
+      newErrors.message = isAr ? "الرسالة مطلوبة" : "Message is required";
+    }
+    return newErrors;
+  };
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    const validationErrors = validate();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+    setErrors({});
+    setIsSubmitting(true);
+    
+    // Simulate API call
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setIsSuccess(true);
+      setFormData({ name: "", email: "", subject: "", message: "" });
+      setTimeout(() => setIsSuccess(false), 5000);
+    }, 1500);
+  };
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+    if (errors[name]) {
+      setErrors(prev => {
+        const newErrors = { ...prev };
+        delete newErrors[name];
+        return newErrors;
+      });
+    }
+  };
+
   return (
     <section id="contact" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
@@ -270,29 +336,92 @@ const Contact = ({ isAr }: { isAr: boolean }) => {
           </div>
 
           <div className="bg-slate-50 p-10 rounded-3xl border border-slate-100">
-            <form className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label className="text-sm font-bold text-slate-700">{isAr ? "الاسم" : "Name"}</label>
-                  <input type="text" className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-emerald-500 outline-none transition-all" />
+            {isSuccess ? (
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="h-full flex flex-col items-center justify-center text-center space-y-4 py-12"
+              >
+                <div className="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center">
+                  <CheckCircle2 size={40} />
+                </div>
+                <h4 className="text-2xl font-bold text-slate-900">
+                  {isAr ? "تم الإرسال بنجاح!" : "Sent Successfully!"}
+                </h4>
+                <p className="text-slate-600 max-w-xs">
+                  {isAr 
+                    ? "شكراً لتواصلك معنا. سنقوم بالرد عليك في أقرب وقت ممكن."
+                    : "Thank you for contacting us. We will get back to you as soon as possible."}
+                </p>
+                <button 
+                  onClick={() => setIsSuccess(false)}
+                  className="text-emerald-600 font-bold hover:underline"
+                >
+                  {isAr ? "إرسال رسالة أخرى" : "Send another message"}
+                </button>
+              </motion.div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <label className="text-sm font-bold text-slate-700">{isAr ? "الاسم" : "Name"}</label>
+                    <input 
+                      type="text" 
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      className={`w-full px-4 py-3 rounded-lg border ${errors.name ? 'border-red-500 focus:ring-red-500' : 'border-slate-200 focus:ring-emerald-500'} outline-none transition-all`} 
+                    />
+                    {errors.name && <p className="text-red-500 text-xs font-medium">{errors.name}</p>}
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-bold text-slate-700">{isAr ? "البريد الإلكتروني" : "Email"}</label>
+                    <input 
+                      type="email" 
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      className={`w-full px-4 py-3 rounded-lg border ${errors.email ? 'border-red-500 focus:ring-red-500' : 'border-slate-200 focus:ring-emerald-500'} outline-none transition-all`} 
+                    />
+                    {errors.email && <p className="text-red-500 text-xs font-medium">{errors.email}</p>}
+                  </div>
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm font-bold text-slate-700">{isAr ? "البريد الإلكتروني" : "Email"}</label>
-                  <input type="email" className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-emerald-500 outline-none transition-all" />
+                  <label className="text-sm font-bold text-slate-700">{isAr ? "الموضوع" : "Subject"}</label>
+                  <input 
+                    type="text" 
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-emerald-500 outline-none transition-all" 
+                  />
                 </div>
-              </div>
-              <div className="space-y-2">
-                <label className="text-sm font-bold text-slate-700">{isAr ? "الموضوع" : "Subject"}</label>
-                <input type="text" className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-emerald-500 outline-none transition-all" />
-              </div>
-              <div className="space-y-2">
-                <label className="text-sm font-bold text-slate-700">{isAr ? "الرسالة" : "Message"}</label>
-                <textarea rows={4} className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-emerald-500 outline-none transition-all"></textarea>
-              </div>
-              <button className="w-full py-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-bold transition-all shadow-lg shadow-emerald-600/20">
-                {isAr ? "إرسال الرسالة" : "Send Message"}
-              </button>
-            </form>
+                <div className="space-y-2">
+                  <label className="text-sm font-bold text-slate-700">{isAr ? "الرسالة" : "Message"}</label>
+                  <textarea 
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    rows={4} 
+                    className={`w-full px-4 py-3 rounded-lg border ${errors.message ? 'border-red-500 focus:ring-red-500' : 'border-slate-200 focus:ring-emerald-500'} outline-none transition-all`}
+                  ></textarea>
+                  {errors.message && <p className="text-red-500 text-xs font-medium">{errors.message}</p>}
+                </div>
+                <button 
+                  disabled={isSubmitting}
+                  className={`w-full py-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-bold transition-all shadow-lg shadow-emerald-600/20 flex items-center justify-center gap-2 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                >
+                  {isSubmitting ? (
+                    <>
+                      <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                      {isAr ? "جاري الإرسال..." : "Sending..."}
+                    </>
+                  ) : (
+                    isAr ? "إرسال الرسالة" : "Send Message"
+                  )}
+                </button>
+              </form>
+            )}
           </div>
         </div>
       </div>

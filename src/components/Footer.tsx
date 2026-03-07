@@ -8,11 +8,8 @@ export default function Footer({ isAr }: { isAr: boolean }) {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">
-            <div className="flex items-center gap-3">
+            <div className="flex items-center">
               <Logo className="h-20" isAr={isAr} />
-              <span className="font-bold text-xl tracking-tight">
-                {isAr ? "ريف الأمثل" : "Reef Al-Amthal"}
-              </span>
             </div>
             <p className="text-white/50 leading-relaxed">
               {isAr 

@@ -38,11 +38,8 @@ export default function Navbar({ isAr, setIsAr }: { isAr: boolean; setIsAr: (v: 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled || !isHomePage ? "bg-white/90 backdrop-blur-md shadow-sm py-4" : "bg-transparent py-6"}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <Link to="/" className="flex items-center gap-3">
+        <Link to="/" className="flex items-center">
           <Logo className="h-20" isAr={isAr} />
-          <span className={`font-bold text-xl tracking-tight ${isScrolled || !isHomePage ? "text-slate-900" : "text-white"}`}>
-            {isAr ? "ريف الأمثل" : "Reef Al-Amthal"}
-          </span>
         </Link>
 
         {/* Desktop Nav */}

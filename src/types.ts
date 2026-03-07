@@ -7,6 +7,12 @@ export interface Service {
   description: string;
   descriptionAr: string;
   icon: LucideIcon;
+  longDescription?: string;
+  longDescriptionAr?: string;
+  benefits?: string[];
+  benefitsAr?: string[];
+  process?: { step: number; title: string; titleAr: string; description: string; descriptionAr: string }[];
+  image?: string;
 }
 
 export interface Project {
@@ -18,6 +24,26 @@ export interface Project {
   image: string;
   description?: string;
   descriptionAr?: string;
+  location?: string;
+  locationAr?: string;
+  year?: string;
+  area?: string;
+  status?: string;
+  statusAr?: string;
+  supervisor?: {
+    name: string;
+    nameAr: string;
+    role: string;
+    roleAr: string;
+    image: string;
+    bio?: string;
+    bioAr?: string;
+    challengesSolved?: string[];
+    challengesSolvedAr?: string[];
+  };
+  gallery?: string[];
+  results?: string[];
+  resultsAr?: string[];
 }
 
 export interface BlogPost {
