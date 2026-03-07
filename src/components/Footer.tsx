@@ -58,8 +58,9 @@ export default function Footer({ isAr }: { isAr: boolean }) {
                 <span className="text-emerald-400 font-bold shrink-0">{isAr ? "العنوان:" : "Address:"}</span>
                 <span>{isAr ? "الدمام - حي البديع 3752 - شارع الملك عبدالعزيز" : "Dammam - Al-Badeea District 3752 - King Abdulaziz St"}</span>
               </li>
-              <li className="pt-2 border-t border-white/5 text-[10px] uppercase tracking-widest">
-                {isAr ? "رقم الغرفة التجارية" : "Chamber of Commerce No."}
+              <li className="pt-2 border-t border-white/5 text-[10px] uppercase tracking-widest flex flex-col gap-1">
+                <span>{isAr ? "سجل تجاري: 7099149712" : "C.R No. 7099149712"}</span>
+                <span>{isAr ? "الرقم الضريبي: 331155673920003" : "VAT No. 331155673920003"}</span>
               </li>
             </ul>
           </div>
@@ -68,8 +69,8 @@ export default function Footer({ isAr }: { isAr: boolean }) {
         <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-white/30 text-xs uppercase tracking-widest">
           <p>© {new Date().getFullYear()} {isAr ? "ريف الأمثل للاستشارات الهندسية. جميع الحقوق محفوظة." : "Reef Al-Amthal Engineering Consulting. All rights reserved."}</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition-colors">{isAr ? "سياسة الخصوصية" : "Privacy Policy"}</a>
-            <a href="#" className="hover:text-white transition-colors">{isAr ? "الشروط والأحكام" : "Terms & Conditions"}</a>
+            <Link to="/privacy-policy" className="hover:text-white transition-colors">{isAr ? "سياسة الخصوصية" : "Privacy Policy"}</Link>
+            <Link to="/terms-conditions" className="hover:text-white transition-colors">{isAr ? "الشروط والأحكام" : "Terms & Conditions"}</Link>
           </div>
         </div>
       </div>

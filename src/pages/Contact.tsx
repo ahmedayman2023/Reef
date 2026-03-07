@@ -103,6 +103,19 @@ export default function ContactPage({ isAr }: { isAr: boolean }) {
                     </div>
                   </div>
                 </div>
+
+                <div className="flex gap-6">
+                  <div className="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600 shrink-0">
+                    <span className="font-bold text-[10px]">VAT</span>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-900 mb-1">{isAr ? "البيانات الضريبية والتجارية" : "Tax & Commercial Info"}</h4>
+                    <div className="text-slate-600 text-sm">
+                      <p>{isAr ? "سجل تجاري: 7099149712" : "C.R No. 7099149712"}</p>
+                      <p>{isAr ? "الرقم الضريبي: 331155673920003" : "VAT No. 331155673920003"}</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 

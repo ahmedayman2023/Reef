@@ -9,6 +9,8 @@ import BlogList from "./pages/BlogList";
 import BlogPostPage from "./pages/BlogPost";
 import ServiceDetail from "./pages/ServiceDetail";
 import ProjectDetail from "./pages/ProjectDetail";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsConditions from "./pages/TermsConditions";
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -45,6 +47,8 @@ export default function App() {
             <Route path="/blog/:id" element={<BlogPostPage isAr={isAr} />} />
             <Route path="/services/:id" element={<ServiceDetail isAr={isAr} />} />
             <Route path="/projects/:id" element={<ProjectDetail isAr={isAr} />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy isAr={isAr} />} />
+            <Route path="/terms-conditions" element={<TermsConditions isAr={isAr} />} />
           </Routes>
         </main>
         <Footer isAr={isAr} />
