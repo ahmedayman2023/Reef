@@ -41,14 +41,27 @@ export default function Footer({ isAr }: { isAr: boolean }) {
           </div>
 
           <div>
-            <h4 className="font-bold mb-6">{isAr ? "النشرة الإخبارية" : "Newsletter"}</h4>
-            <p className="text-white/50 text-sm mb-4">{isAr ? "اشترك للحصول على آخر التحديثات." : "Subscribe for the latest updates."}</p>
-            <div className="flex gap-2">
-              <input type="email" placeholder={isAr ? "بريدك الإلكتروني" : "Your Email"} className="bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-sm outline-none focus:border-emerald-500 w-full" />
-              <button className="bg-emerald-600 p-2 rounded-lg hover:bg-emerald-700 transition-all">
-                <ArrowRight size={18} />
-              </button>
-            </div>
+            <h4 className="font-bold mb-6">{isAr ? "معلومات التواصل" : "Contact Information"}</h4>
+            <ul className="space-y-4 text-white/50 text-sm">
+              <li className="flex items-center gap-3">
+                <span className="text-emerald-400 font-bold">{isAr ? "الهاتف:" : "Phone:"}</span>
+                <div className="flex flex-col" dir="ltr">
+                  <span>0138335851</span>
+                  <span>+966 50 963 4367</span>
+                </div>
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="text-emerald-400 font-bold">{isAr ? "البريد:" : "Email:"}</span>
+                <span>Info@reef-consult.com</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-emerald-400 font-bold shrink-0">{isAr ? "العنوان:" : "Address:"}</span>
+                <span>{isAr ? "الدمام - حي البديع 3752 - شارع الملك عبدالعزيز" : "Dammam - Al-Badeea District 3752 - King Abdulaziz St"}</span>
+              </li>
+              <li className="pt-2 border-t border-white/5 text-[10px] uppercase tracking-widest">
+                {isAr ? "رقم الغرفة التجارية" : "Chamber of Commerce No."}
+              </li>
+            </ul>
           </div>
         </div>
 

@@ -30,13 +30,33 @@ export default function ContactPage({ isAr }: { isAr: boolean }) {
                     <MapPin size={24} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-900 mb-1">{isAr ? "الموقع" : "Location"}</h4>
-                    <p className="text-slate-600">
-                      {isAr 
-                        ? "شارع الملك عبدالعزيز، البديع، الدمام 32415، المملكة العربية السعودية" 
-                        : "King Abdulaziz St, Al Badi, Dammam 32415, Saudi Arabia"}
-                    </p>
-                    <p className="text-xs text-slate-400 mt-1">C4W7+JP الدمام</p>
+                    <h4 className="font-bold text-slate-900 mb-1">{isAr ? "المواقع" : "Locations"}</h4>
+                    <div className="space-y-4">
+                      <div>
+                        <p className="text-xs font-bold text-emerald-600 mb-1">{isAr ? "الرياض" : "Riyadh"}</p>
+                        <p className="text-slate-600 text-sm">
+                          {isAr 
+                            ? "ظهرة لبن – طريق نجد" 
+                            : "Dhahrat Laban – Najd Road"}
+                        </p>
+                      </div>
+                      <div>
+                        <p className="text-xs font-bold text-emerald-600 mb-1">{isAr ? "الدمام" : "Dammam"}</p>
+                        <p className="text-slate-600 text-sm">
+                          {isAr 
+                            ? "حي البديع 3752 - شارع الملك عبدالعزيز - عمارة أبا حسين للكهرباء" 
+                            : "Al-Badeea District 3752 - King Abdulaziz Street - Aba Hussain Electrical Building"}
+                        </p>
+                      </div>
+                      <div>
+                        <p className="text-xs font-bold text-emerald-600 mb-1">{isAr ? "الخبر" : "Khobar"}</p>
+                        <p className="text-slate-600 text-sm">
+                          {isAr 
+                            ? "حي الجسر – طريق مجلس التعاون – مبنى رقم 7785" 
+                            : "Al-Jisr District – GCC Road – Building No. 7785"}
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 
@@ -46,7 +66,10 @@ export default function ContactPage({ isAr }: { isAr: boolean }) {
                   </div>
                   <div>
                     <h4 className="font-bold text-slate-900 mb-1">{isAr ? "الهاتف" : "Phone"}</h4>
-                    <p className="text-slate-600" dir="ltr">+966 50 963 4367</p>
+                    <div className="text-slate-600" dir="ltr">
+                      <p>0138335851</p>
+                      <p>+966 50 963 4367</p>
+                    </div>
                   </div>
                 </div>
                 
@@ -56,7 +79,7 @@ export default function ContactPage({ isAr }: { isAr: boolean }) {
                   </div>
                   <div>
                     <h4 className="font-bold text-slate-900 mb-1">{isAr ? "البريد الإلكتروني" : "Email"}</h4>
-                    <p className="text-slate-600">info@reefalamthal.com</p>
+                    <p className="text-slate-600">Info@reef-consult.com</p>
                   </div>
                 </div>
 
@@ -66,9 +89,18 @@ export default function ContactPage({ isAr }: { isAr: boolean }) {
                   </div>
                   <div>
                     <h4 className="font-bold text-slate-900 mb-1">{isAr ? "ساعات العمل" : "Working Hours"}</h4>
-                    <p className="text-slate-600">
-                      {isAr ? "الأحد - الخميس: 8:00 صباحاً - 5:00 مساءً" : "Sunday - Thursday: 8:00 AM - 5:00 PM"}
-                    </p>
+                    <div className="text-slate-600 text-sm space-y-1">
+                      <p>
+                        {isAr 
+                          ? "السبت - الأربعاء: 9:00 ص - 1:00 م | 4:00 م - 8:30 م" 
+                          : "Sat - Wed: 9:00 AM - 1:00 PM | 4:00 PM - 8:30 PM"}
+                      </p>
+                      <p>
+                        {isAr 
+                          ? "الخميس: 9:00 ص - 2:30 م" 
+                          : "Thursday: 9:00 AM - 2:30 PM"}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>

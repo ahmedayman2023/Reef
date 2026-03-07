@@ -22,12 +22,12 @@ export default function Logo({ className = "h-12 w-auto", isAr = true }: LogoPro
   return (
     <div className={`flex items-center ${className}`}>
       <img 
-        src="/ReefLogo.png" 
+        src="https://i.im.ge/2026/03/08/egUTAp.ReefLogo3.png" 
         alt="Reef Engineering Logo" 
         className="h-full w-auto object-contain"
         referrerPolicy="no-referrer"
         onError={() => {
-          console.error("Logo failed to load at /ReefLogo.png. Ensure the file exists in the public folder with exact casing.");
+          console.error("Logo failed to load from the provided link.");
           setError(true);
         }}
       />

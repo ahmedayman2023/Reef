@@ -309,7 +309,7 @@ const Contact = ({ isAr }: { isAr: boolean }) => {
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-900 mb-1">{isAr ? "الموقع" : "Location"}</h4>
-                  <p className="text-slate-600">{isAr ? "الرياض، المملكة العربية السعودية" : "Riyadh, Saudi Arabia"}</p>
+                  <p className="text-slate-600">{isAr ? "الدمام، المملكة العربية السعودية" : "Dammam, Saudi Arabia"}</p>
                 </div>
               </div>
               
@@ -319,7 +319,10 @@ const Contact = ({ isAr }: { isAr: boolean }) => {
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-900 mb-1">{isAr ? "الهاتف" : "Phone"}</h4>
-                  <p className="text-slate-600" dir="ltr">+966 50 963 4367</p>
+                  <div className="text-slate-600" dir="ltr">
+                    <p>0138335851</p>
+                    <p>+966 50 963 4367</p>
+                  </div>
                 </div>
               </div>
               
@@ -329,7 +332,7 @@ const Contact = ({ isAr }: { isAr: boolean }) => {
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-900 mb-1">{isAr ? "البريد الإلكتروني" : "Email"}</h4>
-                  <p className="text-slate-600">info@reefalamthal.com</p>
+                  <p className="text-slate-600">Info@reef-consult.com</p>
                 </div>
               </div>
             </div>
