@@ -128,16 +128,13 @@ const PROJECTS: Project[] = [
 // --- Components ---
 
 const Logo = ({ className = "h-12 w-auto" }: { isScrolled?: boolean; className?: string }) => (
-  <div className={`flex items-center gap-3 ${className}`}>
-    <svg viewBox="0 0 250 250" className="h-full w-auto" fill="currentColor">
-      {/* Palm Tree */}
-      <path d="M50 60C50 60 30 40 10 55M50 60C50 60 70 40 90 55M50 60C50 60 40 20 25 10M50 60C50 60 60 20 75 10M50 100V60" stroke="currentColor" strokeWidth="6" strokeLinecap="round" fill="none"/>
-      {/* Building Shape with Triangles */}
-      <path d="M40 100H160V220H40V100Z" fill="currentColor" />
-      <path d="M40 100L50 120L60 100L70 120L80 100L90 120L100 100L110 120L120 100L130 120L140 100L150 120L160 100" fill="white" />
-      {/* REEF Text inside building */}
-      <text x="100" y="190" textAnchor="middle" fontSize="55" fontWeight="900" fontFamily="Arial, sans-serif" fill="white">REEF</text>
-    </svg>
+  <div className={`flex items-center ${className}`}>
+    <img 
+      src="/src/images/ReefLogo3.png" 
+      alt="Reef Logo" 
+      className="h-full w-auto object-contain"
+      referrerPolicy="no-referrer"
+    />
   </div>
 );
 
@@ -163,7 +160,7 @@ const Navbar = ({ isAr, setIsAr }: { isAr: boolean; setIsAr: (v: boolean) => voi
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-white/90 backdrop-blur-md shadow-sm py-4" : "bg-transparent py-6"}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <div className="flex items-center gap-3">
-          <Logo isScrolled={isScrolled} className={`h-14 ${isScrolled ? "text-emerald-600" : "text-white"}`} />
+          <Logo className="h-20" />
           <span className={`font-bold text-xl tracking-tight ${isScrolled ? "text-slate-900" : "text-white"}`}>
             {isAr ? "ريف الأمثل" : "Reef Al-Amthal"}
           </span>
@@ -522,7 +519,7 @@ const Footer = ({ isAr }: { isAr: boolean }) => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">
             <div className="flex items-center gap-3">
-              <Logo className="h-14 text-emerald-500" />
+              <Logo className="h-20" />
               <span className="font-bold text-xl tracking-tight">
                 {isAr ? "ريف الأمثل" : "Reef Al-Amthal"}
               </span>
