@@ -561,7 +561,6 @@ export default function Home({ isAr }: { isAr: boolean }) {
       <About isAr={isAr} />
       <Services isAr={isAr} />
       <Portfolio isAr={isAr} />
-      <Contact isAr={isAr} />
     </>
   );
 }
