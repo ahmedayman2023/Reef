@@ -11,6 +11,7 @@ import ServiceDetail from "./pages/ServiceDetail";
 import ProjectDetail from "./pages/ProjectDetail";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
+import TeamPage from "./pages/Team";
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
