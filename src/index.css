@@ -11,13 +11,39 @@
   }
   
   body {
-    @apply antialiased text-slate-900 bg-white;
+    @apply antialiased;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    background-color: var(--bg);
+    color: var(--text);
   }
 
   [dir="rtl"] {
     font-family: "Cairo", sans-serif;
   }
+}
+
+:root {
+  --bg: #ffffff;
+  --text: #0f1724; /* slate-900 */
+  --muted: rgba(15,23,36,0.6);
+  --accent: #10b981; /* emerald-500 */
+  --nav-bg: rgba(255,255,255,0.9);
+  --nav-text: #0f1724;
+  --nav-on-hero-text: #ffffff;
+  --footer-bg: #0f1724;
+  --footer-text: #ffffff;
+}
+
+.dark {
+  --bg: #071023;
+  --text: #e6eef6;
+  --muted: rgba(255,255,255,0.65);
+  --accent: #34d399;
+  --nav-bg: rgba(8,10,15,0.6);
+  --nav-text: #e6eef6;
+  --nav-on-hero-text: #e6eef6;
+  --footer-bg: #020617;
+  --footer-text: #e6eef6;
 }
 
 .glass-card {

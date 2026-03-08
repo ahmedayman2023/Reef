@@ -4,15 +4,15 @@ import Logo from "./Logo";
 
 export default function Footer({ isAr }: { isAr: boolean }) {
   return (
-    <footer className="bg-slate-950 text-white pt-20 pb-10 border-t border-white/5">
+    <footer style={{ backgroundColor: "var(--footer-bg)", color: "var(--footer-text)" }} className="pt-20 pb-10 border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">
             <div className="flex items-center">
               <Logo className="h-20" isAr={isAr} />
             </div>
-            <p className="text-white/50 leading-relaxed">
-              {isAr 
+            <p className="leading-relaxed" style={{ color: "var(--muted)" }}>
+              {isAr
                 ? "نحن نؤمن بأن الهندسة هي فن تحويل الأفكار إلى واقع مستدام يخدم المجتمع."
                 : "We believe that engineering is the art of turning ideas into a sustainable reality that serves society."}
             </p>
@@ -20,19 +20,43 @@ export default function Footer({ isAr }: { isAr: boolean }) {
 
           <div>
             <h4 className="font-bold mb-6">{isAr ? "روابط سريعة" : "Quick Links"}</h4>
-            <ul className="space-y-4 text-white/50 text-sm">
-              <li><Link to="/" className="hover:text-emerald-400 transition-colors">{isAr ? "الرئيسية" : "Home"}</Link></li>
-              <li><a href="/#about" className="hover:text-emerald-400 transition-colors">{isAr ? "من نحن" : "About"}</a></li>
-              <li><a href="/#services" className="hover:text-emerald-400 transition-colors">{isAr ? "خدماتنا" : "Services"}</a></li>
-              <li><Link to="/projects" className="hover:text-emerald-400 transition-colors">{isAr ? "مشاريعنا" : "Projects"}</Link></li>
-              <li><Link to="/blog" className="hover:text-emerald-400 transition-colors">{isAr ? "المدونة" : "Blog"}</Link></li>
-              <li><Link to="/contact" className="hover:text-emerald-400 transition-colors">{isAr ? "اتصل بنا" : "Contact"}</Link></li>
+            <ul className="space-y-4 text-sm">
+              <li>
+                <Link to="/" className="transition-colors" style={{ color: "var(--muted)" }}>
+                  {isAr ? "الرئيسية" : "Home"}
+                </Link>
+              </li>
+              <li>
+                <a href="/#about" className="transition-colors" style={{ color: "var(--muted)" }}>
+                  {isAr ? "من نحن" : "About"}
+                </a>
+              </li>
+              <li>
+                <a href="/#services" className="transition-colors" style={{ color: "var(--muted)" }}>
+                  {isAr ? "خدماتنا" : "Services"}
+                </a>
+              </li>
+              <li>
+                <Link to="/projects" className="transition-colors" style={{ color: "var(--muted)" }}>
+                  {isAr ? "مشاريعنا" : "Projects"}
+                </Link>
+              </li>
+              <li>
+                <Link to="/blog" className="transition-colors" style={{ color: "var(--muted)" }}>
+                  {isAr ? "المدونة" : "Blog"}
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="transition-colors" style={{ color: "var(--muted)" }}>
+                  {isAr ? "اتصل بنا" : "Contact"}
+                </Link>
+              </li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-bold mb-6">{isAr ? "خدماتنا" : "Our Services"}</h4>
-            <ul className="space-y-4 text-white/50 text-sm">
+            <ul className="space-y-4 text-sm" style={{ color: "var(--muted)" }}>
               <li>{isAr ? "التصميم المعماري" : "Architectural Design"}</li>
               <li>{isAr ? "الهندسة الإنشائية" : "Structural Engineering"}</li>
               <li>{isAr ? "إدارة المشاريع" : "Project Management"}</li>
@@ -42,7 +66,7 @@ export default function Footer({ isAr }: { isAr: boolean }) {
 
           <div>
             <h4 className="font-bold mb-6">{isAr ? "معلومات التواصل" : "Contact Information"}</h4>
-            <ul className="space-y-4 text-white/50 text-sm">
+            <ul className="space-y-4 text-sm" style={{ color: "var(--muted)" }}>
               <li className="flex items-center gap-3">
                 <span className="text-emerald-400 font-bold">{isAr ? "الهاتف:" : "Phone:"}</span>
                 <div className="flex flex-col" dir="ltr">
@@ -66,11 +90,11 @@ export default function Footer({ isAr }: { isAr: boolean }) {
           </div>
         </div>
 
-        <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-white/30 text-xs uppercase tracking-widest">
+        <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs uppercase tracking-widest" style={{ color: "rgba(255,255,255,0.35)" }}>
           <p>© {new Date().getFullYear()} {isAr ? "ريف الأمثل للاستشارات الهندسية. جميع الحقوق محفوظة." : "Reef Al-Amthal Engineering Consulting. All rights reserved."}</p>
           <div className="flex gap-6">
-            <Link to="/privacy-policy" className="hover:text-white transition-colors">{isAr ? "سياسة الخصوصية" : "Privacy Policy"}</Link>
-            <Link to="/terms-conditions" className="hover:text-white transition-colors">{isAr ? "الشروط والأحكام" : "Terms & Conditions"}</Link>
+            <Link to="/privacy-policy" className="transition-colors" style={{ color: "var(--muted)" }}>{isAr ? "سياسة الخصوصية" : "Privacy Policy"}</Link>
+            <Link to="/terms-conditions" className="transition-colors" style={{ color: "var(--muted)" }}>{isAr ? "الشروط والأحكام" : "Terms & Conditions"}</Link>
           </div>
         </div>
       </div>
