@@ -11,7 +11,6 @@ import ServiceDetail from "./pages/ServiceDetail";
 import ProjectDetail from "./pages/ProjectDetail";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
-
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
 
@@ -33,7 +32,6 @@ function ScrollToTop() {
 export default function App() {
   const [isAr, setIsAr] = useState(true);
 
-  return (
     <Router>
       <ScrollToTop />
       <div className="min-h-screen flex flex-col" dir={isAr ? "rtl" : "ltr"}>
