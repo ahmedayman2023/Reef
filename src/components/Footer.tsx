@@ -27,7 +27,7 @@ export default function Footer({ isAr }: { isAr: boolean }) {
     isAr ? "إدارة المشاريع" : "Project Management",
     isAr ? "التصميم الداخلي" : "Interior Design",
     isAr ? "استشارات هندسية" : "Engineering Consultancy",
-    isAr ? "إشرافConstruction" : "Construction Supervision",
+    isAr ? "إشراف هندسي" : "Construction Supervision",
   ];
 
   return (
