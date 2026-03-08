@@ -54,9 +54,10 @@ const Hero = ({ isAr }: { isAr: boolean }) => {
   return (
     <section id="home" className="relative h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-[#0b1f9c]"></div>
-        <div className="absolute inset-0 hero-pattern opacity-20"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1e3a8a]/16 via-[#020617]/22 to-[#020617]/62"></div>
+        <div className="absolute inset-0 bg-[#0f2f9f]"></div>
+        <div className="absolute inset-0 hero-pattern opacity-12"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_30%,rgba(191,219,254,0.20),transparent_44%),radial-gradient(circle_at_78%_38%,rgba(147,197,253,0.14),transparent_42%)]"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0b1f5f]/18 via-[#08153d]/26 to-[#020617]/54"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
@@ -67,14 +68,14 @@ const Hero = ({ isAr }: { isAr: boolean }) => {
             transition={{ duration: 0.8 }}
             className="max-w-3xl"
           >
-            <span className="inline-block py-1 px-3 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold tracking-widest uppercase mb-6 border border-emerald-500/30">
+            <span className="inline-block py-1 px-3 rounded-full bg-blue-500/18 text-blue-200 text-xs font-bold tracking-widest uppercase mb-6 border border-blue-300/30">
               {isAr ? "التميز في الهندسة" : "Excellence in Engineering"}
             </span>
             <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-6">
               {isAr ? (
-                <>نصمم <span className="text-emerald-400">المستقبل</span> برؤية هندسية متكاملة</>
+                <>نصمم <span className="text-blue-300">المستقبل</span> برؤية هندسية متكاملة</>
               ) : (
-                <>Designing the <span className="text-emerald-400">Future</span> with Engineering Vision</>
+                <>Designing the <span className="text-blue-300">Future</span> with Engineering Vision</>
               )}
             </h1>
             <p className="text-xl text-white/70 mb-10 leading-relaxed">
@@ -83,7 +84,7 @@ const Hero = ({ isAr }: { isAr: boolean }) => {
                 : "Reef Al-Amthal Engineering Consulting provides innovative and comprehensive solutions in architectural and structural design and project management."}
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link to="/contact" className="px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-bold transition-all shadow-lg shadow-emerald-600/20 flex items-center gap-2">
+              <Link to="/contact" className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-bold transition-all shadow-lg shadow-blue-600/20 flex items-center gap-2">
                 {isAr ? "ابدأ مشروعك" : "Start Your Project"}
                 {isAr ? <ChevronLeft size={18} /> : <ChevronRight size={18} />}
               </Link>
@@ -184,13 +185,12 @@ const Hero = ({ isAr }: { isAr: boolean }) => {
         .hero-pattern {
           background-color: transparent;
           background-image:
-            linear-gradient(to bottom, rgba(191, 219, 254, 0.52) 0 10px, rgba(191, 219, 254, 0.12) 28px, transparent 112px),
-            linear-gradient(to bottom, rgba(219, 234, 254, 0.42) 0 8px, rgba(219, 234, 254, 0.1) 24px, transparent 105px),
-            linear-gradient(to bottom, rgba(186, 230, 253, 0.36) 0 7px, rgba(186, 230, 253, 0.08) 21px, transparent 96px);
-          background-size: 34px 180px, 32px 165px, 30px 150px;
-          background-position: 0 0, 16px 62px, 8px 126px;
+            linear-gradient(to bottom, rgba(219, 234, 254, 0.40) 0 8px, rgba(219, 234, 254, 0.08) 24px, transparent 128px),
+            linear-gradient(to bottom, rgba(191, 219, 254, 0.30) 0 6px, rgba(191, 219, 254, 0.06) 20px, transparent 120px);
+          background-size: 42px 196px, 40px 182px;
+          background-position: 0 0, 20px 74px;
           background-repeat: repeat;
-          filter: blur(0.25px);
+          filter: blur(0.4px);
         }
       `}</style>
 
