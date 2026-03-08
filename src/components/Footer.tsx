@@ -22,12 +22,12 @@ export default function Footer({ isAr }: { isAr: boolean }) {
   ];
 
   const services = [
-    isAr ? "التصميم المعماري" : "Architectural Design",
-    isAr ? "الهندسة الإنشائية" : "Structural Engineering",
-    isAr ? "إدارة المشاريع" : "Project Management",
-    isAr ? "التصميم الداخلي" : "Interior Design",
-    isAr ? "استشارات هندسية" : "Engineering Consultancy",
-    isAr ? "إشراف هندسي" : "Construction Supervision",
+    { name: isAr ? "التصميم المعماري" : "Architectural Design", href: "/services/1" },
+    { name: isAr ? "الهندسة الإنشائية" : "Structural Engineering", href: "/services/2" },
+    { name: isAr ? "إدارة المشاريع" : "Project Management", href: "/services/4" },
+    { name: isAr ? "التصميم الداخلي" : "Interior Design", href: "/services/3" },
+    { name: isAr ? "استشارات هندسية" : "Engineering Consultancy", href: "/services/5" },
+    { name: isAr ? "إشراف هندسي" : "Construction Supervision", href: "/services/6" },
   ];
 
   return (
@@ -101,9 +101,12 @@ export default function Footer({ isAr }: { isAr: boolean }) {
             <ul className="space-y-3">
               {services.map((service, index) => (
                 <li key={index}>
-                  <span className="text-gray-400 text-sm cursor-pointer hover:text-emerald-400 transition-colors duration-300">
-                    {service}
-                  </span>
+                  <Link
+                    to={service.href}
+                    className="text-gray-400 text-sm hover:text-emerald-400 transition-colors duration-300"
+                  >
+                    {service.name}
+                  </Link>
                 </li>
               ))}
             </ul>
