@@ -50,7 +50,7 @@ export default function Footer({ isAr }: { isAr: boolean }) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Column 1: Company Info */}
           <div className="space-y-6">
-            <Logo className="h-16" isAr={isAr} />
+<Logo className="h-24" isAr={isAr} />
             <p className="text-gray-400 text-sm leading-relaxed">
               {isAr
                 ? "شركة ريف الأمثل للاستشارات الهندسية - شركتكم الموثوقة لاستشارات الهندسة المهنية في المملكة العربية السعودية."
