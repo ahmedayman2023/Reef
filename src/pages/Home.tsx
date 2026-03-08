@@ -393,6 +393,78 @@ const Services = ({ isAr }: { isAr: boolean }) => {
   );
 };
 
+const EnvironmentalConsulting = ({ isAr }: { isAr: boolean }) => {
+  const environmentalService = SERVICES.find((service) => service.id === 7);
+
+  if (!environmentalService) return null;
+
+  return (
+    <section id="environmental-consulting" className="py-24 bg-emerald-50/40">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5 }}
+            className="space-y-6"
+          >
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 text-emerald-700 text-xs font-bold uppercase tracking-widest">
+              <Leaf size={14} />
+              {isAr ? "الاستشارات البيئية" : "Environmental Consultation"}
+            </span>
+
+            <h3 className="text-4xl font-bold text-slate-900 leading-tight">
+              {isAr ? "نبني مشاريع أكثر استدامة وأثرًا إيجابيًا" : "Build Sustainable Projects with Measurable Impact"}
+            </h3>
+
+            <p className="text-slate-600 leading-relaxed text-lg">
+              {isAr ? environmentalService.longDescriptionAr : environmentalService.longDescription}
+            </p>
+
+            <div className="grid sm:grid-cols-2 gap-4">
+              {(isAr ? environmentalService.benefitsAr : environmentalService.benefits).slice(0, 4).map((benefit, index) => (
+                <div key={index} className="flex items-start gap-3 p-4 rounded-xl bg-white border border-emerald-100">
+                  <CheckCircle2 size={18} className="text-emerald-600 mt-0.5 shrink-0" />
+                  <p className="text-sm text-slate-700 leading-relaxed">{benefit}</p>
+                </div>
+              ))}
+            </div>
+
+            <Link
+              to="/services/7"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-bold transition-all"
+            >
+              {isAr ? "اكتشف الخدمة" : "Explore Service"}
+              {isAr ? <ChevronLeft size={16} /> : <ChevronRight size={16} />}
+            </Link>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.98 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="relative rounded-3xl overflow-hidden shadow-2xl"
+          >
+            <img
+              src={environmentalService.image}
+              alt={isAr ? environmentalService.titleAr : environmentalService.title}
+              className="w-full h-[420px] object-cover"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-slate-900/15 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+              <h4 className="text-2xl font-bold mb-2">{isAr ? environmentalService.titleAr : environmentalService.title}</h4>
+              <p className="text-white/85 leading-relaxed">{isAr ? environmentalService.descriptionAr : environmentalService.description}</p>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const Portfolio = ({ isAr }: { isAr: boolean }) => {
   return (
     <section id="projects" className="py-24 bg-slate-900 text-white">
@@ -654,6 +726,7 @@ export default function Home({ isAr }: { isAr: boolean }) {
       <Hero isAr={isAr} />
       <About isAr={isAr} />
       <Services isAr={isAr} />
+      <EnvironmentalConsulting isAr={isAr} />
       <Portfolio isAr={isAr} />
     </>
   );
