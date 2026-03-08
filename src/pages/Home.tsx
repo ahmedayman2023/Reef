@@ -204,14 +204,14 @@ const About = ({ isAr }: { isAr: boolean }) => {
         <div className="relative">
           <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
             <img 
-              src="https://unsplash.com/photos/low-angle-photo-of-city-high-rise-buildings-during-daytime-PhYq704ffdA?auto=format&fit=crop&q=80&w=2000" 
+              src="https://unsplash.com/photos/low-angle-photo-of-city-high-rise-buildings-during-daytime-PhYq704ffdA" 
               alt="" 
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
             />
           </div>
           <div className="absolute -bottom-8 -right-8 bg-emerald-600 text-white p-8 rounded-2xl shadow-xl hidden md:block">
-            <div className="text-4xl font-bold mb-1">15+</div>
+            <div className="text-4xl font-bold mb-1">27+</div>
             <div className="text-sm opacity-80 uppercase tracking-widest">{isAr ? "عاماً من التميز" : "Years of Excellence"}</div>
           </div>
         </div>
