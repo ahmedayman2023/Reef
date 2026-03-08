@@ -90,7 +90,7 @@ const About = ({ isAr }: { isAr: boolean }) => {
         <div className="relative">
           <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
             <img 
-              src="https://images.unsplash.com/photo-1503387762-592dee58c460?auto=format&fit=crop&q=80&w=1000" 
+              src="https://i.im.ge/2026/03/08/eghkF8.WhatsApp-Image-2026-02-25-at-14-05-22.jpeg" 
               alt="Engineering Team" 
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
