@@ -71,7 +71,7 @@ export default function Navbar({ isAr, setIsAr }: { isAr: boolean; setIsAr: (v: 
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <Link to="/" className="flex items-center">
-          <Logo className="h-20" isAr={isAr} />
+          <Logo className="h-24 md:h-28" isAr={isAr} tone={isScrolled || !isHomePage ? "blue" : "white"} />
         </Link>
 
         {/* Desktop Nav */}
