@@ -115,8 +115,8 @@ const Hero = ({ isAr }: { isAr: boolean }) => {
               }}
               onTouchEnd={endDrag}
             >
-              <div className="absolute inset-0 rounded-full bg-emerald-500/20 blur-3xl"></div>
-              <div className="absolute inset-10 rounded-full border border-emerald-300/25"></div>
+              <div className="absolute inset-0 rounded-full bg-blue-500/20 blur-3xl"></div>
+              <div className="absolute inset-10 rounded-full border border-blue-300/25"></div>
 
               {heroServices.map((service, index) => {
                 const Icon = service.icon;
@@ -128,7 +128,7 @@ const Hero = ({ isAr }: { isAr: boolean }) => {
                       animation: `floatTag ${3.2 + index * 0.25}s ease-in-out ${index * 0.1}s infinite alternate`,
                     }}
                   >
-                    <Icon size={13} className="text-emerald-300" />
+                    <Icon size={13} className="text-blue-300" />
                     <span>{isAr ? service.ar : service.en}</span>
                   </div>
                 );
@@ -141,7 +141,7 @@ const Hero = ({ isAr }: { isAr: boolean }) => {
                 transition={{ type: "spring", stiffness: 120, damping: 18, mass: 0.7 }}
               >
                 <div
-                  className="absolute left-1/2 top-1/2 w-[300px] h-[300px] rounded-2xl border border-emerald-300/20"
+                  className="absolute left-1/2 top-1/2 w-[300px] h-[300px] rounded-2xl border border-blue-300/20"
                   style={{
                     transform: "translate(-50%, -50%) rotateX(90deg) translateZ(-75px)",
                     background: "linear-gradient(180deg, rgba(148,163,184,0.3) 0%, rgba(15,23,42,0.6) 100%)",
@@ -149,11 +149,11 @@ const Hero = ({ isAr }: { isAr: boolean }) => {
                 />
 
                 <div className="absolute left-1/2 top-1/2 w-[124px] h-[190px] -translate-x-1/2 -translate-y-1/2" style={{ transformStyle: "preserve-3d" }}>
-                  <div className="absolute inset-0 border border-white/30" style={{ transform: "translateZ(62px)", background: "linear-gradient(180deg, rgba(52,211,153,0.75), rgba(16,185,129,0.45))" }} />
-                  <div className="absolute inset-0 border border-white/20" style={{ transform: "rotateY(180deg) translateZ(62px)", background: "linear-gradient(180deg, rgba(16,185,129,0.65), rgba(5,150,105,0.35))" }} />
+                  <div className="absolute inset-0 border border-white/30" style={{ transform: "translateZ(62px)", background: "linear-gradient(180deg, rgba(59,130,246,0.78), rgba(37,99,235,0.48))" }} />
+                  <div className="absolute inset-0 border border-white/20" style={{ transform: "rotateY(180deg) translateZ(62px)", background: "linear-gradient(180deg, rgba(37,99,235,0.66), rgba(29,78,216,0.36))" }} />
                   <div className="absolute inset-0 border border-white/20" style={{ transform: "rotateY(90deg) translateZ(62px)", background: "linear-gradient(180deg, rgba(15,23,42,0.85), rgba(30,41,59,0.9))" }} />
                   <div className="absolute inset-0 border border-white/20" style={{ transform: "rotateY(-90deg) translateZ(62px)", background: "linear-gradient(180deg, rgba(15,23,42,0.85), rgba(30,41,59,0.9))" }} />
-                  <div className="absolute inset-0 border border-white/20" style={{ transform: "rotateX(90deg) translateZ(95px)", background: "linear-gradient(180deg, rgba(110,231,183,0.9), rgba(16,185,129,0.75))" }} />
+                  <div className="absolute inset-0 border border-white/20" style={{ transform: "rotateX(90deg) translateZ(95px)", background: "linear-gradient(180deg, rgba(125,211,252,0.9), rgba(59,130,246,0.78))" }} />
                 </div>
 
                 <div className="absolute left-[46px] top-[110px] w-[68px] h-[106px]" style={{ transformStyle: "preserve-3d" }}>
