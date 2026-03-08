@@ -9,6 +9,7 @@ export default function Navbar({ isAr, setIsAr }: { isAr: boolean; setIsAr: (v: 
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [closeTimeoutId, setCloseTimeoutId] = useState<number | null>(null);
   const [isDark, setIsDark] = useState<boolean>(() => {
     try {
       const stored = localStorage.getItem("theme");
@@ -90,6 +91,22 @@ export default function Navbar({ isAr, setIsAr }: { isAr: boolean; setIsAr: (v: 
     }
   };
 
+  const openDropdown = (key: string) => {
+    if (closeTimeoutId) {
+      window.clearTimeout(closeTimeoutId);
+      setCloseTimeoutId(null);
+    }
+    setActiveDropdown(key);
+  };
+
+  const closeDropdownWithDelay = () => {
+    const id = window.setTimeout(() => {
+      setActiveDropdown(null);
+      setCloseTimeoutId(null);
+    }, 180);
+    setCloseTimeoutId(id);
+  };
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300`}
@@ -115,8 +132,8 @@ export default function Navbar({ isAr, setIsAr }: { isAr: boolean; setIsAr: (v: 
               <div
                 key={link.key}
                 className="relative"
-                onMouseEnter={() => hasDropdown && setActiveDropdown(link.key)}
-                onMouseLeave={() => hasDropdown && setActiveDropdown(null)}
+                onMouseEnter={() => hasDropdown && openDropdown(link.key)}
+                onMouseLeave={() => hasDropdown && closeDropdownWithDelay()}
               >
                 {link.href.startsWith("#") || (link.href.startsWith("/#") && !isHomePage) ? (
                   <a
@@ -146,23 +163,35 @@ export default function Navbar({ isAr, setIsAr }: { isAr: boolean; setIsAr: (v: 
                   <motion.div
                     initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className={`absolute top-full mt-3 min-w-56 rounded-xl border shadow-xl py-2 z-50 ${isAr ? "right-0" : "left-0"}`}
-                    style={{
-                      backgroundColor: "var(--nav-bg)",
-                      borderColor: "rgba(255,255,255,0.08)",
-                    }}
+                    className={`absolute top-full min-w-56 pt-2 z-50 ${isAr ? "right-0" : "left-0"}`}
+                    onMouseEnter={() => openDropdown(link.key)}
+                    onMouseLeave={closeDropdownWithDelay}
                   >
-                    {dropdownItems[link.key].map((item) => (
-                      <Link
-                        key={`${link.key}-${item.href}-${item.name}`}
-                        to={item.href}
-                        className="block px-4 py-2 text-sm hover:text-[var(--accent)] transition-colors"
-                        style={{ color: "var(--nav-text)" }}
-                        onClick={() => setActiveDropdown(null)}
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
+                    <div
+                      className="rounded-xl border shadow-xl py-2"
+                      style={{
+                        backgroundColor: "var(--nav-bg)",
+                        borderColor: "rgba(255,255,255,0.08)",
+                      }}
+                    >
+                      {dropdownItems[link.key].map((item) => (
+                        <Link
+                          key={`${link.key}-${item.href}-${item.name}`}
+                          to={item.href}
+                          className="block px-4 py-2 text-sm hover:text-[var(--accent)] transition-colors cursor-pointer"
+                          style={{ color: "var(--nav-text)" }}
+                          onClick={() => {
+                            setActiveDropdown(null);
+                            if (closeTimeoutId) {
+                              window.clearTimeout(closeTimeoutId);
+                              setCloseTimeoutId(null);
+                            }
+                          }}
+                        >
+                          {item.name}
+                        </Link>
+                      ))}
+                    </div>
                   </motion.div>
                 )}
               </div>
