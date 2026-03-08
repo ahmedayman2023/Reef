@@ -15,6 +15,7 @@ export default function Footer({ isAr }: { isAr: boolean }) {
   const quickLinks = [
     { name: isAr ? "الرئيسية" : "Home", href: "/" },
     { name: isAr ? "من نحن" : "About", href: "/#about" },
+    { name: isAr ? "الفريق" : "Team", href: "/team" },
     { name: isAr ? "خدماتنا" : "Services", href: "/#services" },
     { name: isAr ? "مشاريعنا" : "Projects", href: "/projects" },
     { name: isAr ? "المدونة" : "Blog", href: "/blog" },
@@ -26,8 +27,9 @@ export default function Footer({ isAr }: { isAr: boolean }) {
     { name: isAr ? "الهندسة الإنشائية" : "Structural Engineering", href: "/services/2" },
     { name: isAr ? "إدارة المشاريع" : "Project Management", href: "/services/4" },
     { name: isAr ? "التصميم الداخلي" : "Interior Design", href: "/services/3" },
-    { name: isAr ? "استشارات هندسية" : "Engineering Consultancy", href: "/services/5" },
+    { name: isAr ? "الاستشارات الفنية" : "Technical Consultation", href: "/services/5" },
     { name: isAr ? "إشراف هندسي" : "Construction Supervision", href: "/services/6" },
+    { name: isAr ? "الاستشارات البيئية" : "Environmental Consultation", href: "/services/7" },
   ];
 
   return (

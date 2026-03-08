@@ -12,7 +12,8 @@ import {
   Lightbulb,
   MapPin,
   Phone,
-  Mail
+  Mail,
+  Leaf
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { SERVICES, PROJECTS } from "../constants";
@@ -47,8 +48,9 @@ const Hero = ({ isAr }: { isAr: boolean }) => {
     { icon: HardHat, ar: "الهندسة الإنشائية", en: "Structural Engineering", pos: "top-20 right-0", to: "/services/2" },
     { icon: Briefcase, ar: "إدارة المشاريع", en: "Project Management", pos: "bottom-20 right-0", to: "/services/4" },
     { icon: Lightbulb, ar: "التصميم الداخلي", en: "Interior Design", pos: "bottom-5 left-1/2 -translate-x-1/2", to: "/services/3" },
-    { icon: Globe, ar: "استشارات هندسية", en: "Engineering Consulting", pos: "bottom-20 left-0", to: "/services/5" },
-    { icon: Building2, ar: "إشراف هندسي", en: "Engineering Supervision", pos: "top-20 left-0", to: "/services/4" },
+    { icon: Globe, ar: "الاستشارات الفنية", en: "Technical Consultation", pos: "bottom-20 left-0", to: "/services/5" },
+    { icon: Building2, ar: "إشراف هندسي", en: "Construction Supervision", pos: "top-20 left-0", to: "/services/6" },
+    { icon: Leaf, ar: "الاستشارات البيئية", en: "Environmental Consultation", pos: "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2", to: "/services/7" },
   ];
 
   return (
@@ -335,9 +337,12 @@ const About = ({ isAr }: { isAr: boolean }) => {
             ))}
           </div>
 
-          <button className="px-8 py-4 bg-slate-900 text-white rounded-lg font-bold hover:bg-slate-950 transition-all">
+          <Link
+            to="/team"
+            className="inline-flex px-8 py-4 bg-slate-900 text-white rounded-lg font-bold hover:bg-slate-950 transition-all"
+          >
             {isAr ? "تعرف على فريقنا" : "Meet Our Team"}
-          </button>
+          </Link>
         </div>
       </div>
     </section>

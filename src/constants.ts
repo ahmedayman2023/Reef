@@ -4,7 +4,8 @@ import {
   Compass, 
   Globe, 
   Briefcase, 
-  Lightbulb 
+  Lightbulb,
+  Leaf 
 } from "lucide-react";
 import { Service, Project, BlogPost } from "./types";
 
@@ -181,6 +182,35 @@ export const SERVICES: Service[] = [
       { step: 2, title: "Master Planning", titleAr: "التخطيط الرئيسي", description: "Developing the spatial framework and land use plans.", descriptionAr: "تطوير الإطار المكاني وخطط استخدام الأراضي." },
       { step: 3, title: "Infrastructure Design", titleAr: "تصميم البنية التحتية", description: "Planning for utilities, transport, and services.", descriptionAr: "التخطيط للمرافق والنقل والخدمات." },
       { step: 4, title: "Policy Development", titleAr: "تطوير السياسات", description: "Creating guidelines for sustainable development.", descriptionAr: "إنشاء مبادئ توجيهية للتنمية المستدامة." }
+    ]
+  },
+  {
+    id: 7,
+    title: "Environmental Consultation",
+    titleAr: "الاستشارات البيئية",
+    description: "Specialized guidance on sustainability, environmental impact, and green building compliance.",
+    descriptionAr: "إرشاد متخصص في الاستدامة والأثر البيئي والامتثال لمعايير البناء الأخضر.",
+    icon: Leaf,
+    image: "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&q=80&w=1200",
+    longDescription: "Our environmental consultation services help projects align with sustainability goals and environmental regulations from concept to delivery. We support impact assessments, resource efficiency strategies, and green certification pathways to reduce environmental footprint while improving long-term value.",
+    longDescriptionAr: "تساعد خدمات الاستشارات البيئية لدينا المشاريع على التوافق مع أهداف الاستدامة واللوائح البيئية من مرحلة الفكرة حتى التسليم. ندعم تقييمات الأثر البيئي واستراتيجيات كفاءة الموارد ومسارات شهادات المباني الخضراء لتقليل البصمة البيئية وتعزيز القيمة طويلة المدى.",
+    benefits: [
+      "Improved compliance with environmental regulations and standards",
+      "Reduced energy, water, and material consumption",
+      "Stronger ESG profile and long-term asset value",
+      "Clear roadmap for sustainable design and operation"
+    ],
+    benefitsAr: [
+      "تعزيز الامتثال للأنظمة والمعايير البيئية",
+      "خفض استهلاك الطاقة والمياه والمواد",
+      "تحسين مؤشرات الاستدامة ورفع قيمة الأصول على المدى الطويل",
+      "خارطة طريق واضحة للتصميم والتشغيل المستدام"
+    ],
+    process: [
+      { step: 1, title: "Baseline Assessment", titleAr: "التقييم الأولي", description: "Reviewing project data, site context, and environmental risks.", descriptionAr: "مراجعة بيانات المشروع وسياق الموقع والمخاطر البيئية." },
+      { step: 2, title: "Strategy Development", titleAr: "تطوير الاستراتيجية", description: "Defining sustainability targets and practical implementation plans.", descriptionAr: "تحديد أهداف الاستدامة وخطط تطبيق عملية." },
+      { step: 3, title: "Compliance & Certification", titleAr: "الامتثال والشهادات", description: "Supporting regulatory submissions and green building certification requirements.", descriptionAr: "دعم متطلبات الجهات التنظيمية وشهادات المباني الخضراء." },
+      { step: 4, title: "Monitoring", titleAr: "المتابعة", description: "Tracking performance and refining environmental measures during execution.", descriptionAr: "متابعة الأداء وتحسين الإجراءات البيئية أثناء التنفيذ." }
     ]
   },
 ];
