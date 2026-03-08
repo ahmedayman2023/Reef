@@ -2,7 +2,8 @@ import React from 'react';
 
 const BentoGrid = () => {
   return (
-    <div className="w-full max-w-7xl mx-auto p-4">
+    <div className="min-h-screen w-full bg-gray-50 flex items-center justify-center p-4 sm:p-6 lg:p-8">
+      <div className="w-full max-w-7xl">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[180px]">
         
         {/* Hero Section - Large Square */}
@@ -57,6 +58,7 @@ const BentoGrid = () => {
              <span className="font-medium">Architectural Rendering</span>
            </div>
         </div>
+      </div>
       </div>
     </div>
   );
