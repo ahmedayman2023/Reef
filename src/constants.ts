@@ -403,7 +403,7 @@ export const PROJECTS: Project[] = [
     statusAr: "مكتمل",
     supervisor: {
       name: "Eng. Layla Al-Harbi",
-      nameAr: "م. ليلى الحربي",
+      nameAr: "م. سيد العزب",
       role: "Interior Design Lead",
       roleAr: "رئيسة التصميم الداخلي",
       image: "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&q=80&w=400",

@@ -11,7 +11,6 @@ import ServiceDetail from "./pages/ServiceDetail";
 import ProjectDetail from "./pages/ProjectDetail";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
-import TeamPage from "./pages/Team";
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -50,7 +49,6 @@ export default function App() {
             <Route path="/projects/:id" element={<ProjectDetail isAr={isAr} />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy isAr={isAr} />} />
             <Route path="/terms-conditions" element={<TermsConditions isAr={isAr} />} />
-            <Route path="/team" element={<TeamPage isAr={isAr} />} />
           </Routes>
         </main>
         <Footer isAr={isAr} />
