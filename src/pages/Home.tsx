@@ -1,4 +1,4 @@
-import { useState, ChangeEvent, FormEvent } from "react";
+import { useRef, useState, ChangeEvent, FormEvent } from "react";
 import { motion } from "motion/react";
 import { 
   Building2, 
@@ -18,6 +18,30 @@ import { Link } from "react-router-dom";
 import { SERVICES, PROJECTS } from "../constants";
 
 const Hero = ({ isAr }: { isAr: boolean }) => {
+  const [rotation, setRotation] = useState({ x: -18, y: 26 });
+  const [isDragging, setIsDragging] = useState(false);
+  const dragStart = useRef({ x: 0, y: 0, rx: 0, ry: 0 });
+
+  const clamp = (value: number, min: number, max: number) => Math.min(max, Math.max(min, value));
+
+  const startDrag = (x: number, y: number) => {
+    setIsDragging(true);
+    dragStart.current = { x, y, rx: rotation.x, ry: rotation.y };
+  };
+
+  const updateDrag = (x: number, y: number) => {
+    if (!isDragging) return;
+    const deltaX = x - dragStart.current.x;
+    const deltaY = y - dragStart.current.y;
+
+    setRotation({
+      y: dragStart.current.ry + deltaX * 0.35,
+      x: clamp(dragStart.current.rx - deltaY * 0.35, -70, 70),
+    });
+  };
+
+  const endDrag = () => setIsDragging(false);
+
   return (
     <section id="home" className="relative h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0 z-0">
@@ -31,37 +55,103 @@ const Hero = ({ isAr }: { isAr: boolean }) => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="max-w-3xl"
-        >
-          <span className="inline-block py-1 px-3 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold tracking-widest uppercase mb-6 border border-emerald-500/30">
-            {isAr ? "التميز في الهندسة" : "Excellence in Engineering"}
-          </span>
-          <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-6">
-            {isAr ? (
-              <>نصمم <span className="text-emerald-400">المستقبل</span> برؤية هندسية متكاملة</>
-            ) : (
-              <>Designing the <span className="text-emerald-400">Future</span> with Engineering Vision</>
-            )}
-          </h1>
-          <p className="text-xl text-white/70 mb-10 leading-relaxed">
-            {isAr 
-              ? "شركة ريف الأمثل للاستشارات الهندسية تقدم حلولاً مبتكرة وشاملة في مجالات التصميم المعماري والإنشائي وإدارة المشاريع."
-              : "Reef Al-Amthal Engineering Consulting provides innovative and comprehensive solutions in architectural and structural design and project management."}
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <Link to="/contact" className="px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-bold transition-all shadow-lg shadow-emerald-600/20 flex items-center gap-2">
-              {isAr ? "ابدأ مشروعك" : "Start Your Project"}
-              {isAr ? <ChevronLeft size={18} /> : <ChevronRight size={18} />}
-            </Link>
-            <a href="#about" className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white border border-white/30 rounded-lg font-bold transition-all backdrop-blur-sm">
-              {isAr ? "اكتشف المزيد" : "Discover More"}
-            </a>
+        <div className="grid lg:grid-cols-2 items-center gap-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-3xl"
+          >
+            <span className="inline-block py-1 px-3 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold tracking-widest uppercase mb-6 border border-emerald-500/30">
+              {isAr ? "التميز في الهندسة" : "Excellence in Engineering"}
+            </span>
+            <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-6">
+              {isAr ? (
+                <>نصمم <span className="text-emerald-400">المستقبل</span> برؤية هندسية متكاملة</>
+              ) : (
+                <>Designing the <span className="text-emerald-400">Future</span> with Engineering Vision</>
+              )}
+            </h1>
+            <p className="text-xl text-white/70 mb-10 leading-relaxed">
+              {isAr 
+                ? "شركة ريف الأمثل للاستشارات الهندسية تقدم حلولاً مبتكرة وشاملة في مجالات التصميم المعماري والإنشائي وإدارة المشاريع."
+                : "Reef Al-Amthal Engineering Consulting provides innovative and comprehensive solutions in architectural and structural design and project management."}
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Link to="/contact" className="px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-bold transition-all shadow-lg shadow-emerald-600/20 flex items-center gap-2">
+                {isAr ? "ابدأ مشروعك" : "Start Your Project"}
+                {isAr ? <ChevronLeft size={18} /> : <ChevronRight size={18} />}
+              </Link>
+              <a href="#about" className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white border border-white/30 rounded-lg font-bold transition-all backdrop-blur-sm">
+                {isAr ? "اكتشف المزيد" : "Discover More"}
+              </a>
+            </div>
+          </motion.div>
+
+          <div className="hidden lg:flex justify-center">
+            <div
+              className={`relative w-[320px] h-[320px] select-none touch-none ${isDragging ? "cursor-grabbing" : "cursor-grab"}`}
+              style={{ perspective: "1200px" }}
+              onMouseDown={(e) => startDrag(e.clientX, e.clientY)}
+              onMouseMove={(e) => updateDrag(e.clientX, e.clientY)}
+              onMouseUp={endDrag}
+              onMouseLeave={endDrag}
+              onTouchStart={(e) => {
+                const touch = e.touches[0];
+                startDrag(touch.clientX, touch.clientY);
+              }}
+              onTouchMove={(e) => {
+                const touch = e.touches[0];
+                updateDrag(touch.clientX, touch.clientY);
+              }}
+              onTouchEnd={endDrag}
+            >
+              <div className="absolute inset-0 rounded-full bg-emerald-500/20 blur-3xl"></div>
+
+              <div
+                className="absolute left-1/2 top-1/2 w-[210px] h-[210px] -translate-x-1/2 -translate-y-1/2"
+                style={{
+                  transformStyle: "preserve-3d",
+                  transform: `translate(-50%, -50%) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,
+                }}
+              >
+                <div
+                  className="absolute left-1/2 top-1/2 w-[220px] h-[220px] rounded-2xl border border-emerald-300/20"
+                  style={{
+                    transform: "translate(-50%, -50%) rotateX(90deg) translateZ(-62px)",
+                    background: "linear-gradient(180deg, rgba(148,163,184,0.3) 0%, rgba(15,23,42,0.6) 100%)",
+                  }}
+                />
+
+                <div className="absolute left-1/2 top-1/2 w-[96px] h-[150px] -translate-x-1/2 -translate-y-1/2" style={{ transformStyle: "preserve-3d" }}>
+                  <div className="absolute inset-0 border border-white/30" style={{ transform: "translateZ(48px)", background: "linear-gradient(180deg, rgba(52,211,153,0.75), rgba(16,185,129,0.45))" }} />
+                  <div className="absolute inset-0 border border-white/20" style={{ transform: "rotateY(180deg) translateZ(48px)", background: "linear-gradient(180deg, rgba(16,185,129,0.65), rgba(5,150,105,0.35))" }} />
+                  <div className="absolute inset-0 border border-white/20" style={{ transform: "rotateY(90deg) translateZ(48px)", background: "linear-gradient(180deg, rgba(15,23,42,0.85), rgba(30,41,59,0.9))" }} />
+                  <div className="absolute inset-0 border border-white/20" style={{ transform: "rotateY(-90deg) translateZ(48px)", background: "linear-gradient(180deg, rgba(15,23,42,0.85), rgba(30,41,59,0.9))" }} />
+                  <div className="absolute inset-0 border border-white/20" style={{ transform: "rotateX(90deg) translateZ(75px)", background: "linear-gradient(180deg, rgba(110,231,183,0.9), rgba(16,185,129,0.75))" }} />
+                </div>
+
+                <div className="absolute left-[35px] top-[90px] w-[54px] h-[85px]" style={{ transformStyle: "preserve-3d" }}>
+                  <div className="absolute inset-0 border border-white/25" style={{ transform: "translateZ(27px)", background: "linear-gradient(180deg, rgba(59,130,246,0.7), rgba(37,99,235,0.45))" }} />
+                  <div className="absolute inset-0 border border-white/20" style={{ transform: "rotateY(180deg) translateZ(27px)", background: "linear-gradient(180deg, rgba(37,99,235,0.55), rgba(30,64,175,0.35))" }} />
+                  <div className="absolute inset-0 border border-white/20" style={{ transform: "rotateY(90deg) translateZ(27px)", background: "linear-gradient(180deg, rgba(15,23,42,0.85), rgba(30,41,59,0.9))" }} />
+                  <div className="absolute inset-0 border border-white/20" style={{ transform: "rotateY(-90deg) translateZ(27px)", background: "linear-gradient(180deg, rgba(15,23,42,0.85), rgba(30,41,59,0.9))" }} />
+                </div>
+
+                <div className="absolute right-[35px] top-[105px] w-[44px] h-[70px]" style={{ transformStyle: "preserve-3d" }}>
+                  <div className="absolute inset-0 border border-white/25" style={{ transform: "translateZ(22px)", background: "linear-gradient(180deg, rgba(14,165,233,0.7), rgba(2,132,199,0.45))" }} />
+                  <div className="absolute inset-0 border border-white/20" style={{ transform: "rotateY(180deg) translateZ(22px)", background: "linear-gradient(180deg, rgba(2,132,199,0.55), rgba(3,105,161,0.35))" }} />
+                  <div className="absolute inset-0 border border-white/20" style={{ transform: "rotateY(90deg) translateZ(22px)", background: "linear-gradient(180deg, rgba(15,23,42,0.85), rgba(30,41,59,0.9))" }} />
+                  <div className="absolute inset-0 border border-white/20" style={{ transform: "rotateY(-90deg) translateZ(22px)", background: "linear-gradient(180deg, rgba(15,23,42,0.85), rgba(30,41,59,0.9))" }} />
+                </div>
+              </div>
+
+              <div className="absolute -bottom-9 left-1/2 -translate-x-1/2 text-xs text-white/70 bg-slate-900/60 px-3 py-1 rounded-full border border-white/15">
+                {isAr ? "اسحب لتحريك المبنى 360°" : "Drag to rotate the building 360°"}
+              </div>
+            </div>
           </div>
-        </motion.div>
+        </div>
       </div>
 
       <div className="absolute bottom-0 left-0 right-0 bg-white/5 backdrop-blur-xl border-t border-white/10 py-10 hidden lg:block">
