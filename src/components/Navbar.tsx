@@ -45,7 +45,6 @@ export default function Navbar({ isAr, setIsAr }: { isAr: boolean; setIsAr: (v: 
   const navLinks = [
     { key: "home", name: isAr ? "الرئيسية" : "Home", href: isHomePage ? "#home" : "/" },
     { key: "about", name: isAr ? "من نحن" : "About", href: isHomePage ? "#about" : "/#about" },
-    { key: "team", name: isAr ? "الفريق" : "Team", href: "/team" },
     { key: "services", name: isAr ? "خدماتنا" : "Services", href: isHomePage ? "#services" : "/#services" },
     { key: "projects", name: isAr ? "مشاريعنا" : "Projects", href: "/projects" },
     { key: "blog", name: isAr ? "المدونة" : "Blog", href: "/blog" },
@@ -55,7 +54,6 @@ export default function Navbar({ isAr, setIsAr }: { isAr: boolean; setIsAr: (v: 
   const dropdownItems: Record<string, { name: string; href: string }[]> = {
     about: [
       { name: isAr ? "نبذة عن الشركة" : "Company Overview", href: isHomePage ? "#about" : "/#about" },
-      { name: isAr ? "فريق العمل" : "Team", href: "/team" },
       { name: isAr ? "خدماتنا" : "Our Services", href: isHomePage ? "#services" : "/#services" },
       { name: isAr ? "تواصل معنا" : "Get in Touch", href: "/contact" },
     ],
