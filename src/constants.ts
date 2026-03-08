@@ -236,7 +236,7 @@ export const PROJECTS: Project[] = [
       nameAr: "م. حازم الخطيب",
       role: "Lead Project Manager",
       roleAr: "مدير المشروع الرئيسي",
-      image: "https://i.im.ge/2026/03/08/eg5Sux.generated-file-name.png",
+      image: "https://i.im.ge/2026/03/08/eg5d9a.1.png",
       bio: "With over 15 years of experience in high-end residential projects, Eng. Khalid ensures every detail meets our rigorous quality standards.",
       bioAr: "مع أكثر من 15 عاماً من الخبرة في المشاريع السكنية الراقية، يضمن المهندس خالد أن كل تفصيل يلبي معايير الجودة الصارمة لدينا.",
       challengesSolved: [
@@ -283,10 +283,10 @@ export const PROJECTS: Project[] = [
     statusAr: "مكتمل",
     supervisor: {
       name: "Eng. Sarah Mansour",
-      nameAr: "م. سارة منصور",
+      nameAr: "م. زكريا محمد",
       role: "Senior Architect",
-      roleAr: "كبير المعماريين",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400",
+      roleAr: "رئيص قسم الهندسة الكهربائية",
+      image: "https://im.ge/i/1.eg5d9ahttps://im.ge/i/2.eg5UqF",
       bio: "Eng. Sarah specializes in urban residential developments, focusing on community-centric design and sustainable living.",
       bioAr: "تتخصص المهندسة سارة في التطويرات السكنية الحضرية، مع التركيز على التصميم المتمحور حول المجتمع والحياة المستدامة.",
       challengesSolved: [
