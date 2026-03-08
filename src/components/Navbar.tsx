@@ -109,7 +109,7 @@ export default function Navbar({ isAr, setIsAr }: { isAr: boolean; setIsAr: (v: 
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300`}
+      className={`absolute top-0 left-0 right-0 z-50 transition-all duration-300`}
       style={{
         backgroundColor: isHomePage ? "transparent" : "var(--nav-bg)",
         color: isScrolled || !isHomePage ? "var(--nav-text)" : "var(--nav-on-hero-text)",
