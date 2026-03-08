@@ -54,13 +54,9 @@ const Hero = ({ isAr }: { isAr: boolean }) => {
   return (
     <section id="home" className="relative h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2070" 
-          alt="Modern Architecture" 
-          className="w-full h-full object-cover"
-          referrerPolicy="no-referrer"
-        />
-        <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-[2px]"></div>
+        <div className="absolute inset-0 bg-[#0a20d6]"></div>
+        <div className="absolute inset-0 hero-pattern opacity-95"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1e3a8a]/20 via-[#020617]/20 to-[#020617]/60"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
@@ -183,6 +179,18 @@ const Hero = ({ isAr }: { isAr: boolean }) => {
         @keyframes floatTag {
           0% { transform: translateY(0px); }
           100% { transform: translateY(-8px); }
+        }
+
+        .hero-pattern {
+          background-color: #0a20d6;
+          background-image:
+            linear-gradient(to bottom, rgba(255, 221, 230, 0.95) 0 16px, rgba(255, 221, 230, 0.18) 40px, transparent 125px),
+            linear-gradient(to bottom, rgba(255, 221, 230, 0.9) 0 14px, rgba(255, 221, 230, 0.16) 38px, transparent 118px),
+            linear-gradient(to bottom, rgba(255, 221, 230, 0.88) 0 13px, rgba(255, 221, 230, 0.15) 34px, transparent 112px),
+            linear-gradient(to bottom, rgba(255, 221, 230, 0.82) 0 12px, rgba(255, 221, 230, 0.12) 30px, transparent 105px);
+          background-size: 30px 175px, 28px 155px, 27px 145px, 25px 132px;
+          background-position: 0 0, 14px 58px, 6px 115px, 18px 164px;
+          background-repeat: repeat;
         }
       `}</style>
 
