@@ -26,7 +26,7 @@
   --bg: #ffffff;
   --text: #0f1724; /* slate-900 */
   --muted: rgba(15,23,36,0.6);
-  --accent: #10b981; /* emerald-500 */
+  --accent: #38bdf8; /* sky-400 - light blue */
   --nav-bg: rgba(255,255,255,0.9);
   --nav-text: #0f1724;
   --nav-on-hero-text: #ffffff;
@@ -38,7 +38,7 @@
   --bg: #071023;
   --text: #e6eef6;
   --muted: rgba(255,255,255,0.65);
-  --accent: #34d399;
+  --accent: #7dd3fc; /* sky-300 - light blue */
   --nav-bg: rgba(8,10,15,0.6);
   --nav-text: #e6eef6;
   --nav-on-hero-text: #e6eef6;
