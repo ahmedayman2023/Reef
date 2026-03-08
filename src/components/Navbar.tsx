@@ -64,8 +64,8 @@ export default function Navbar({ isAr, setIsAr }: { isAr: boolean; setIsAr: (v: 
       style={{
         backgroundColor: isHomePage ? "transparent" : "var(--nav-bg)",
         color: isScrolled || !isHomePage ? "var(--nav-text)" : "var(--nav-on-hero-text)",
-        paddingTop: isScrolled || !isHomePage ? "1rem" : "1.5rem",
-        paddingBottom: isScrolled || !isHomePage ? "1rem" : "1.5rem",
+        paddingTop: "1rem",
+        paddingBottom: "1rem",
         backdropFilter: !isHomePage ? "blur(6px)" : undefined,
       }}
     >
