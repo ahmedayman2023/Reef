@@ -508,8 +508,13 @@ const Contact = ({ isAr }: { isAr: boolean }) => {
               {isAr ? "دعنا نبدأ مشروعك القادم" : "Let's Start Your Next Project"}
             </h3>
             
-            <div className="space-y-8">
-              <div className="flex gap-6">
+            <div className="space-y-4">
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Dammam%2C+Saudi+Arabia"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex gap-6 p-4 rounded-2xl hover:bg-slate-50 transition-all"
+              >
                 <div className="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600 shrink-0">
                   <MapPin size={24} />
                 </div>
@@ -517,9 +522,9 @@ const Contact = ({ isAr }: { isAr: boolean }) => {
                   <h4 className="font-bold text-slate-900 mb-1">{isAr ? "الموقع" : "Location"}</h4>
                   <p className="text-slate-600">{isAr ? "الدمام، المملكة العربية السعودية" : "Dammam, Saudi Arabia"}</p>
                 </div>
-              </div>
+              </a>
               
-              <div className="flex gap-6">
+              <a href="tel:+966138335851" className="flex gap-6 p-4 rounded-2xl hover:bg-slate-50 transition-all">
                 <div className="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600 shrink-0">
                   <Phone size={24} />
                 </div>
@@ -530,9 +535,9 @@ const Contact = ({ isAr }: { isAr: boolean }) => {
                     <p>+966 50 963 4367</p>
                   </div>
                 </div>
-              </div>
+              </a>
               
-              <div className="flex gap-6">
+              <a href="mailto:Info@reef-consult.com" className="flex gap-6 p-4 rounded-2xl hover:bg-slate-50 transition-all">
                 <div className="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600 shrink-0">
                   <Mail size={24} />
                 </div>
@@ -540,7 +545,7 @@ const Contact = ({ isAr }: { isAr: boolean }) => {
                   <h4 className="font-bold text-slate-900 mb-1">{isAr ? "البريد الإلكتروني" : "Email"}</h4>
                   <p className="text-slate-600">Info@reef-consult.com</p>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
 
