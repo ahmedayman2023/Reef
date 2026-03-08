@@ -43,12 +43,12 @@ const Hero = ({ isAr }: { isAr: boolean }) => {
   const endDrag = () => setIsDragging(false);
 
   const heroServices = [
-    { icon: Compass, ar: "التصميم المعماري", en: "Architectural Design", pos: "top-5 left-1/2 -translate-x-1/2" },
-    { icon: HardHat, ar: "الهندسة الإنشائية", en: "Structural Engineering", pos: "top-20 right-0" },
-    { icon: Briefcase, ar: "إدارة المشاريع", en: "Project Management", pos: "bottom-20 right-0" },
-    { icon: Lightbulb, ar: "التصميم الداخلي", en: "Interior Design", pos: "bottom-5 left-1/2 -translate-x-1/2" },
-    { icon: Globe, ar: "استشارات هندسية", en: "Engineering Consulting", pos: "bottom-20 left-0" },
-    { icon: Building2, ar: "إشراف هندسي", en: "Engineering Supervision", pos: "top-20 left-0" },
+    { icon: Compass, ar: "التصميم المعماري", en: "Architectural Design", pos: "top-5 left-1/2 -translate-x-1/2", to: "/services/1" },
+    { icon: HardHat, ar: "الهندسة الإنشائية", en: "Structural Engineering", pos: "top-20 right-0", to: "/services/2" },
+    { icon: Briefcase, ar: "إدارة المشاريع", en: "Project Management", pos: "bottom-20 right-0", to: "/services/4" },
+    { icon: Lightbulb, ar: "التصميم الداخلي", en: "Interior Design", pos: "bottom-5 left-1/2 -translate-x-1/2", to: "/services/3" },
+    { icon: Globe, ar: "استشارات هندسية", en: "Engineering Consulting", pos: "bottom-20 left-0", to: "/services/5" },
+    { icon: Building2, ar: "إشراف هندسي", en: "Engineering Supervision", pos: "top-20 left-0", to: "/services/4" },
   ];
 
   return (
@@ -121,16 +121,17 @@ const Hero = ({ isAr }: { isAr: boolean }) => {
               {heroServices.map((service, index) => {
                 const Icon = service.icon;
                 return (
-                  <div
+                  <Link
                     key={service.ar}
-                    className={`absolute ${service.pos} backdrop-blur-sm border border-white/15 bg-slate-900/55 rounded-full px-3 py-2 text-[11px] text-white/90 flex items-center gap-2 shadow-lg shadow-slate-900/20`}
+                    to={service.to}
+                    className={`absolute ${service.pos} backdrop-blur-sm border border-white/15 bg-slate-900/55 rounded-full px-3 py-2 text-[11px] text-white/90 flex items-center gap-2 shadow-lg shadow-slate-900/20 hover:bg-slate-900/70 hover:border-blue-300/40 transition-colors`}
                     style={{
                       animation: `floatTag ${3.2 + index * 0.25}s ease-in-out ${index * 0.1}s infinite alternate`,
                     }}
                   >
                     <Icon size={13} className="text-blue-300" />
                     <span>{isAr ? service.ar : service.en}</span>
-                  </div>
+                  </Link>
                 );
               })}
 
