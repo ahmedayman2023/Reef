@@ -55,8 +55,8 @@ const Hero = ({ isAr }: { isAr: boolean }) => {
     <section id="home" className="relative h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-[#0f2f9f]"></div>
-        <div className="absolute inset-0 hero-pattern opacity-12"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_30%,rgba(191,219,254,0.20),transparent_44%),radial-gradient(circle_at_78%_38%,rgba(147,197,253,0.14),transparent_42%)]"></div>
+        <div className="absolute inset-0 hero-pattern opacity-16"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_30%,rgba(191,219,254,0.16),transparent_44%),radial-gradient(circle_at_78%_38%,rgba(147,197,253,0.1),transparent_42%)]"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-[#0b1f5f]/18 via-[#08153d]/26 to-[#020617]/54"></div>
       </div>
 
@@ -185,12 +185,17 @@ const Hero = ({ isAr }: { isAr: boolean }) => {
         .hero-pattern {
           background-color: transparent;
           background-image:
-            linear-gradient(to bottom, rgba(219, 234, 254, 0.40) 0 8px, rgba(219, 234, 254, 0.08) 24px, transparent 128px),
-            linear-gradient(to bottom, rgba(191, 219, 254, 0.30) 0 6px, rgba(191, 219, 254, 0.06) 20px, transparent 120px);
-          background-size: 42px 196px, 40px 182px;
-          background-position: 0 0, 20px 74px;
+            repeating-linear-gradient(45deg, rgba(219, 234, 254, 0.24) 0 2px, transparent 2px 11px),
+            repeating-linear-gradient(45deg, rgba(147, 197, 253, 0.22) 0 2px, transparent 2px 11px),
+            repeating-linear-gradient(-45deg, rgba(219, 234, 254, 0.20) 0 2px, transparent 2px 11px),
+            repeating-linear-gradient(-45deg, rgba(147, 197, 253, 0.18) 0 2px, transparent 2px 11px),
+            radial-gradient(120px 120px at 20% 20%, rgba(255,255,255,0.12) 0 2px, transparent 2px),
+            radial-gradient(120px 120px at 70% 60%, rgba(255,255,255,0.1) 0 2px, transparent 2px);
+          background-size: 230px 230px, 230px 230px, 230px 230px, 230px 230px, 420px 420px, 420px 420px;
+          background-position: 0 0, 6px 6px, 0 0, 6px 6px, 0 0, 210px 190px;
           background-repeat: repeat;
-          filter: blur(0.4px);
+          filter: blur(0.35px);
+          mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.72));
         }
       `}</style>
 
