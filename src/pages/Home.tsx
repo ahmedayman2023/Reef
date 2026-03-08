@@ -185,14 +185,14 @@ const Hero = ({ isAr }: { isAr: boolean }) => {
         .hero-pattern {
           background-color: transparent;
           background-image:
-            repeating-linear-gradient(45deg, rgba(219, 234, 254, 0.24) 0 2px, transparent 2px 11px),
-            repeating-linear-gradient(45deg, rgba(147, 197, 253, 0.22) 0 2px, transparent 2px 11px),
-            repeating-linear-gradient(-45deg, rgba(219, 234, 254, 0.20) 0 2px, transparent 2px 11px),
-            repeating-linear-gradient(-45deg, rgba(147, 197, 253, 0.18) 0 2px, transparent 2px 11px),
+            repeating-linear-gradient(45deg, rgba(219, 234, 254, 0.26) 0 3.5px, transparent 3.5px 16px),
+            repeating-linear-gradient(45deg, rgba(147, 197, 253, 0.22) 0 3.5px, transparent 3.5px 16px),
+            repeating-linear-gradient(-45deg, rgba(219, 234, 254, 0.22) 0 3.5px, transparent 3.5px 16px),
+            repeating-linear-gradient(-45deg, rgba(147, 197, 253, 0.18) 0 3.5px, transparent 3.5px 16px),
             radial-gradient(120px 120px at 20% 20%, rgba(255,255,255,0.12) 0 2px, transparent 2px),
             radial-gradient(120px 120px at 70% 60%, rgba(255,255,255,0.1) 0 2px, transparent 2px);
-          background-size: 230px 230px, 230px 230px, 230px 230px, 230px 230px, 420px 420px, 420px 420px;
-          background-position: 0 0, 6px 6px, 0 0, 6px 6px, 0 0, 210px 190px;
+          background-size: 280px 280px, 280px 280px, 280px 280px, 280px 280px, 460px 460px, 460px 460px;
+          background-position: 0 0, 9px 9px, 0 0, 9px 9px, 0 0, 220px 210px;
           background-repeat: repeat;
           filter: blur(0.35px);
           mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.72));
