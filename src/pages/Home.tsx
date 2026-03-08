@@ -42,6 +42,15 @@ const Hero = ({ isAr }: { isAr: boolean }) => {
 
   const endDrag = () => setIsDragging(false);
 
+  const heroServices = [
+    { icon: Compass, ar: "التصميم المعماري", en: "Architectural Design", pos: "top-5 left-1/2 -translate-x-1/2" },
+    { icon: HardHat, ar: "الهندسة الإنشائية", en: "Structural Engineering", pos: "top-20 right-0" },
+    { icon: Briefcase, ar: "إدارة المشاريع", en: "Project Management", pos: "bottom-20 right-0" },
+    { icon: Lightbulb, ar: "التصميم الداخلي", en: "Interior Design", pos: "bottom-5 left-1/2 -translate-x-1/2" },
+    { icon: Globe, ar: "استشارات هندسية", en: "Engineering Consulting", pos: "bottom-20 left-0" },
+    { icon: Building2, ar: "إشراف هندسي", en: "Engineering Supervision", pos: "top-20 left-0" },
+  ];
+
   return (
     <section id="home" className="relative h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0 z-0">
@@ -90,7 +99,7 @@ const Hero = ({ isAr }: { isAr: boolean }) => {
 
           <div className="hidden lg:flex justify-center">
             <div
-              className={`relative w-[320px] h-[320px] select-none touch-none ${isDragging ? "cursor-grabbing" : "cursor-grab"}`}
+              className={`relative w-[460px] h-[460px] select-none touch-none ${isDragging ? "cursor-grabbing" : "cursor-grab"}`}
               style={{ perspective: "1200px" }}
               onMouseDown={(e) => startDrag(e.clientX, e.clientY)}
               onMouseMove={(e) => updateDrag(e.clientX, e.clientY)}
@@ -107,44 +116,60 @@ const Hero = ({ isAr }: { isAr: boolean }) => {
               onTouchEnd={endDrag}
             >
               <div className="absolute inset-0 rounded-full bg-emerald-500/20 blur-3xl"></div>
+              <div className="absolute inset-10 rounded-full border border-emerald-300/25"></div>
 
-              <div
-                className="absolute left-1/2 top-1/2 w-[210px] h-[210px] -translate-x-1/2 -translate-y-1/2"
-                style={{
-                  transformStyle: "preserve-3d",
-                  transform: `translate(-50%, -50%) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,
-                }}
+              {heroServices.map((service, index) => {
+                const Icon = service.icon;
+                return (
+                  <div
+                    key={service.ar}
+                    className={`absolute ${service.pos} backdrop-blur-sm border border-white/15 bg-slate-900/55 rounded-full px-3 py-2 text-[11px] text-white/90 flex items-center gap-2 shadow-lg shadow-slate-900/20`}
+                    style={{
+                      animation: `floatTag ${3.2 + index * 0.25}s ease-in-out ${index * 0.1}s infinite alternate`,
+                    }}
+                  >
+                    <Icon size={13} className="text-emerald-300" />
+                    <span>{isAr ? service.ar : service.en}</span>
+                  </div>
+                );
+              })}
+
+              <motion.div
+                className="absolute left-1/2 top-1/2 w-[280px] h-[280px] -translate-x-1/2 -translate-y-1/2"
+                style={{ transformStyle: "preserve-3d" }}
+                animate={{ rotateX: rotation.x, rotateY: rotation.y }}
+                transition={{ type: "spring", stiffness: 120, damping: 18, mass: 0.7 }}
               >
                 <div
-                  className="absolute left-1/2 top-1/2 w-[220px] h-[220px] rounded-2xl border border-emerald-300/20"
+                  className="absolute left-1/2 top-1/2 w-[300px] h-[300px] rounded-2xl border border-emerald-300/20"
                   style={{
-                    transform: "translate(-50%, -50%) rotateX(90deg) translateZ(-62px)",
+                    transform: "translate(-50%, -50%) rotateX(90deg) translateZ(-75px)",
                     background: "linear-gradient(180deg, rgba(148,163,184,0.3) 0%, rgba(15,23,42,0.6) 100%)",
                   }}
                 />
 
-                <div className="absolute left-1/2 top-1/2 w-[96px] h-[150px] -translate-x-1/2 -translate-y-1/2" style={{ transformStyle: "preserve-3d" }}>
-                  <div className="absolute inset-0 border border-white/30" style={{ transform: "translateZ(48px)", background: "linear-gradient(180deg, rgba(52,211,153,0.75), rgba(16,185,129,0.45))" }} />
-                  <div className="absolute inset-0 border border-white/20" style={{ transform: "rotateY(180deg) translateZ(48px)", background: "linear-gradient(180deg, rgba(16,185,129,0.65), rgba(5,150,105,0.35))" }} />
-                  <div className="absolute inset-0 border border-white/20" style={{ transform: "rotateY(90deg) translateZ(48px)", background: "linear-gradient(180deg, rgba(15,23,42,0.85), rgba(30,41,59,0.9))" }} />
-                  <div className="absolute inset-0 border border-white/20" style={{ transform: "rotateY(-90deg) translateZ(48px)", background: "linear-gradient(180deg, rgba(15,23,42,0.85), rgba(30,41,59,0.9))" }} />
-                  <div className="absolute inset-0 border border-white/20" style={{ transform: "rotateX(90deg) translateZ(75px)", background: "linear-gradient(180deg, rgba(110,231,183,0.9), rgba(16,185,129,0.75))" }} />
+                <div className="absolute left-1/2 top-1/2 w-[124px] h-[190px] -translate-x-1/2 -translate-y-1/2" style={{ transformStyle: "preserve-3d" }}>
+                  <div className="absolute inset-0 border border-white/30" style={{ transform: "translateZ(62px)", background: "linear-gradient(180deg, rgba(52,211,153,0.75), rgba(16,185,129,0.45))" }} />
+                  <div className="absolute inset-0 border border-white/20" style={{ transform: "rotateY(180deg) translateZ(62px)", background: "linear-gradient(180deg, rgba(16,185,129,0.65), rgba(5,150,105,0.35))" }} />
+                  <div className="absolute inset-0 border border-white/20" style={{ transform: "rotateY(90deg) translateZ(62px)", background: "linear-gradient(180deg, rgba(15,23,42,0.85), rgba(30,41,59,0.9))" }} />
+                  <div className="absolute inset-0 border border-white/20" style={{ transform: "rotateY(-90deg) translateZ(62px)", background: "linear-gradient(180deg, rgba(15,23,42,0.85), rgba(30,41,59,0.9))" }} />
+                  <div className="absolute inset-0 border border-white/20" style={{ transform: "rotateX(90deg) translateZ(95px)", background: "linear-gradient(180deg, rgba(110,231,183,0.9), rgba(16,185,129,0.75))" }} />
                 </div>
 
-                <div className="absolute left-[35px] top-[90px] w-[54px] h-[85px]" style={{ transformStyle: "preserve-3d" }}>
-                  <div className="absolute inset-0 border border-white/25" style={{ transform: "translateZ(27px)", background: "linear-gradient(180deg, rgba(59,130,246,0.7), rgba(37,99,235,0.45))" }} />
-                  <div className="absolute inset-0 border border-white/20" style={{ transform: "rotateY(180deg) translateZ(27px)", background: "linear-gradient(180deg, rgba(37,99,235,0.55), rgba(30,64,175,0.35))" }} />
+                <div className="absolute left-[46px] top-[110px] w-[68px] h-[106px]" style={{ transformStyle: "preserve-3d" }}>
+                  <div className="absolute inset-0 border border-white/25" style={{ transform: "translateZ(34px)", background: "linear-gradient(180deg, rgba(59,130,246,0.7), rgba(37,99,235,0.45))" }} />
+                  <div className="absolute inset-0 border border-white/20" style={{ transform: "rotateY(180deg) translateZ(34px)", background: "linear-gradient(180deg, rgba(37,99,235,0.55), rgba(30,64,175,0.35))" }} />
+                  <div className="absolute inset-0 border border-white/20" style={{ transform: "rotateY(90deg) translateZ(34px)", background: "linear-gradient(180deg, rgba(15,23,42,0.85), rgba(30,41,59,0.9))" }} />
+                  <div className="absolute inset-0 border border-white/20" style={{ transform: "rotateY(-90deg) translateZ(34px)", background: "linear-gradient(180deg, rgba(15,23,42,0.85), rgba(30,41,59,0.9))" }} />
+                </div>
+
+                <div className="absolute right-[44px] top-[128px] w-[54px] h-[84px]" style={{ transformStyle: "preserve-3d" }}>
+                  <div className="absolute inset-0 border border-white/25" style={{ transform: "translateZ(27px)", background: "linear-gradient(180deg, rgba(14,165,233,0.7), rgba(2,132,199,0.45))" }} />
+                  <div className="absolute inset-0 border border-white/20" style={{ transform: "rotateY(180deg) translateZ(27px)", background: "linear-gradient(180deg, rgba(2,132,199,0.55), rgba(3,105,161,0.35))" }} />
                   <div className="absolute inset-0 border border-white/20" style={{ transform: "rotateY(90deg) translateZ(27px)", background: "linear-gradient(180deg, rgba(15,23,42,0.85), rgba(30,41,59,0.9))" }} />
                   <div className="absolute inset-0 border border-white/20" style={{ transform: "rotateY(-90deg) translateZ(27px)", background: "linear-gradient(180deg, rgba(15,23,42,0.85), rgba(30,41,59,0.9))" }} />
                 </div>
-
-                <div className="absolute right-[35px] top-[105px] w-[44px] h-[70px]" style={{ transformStyle: "preserve-3d" }}>
-                  <div className="absolute inset-0 border border-white/25" style={{ transform: "translateZ(22px)", background: "linear-gradient(180deg, rgba(14,165,233,0.7), rgba(2,132,199,0.45))" }} />
-                  <div className="absolute inset-0 border border-white/20" style={{ transform: "rotateY(180deg) translateZ(22px)", background: "linear-gradient(180deg, rgba(2,132,199,0.55), rgba(3,105,161,0.35))" }} />
-                  <div className="absolute inset-0 border border-white/20" style={{ transform: "rotateY(90deg) translateZ(22px)", background: "linear-gradient(180deg, rgba(15,23,42,0.85), rgba(30,41,59,0.9))" }} />
-                  <div className="absolute inset-0 border border-white/20" style={{ transform: "rotateY(-90deg) translateZ(22px)", background: "linear-gradient(180deg, rgba(15,23,42,0.85), rgba(30,41,59,0.9))" }} />
-                </div>
-              </div>
+              </motion.div>
 
               <div className="absolute -bottom-9 left-1/2 -translate-x-1/2 text-xs text-white/70 bg-slate-900/60 px-3 py-1 rounded-full border border-white/15">
                 {isAr ? "اسحب لتحريك المبنى 360°" : "Drag to rotate the building 360°"}
@@ -153,6 +178,13 @@ const Hero = ({ isAr }: { isAr: boolean }) => {
           </div>
         </div>
       </div>
+
+      <style>{`
+        @keyframes floatTag {
+          0% { transform: translateY(0px); }
+          100% { transform: translateY(-8px); }
+        }
+      `}</style>
 
       <div className="absolute bottom-0 left-0 right-0 bg-white/5 backdrop-blur-xl border-t border-white/10 py-10 hidden lg:block">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-4 gap-8">
