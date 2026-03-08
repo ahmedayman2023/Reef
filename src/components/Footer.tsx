@@ -42,7 +42,7 @@ export default function Footer({ isAr }: { isAr: boolean }) {
             <Logo className="h-16" isAr={isAr} />
             <p className="text-gray-400 text-sm leading-relaxed">
               {isAr
-                ? "شركة Reef Al-Amthal للاستشارات الهندسية -为您提供专业的工程咨询服务"
+                ? "شركة ريف الأمثل للاستشارات الهندسية - شركتكم الموثوقة لاستشارات الهندسة المهنية في المملكة العربية السعودية."
                 : "Reef Al-Amthal Engineering Consulting - Your trusted partner for professional engineering consulting services in Saudi Arabia."}
             </p>
             
@@ -111,8 +111,8 @@ export default function Footer({ isAr }: { isAr: boolean }) {
                 </div>
                 <div className="flex flex-col">
                   <span className="text-gray-400 text-xs">{isAr ? "الهاتف" : "Phone"}</span>
-                  <a href="tel:+966138335851" className="text-white text-sm hover:text-emerald-400 transition-colors">
-                    +966 13 833 5851
+                  <a href="tel:0138335851" className="text-white text-sm hover:text-emerald-400 transition-colors">
+                    013 833 5851
                   </a>
                   <a href="tel:+966509634367" className="text-white text-sm hover:text-emerald-400 transition-colors">
                     +966 50 963 4367
