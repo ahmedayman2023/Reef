@@ -50,6 +50,7 @@ export default function App() {
             <Route path="/projects/:id" element={<ProjectDetail isAr={isAr} />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy isAr={isAr} />} />
             <Route path="/terms-conditions" element={<TermsConditions isAr={isAr} />} />
+            <Route path="/team" element={<TeamPage isAr={isAr} />} />
           </Routes>
         </main>
         <Footer isAr={isAr} />
