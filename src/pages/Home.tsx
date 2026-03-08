@@ -99,7 +99,7 @@ const Hero = ({ isAr }: { isAr: boolean }) => {
 
           <div className="hidden lg:flex justify-center">
             <div
-              className={`relative w-[460px] h-[460px] select-none touch-none ${isDragging ? "cursor-grabbing" : "cursor-grab"}`}
+              className={`relative w-[520px] h-[520px] select-none touch-none ${isDragging ? "cursor-grabbing" : "cursor-grab"}`}
               style={{ perspective: "1200px" }}
               onMouseDown={(e) => startDrag(e.clientX, e.clientY)}
               onMouseMove={(e) => updateDrag(e.clientX, e.clientY)}
@@ -135,7 +135,7 @@ const Hero = ({ isAr }: { isAr: boolean }) => {
               })}
 
               <motion.div
-                className="absolute left-1/2 top-1/2 w-[280px] h-[280px] -translate-x-1/2 -translate-y-1/2"
+                className="absolute left-1/2 top-1/2 w-[330px] h-[330px] -translate-x-1/2 -translate-y-1/2"
                 style={{ transformStyle: "preserve-3d" }}
                 animate={{ rotateX: rotation.x, rotateY: rotation.y }}
                 transition={{ type: "spring", stiffness: 120, damping: 18, mass: 0.7 }}
@@ -150,7 +150,7 @@ const Hero = ({ isAr }: { isAr: boolean }) => {
                 />
 
                 <div
-                  className="absolute left-1/2 top-1/2 w-[300px] h-[300px] rounded-2xl border border-blue-300/20"
+                  className="absolute left-1/2 top-1/2 w-[336px] h-[336px] rounded-2xl border border-blue-300/20"
                   style={{
                     transform: "translate(-50%, -50%) rotateX(90deg) translateZ(-75px)",
                     background:
@@ -159,11 +159,11 @@ const Hero = ({ isAr }: { isAr: boolean }) => {
                   }}
                 />
 
-                <div className="absolute left-1/2 top-1/2 w-[152px] h-[208px] -translate-x-1/2 -translate-y-1/2" style={{ transformStyle: "preserve-3d" }}>
+                <div className="absolute left-1/2 top-1/2 w-[172px] h-[234px] -translate-x-1/2 -translate-y-1/2" style={{ transformStyle: "preserve-3d" }}>
                   <div
                     className="absolute inset-0 border border-slate-200/35"
                     style={{
-                      transform: "translateZ(76px)",
+                      transform: "translateZ(86px)",
                       background:
                         "linear-gradient(180deg, rgba(148,163,184,0.48) 0%, rgba(100,116,139,0.44) 34%, rgba(51,65,85,0.62) 100%), repeating-linear-gradient(90deg, rgba(226,232,240,0.12) 0 2px, rgba(255,255,255,0.02) 2px 26px)",
                     }}
@@ -171,48 +171,38 @@ const Hero = ({ isAr }: { isAr: boolean }) => {
                   <div
                     className="absolute inset-0 border border-slate-200/25"
                     style={{
-                      transform: "rotateY(180deg) translateZ(76px)",
+                      transform: "rotateY(180deg) translateZ(86px)",
                       background:
                         "linear-gradient(180deg, rgba(100,116,139,0.52), rgba(30,41,59,0.72)), repeating-linear-gradient(90deg, rgba(226,232,240,0.08) 0 2px, rgba(255,255,255,0.01) 2px 24px)",
                     }}
                   />
-                  <div className="absolute inset-0 border border-slate-300/20" style={{ transform: "rotateY(90deg) translateZ(76px)", background: "linear-gradient(180deg, rgba(71,85,105,0.74), rgba(15,23,42,0.9))" }} />
-                  <div className="absolute inset-0 border border-slate-300/20" style={{ transform: "rotateY(-90deg) translateZ(76px)", background: "linear-gradient(180deg, rgba(71,85,105,0.74), rgba(15,23,42,0.9))" }} />
+                  <div className="absolute inset-0 border border-slate-300/20" style={{ transform: "rotateY(90deg) translateZ(86px)", background: "linear-gradient(180deg, rgba(71,85,105,0.74), rgba(15,23,42,0.9))" }} />
+                  <div className="absolute inset-0 border border-slate-300/20" style={{ transform: "rotateY(-90deg) translateZ(86px)", background: "linear-gradient(180deg, rgba(71,85,105,0.74), rgba(15,23,42,0.9))" }} />
                   <div
                     className="absolute inset-0 border border-slate-200/35"
                     style={{
-                      transform: "rotateX(90deg) translateZ(104px)",
+                      transform: "rotateX(90deg) translateZ(117px)",
                       background: "linear-gradient(180deg, rgba(191,219,254,0.9), rgba(96,165,250,0.72))",
                     }}
                   />
 
-                  <div className="absolute left-1/2 bottom-0 w-[52px] h-[108px] -translate-x-1/2" style={{ transformStyle: "preserve-3d" }}>
-                    <div className="absolute inset-0 border border-slate-300/30" style={{ transform: "translateZ(77px)", background: "linear-gradient(180deg, rgba(30,41,59,0.78), rgba(15,23,42,0.95))" }} />
-                    <div className="absolute left-1/2 top-[18px] w-[22px] h-[72px] -translate-x-1/2 border border-blue-100/25" style={{ transform: "translateZ(78px)", background: "linear-gradient(180deg, rgba(59,130,246,0.25), rgba(30,64,175,0.12))" }} />
-                    <div className="absolute left-[34px] top-[56px] w-[3px] h-[3px] rounded-full bg-slate-200/80" style={{ transform: "translateZ(79px)" }} />
+                  <div className="absolute left-1/2 bottom-0 w-[60px] h-[122px] -translate-x-1/2" style={{ transformStyle: "preserve-3d" }}>
+                    <div className="absolute inset-0 border border-slate-300/30" style={{ transform: "translateZ(87px)", background: "linear-gradient(180deg, rgba(30,41,59,0.78), rgba(15,23,42,0.95))" }} />
+                    <div className="absolute left-1/2 top-[20px] w-[26px] h-[82px] -translate-x-1/2 border border-blue-100/25" style={{ transform: "translateZ(88px)", background: "linear-gradient(180deg, rgba(59,130,246,0.25), rgba(30,64,175,0.12))" }} />
+                    <div className="absolute left-[40px] top-[62px] w-[3px] h-[3px] rounded-full bg-slate-200/80" style={{ transform: "translateZ(89px)" }} />
                   </div>
 
-                  <div className="absolute left-[18px] top-[34px] w-[32px] h-[46px]" style={{ transformStyle: "preserve-3d" }}>
-                    <div className="absolute inset-0 border border-slate-300/30" style={{ transform: "translateZ(78px)", background: "linear-gradient(180deg, rgba(30,41,59,0.86), rgba(15,23,42,0.94))" }} />
-                    <div className="absolute left-[4px] top-[4px] w-[24px] h-[38px] border border-blue-100/20" style={{ transform: "translateZ(79px)", background: "linear-gradient(160deg, rgba(191,219,254,0.42) 0%, rgba(96,165,250,0.16) 45%, rgba(30,58,138,0.2) 100%)" }} />
-                    <div className="absolute left-[15px] top-[4px] w-[1px] h-[38px] bg-slate-200/40" style={{ transform: "translateZ(79px)" }} />
+                  <div className="absolute left-[22px] top-[38px] w-[36px] h-[52px]" style={{ transformStyle: "preserve-3d" }}>
+                    <div className="absolute inset-0 border border-slate-300/30" style={{ transform: "translateZ(88px)", background: "linear-gradient(180deg, rgba(30,41,59,0.86), rgba(15,23,42,0.94))" }} />
+                    <div className="absolute left-[5px] top-[5px] w-[26px] h-[42px] border border-blue-100/20" style={{ transform: "translateZ(89px)", background: "linear-gradient(160deg, rgba(191,219,254,0.42) 0%, rgba(96,165,250,0.16) 45%, rgba(30,58,138,0.2) 100%)" }} />
+                    <div className="absolute left-[17px] top-[5px] w-[1px] h-[42px] bg-slate-200/40" style={{ transform: "translateZ(89px)" }} />
                   </div>
 
-                  <div className="absolute right-[18px] top-[34px] w-[32px] h-[46px]" style={{ transformStyle: "preserve-3d" }}>
-                    <div className="absolute inset-0 border border-slate-300/30" style={{ transform: "translateZ(78px)", background: "linear-gradient(180deg, rgba(30,41,59,0.86), rgba(15,23,42,0.94))" }} />
-                    <div className="absolute left-[4px] top-[4px] w-[24px] h-[38px] border border-blue-100/20" style={{ transform: "translateZ(79px)", background: "linear-gradient(160deg, rgba(191,219,254,0.42) 0%, rgba(96,165,250,0.16) 45%, rgba(30,58,138,0.2) 100%)" }} />
-                    <div className="absolute left-[15px] top-[4px] w-[1px] h-[38px] bg-slate-200/40" style={{ transform: "translateZ(79px)" }} />
+                  <div className="absolute right-[22px] top-[38px] w-[36px] h-[52px]" style={{ transformStyle: "preserve-3d" }}>
+                    <div className="absolute inset-0 border border-slate-300/30" style={{ transform: "translateZ(88px)", background: "linear-gradient(180deg, rgba(30,41,59,0.86), rgba(15,23,42,0.94))" }} />
+                    <div className="absolute left-[5px] top-[5px] w-[26px] h-[42px] border border-blue-100/20" style={{ transform: "translateZ(89px)", background: "linear-gradient(160deg, rgba(191,219,254,0.42) 0%, rgba(96,165,250,0.16) 45%, rgba(30,58,138,0.2) 100%)" }} />
+                    <div className="absolute left-[17px] top-[5px] w-[1px] h-[42px] bg-slate-200/40" style={{ transform: "translateZ(89px)" }} />
                   </div>
-                </div>
-
-                <div className="absolute left-[34px] top-[98px] w-[78px] h-[122px]" style={{ transformStyle: "preserve-3d" }}>
-                  <div className="absolute inset-0 border border-slate-200/26" style={{ transform: "translateZ(39px)", background: "linear-gradient(180deg, rgba(71,85,105,0.72), rgba(30,41,59,0.88))" }} />
-                  <div className="absolute inset-0 border border-slate-200/16" style={{ transform: "rotateY(180deg) translateZ(39px)", background: "linear-gradient(180deg, rgba(51,65,85,0.68), rgba(15,23,42,0.84))" }} />
-                  <div className="absolute inset-0 border border-slate-300/18" style={{ transform: "rotateY(90deg) translateZ(39px)", background: "linear-gradient(180deg, rgba(15,23,42,0.88), rgba(2,6,23,0.95))" }} />
-                  <div className="absolute inset-0 border border-slate-300/18" style={{ transform: "rotateY(-90deg) translateZ(39px)", background: "linear-gradient(180deg, rgba(15,23,42,0.88), rgba(2,6,23,0.95))" }} />
-
-                  <div className="absolute left-[10px] top-[14px] w-[58px] h-[90px] border border-blue-100/18" style={{ transform: "translateZ(40px)", background: "linear-gradient(165deg, rgba(191,219,254,0.34), rgba(59,130,246,0.14) 40%, rgba(30,58,138,0.2) 100%)" }} />
-                  <div className="absolute left-[38px] top-[14px] w-[1px] h-[90px] bg-slate-100/45" style={{ transform: "translateZ(40px)" }} />
                 </div>
 
                 <div className="absolute right-[36px] top-[112px] w-[66px] h-[104px]" style={{ transformStyle: "preserve-3d" }}>

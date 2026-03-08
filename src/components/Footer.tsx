@@ -122,10 +122,20 @@ export default function Footer({ isAr }: { isAr: boolean }) {
                 </div>
                 <div className="flex flex-col">
                   <span className="text-gray-400 text-xs">{isAr ? "الهاتف" : "Phone"}</span>
-                  <a href="tel:0138335851" className="text-white text-sm hover:text-emerald-400 transition-colors">
+                  <a
+                    href="tel:0138335851"
+                    dir="ltr"
+                    className="text-white text-sm hover:text-emerald-400 transition-colors text-left"
+                    style={{ unicodeBidi: "isolate" }}
+                  >
                     013 833 5851
                   </a>
-                  <a href="tel:+966509634367" className="text-white text-sm hover:text-emerald-400 transition-colors">
+                  <a
+                    href="tel:+966509634367"
+                    dir="ltr"
+                    className="text-white text-sm hover:text-emerald-400 transition-colors text-left"
+                    style={{ unicodeBidi: "isolate" }}
+                  >
                     +966 50 963 4367
                   </a>
                 </div>
