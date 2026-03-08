@@ -62,11 +62,11 @@ export default function Navbar({ isAr, setIsAr }: { isAr: boolean; setIsAr: (v: 
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300`}
       style={{
-        backgroundColor: isScrolled || !isHomePage ? "var(--nav-bg)" : "transparent",
+        backgroundColor: isHomePage ? "transparent" : "var(--nav-bg)",
         color: isScrolled || !isHomePage ? "var(--nav-text)" : "var(--nav-on-hero-text)",
         paddingTop: isScrolled || !isHomePage ? "1rem" : "1.5rem",
         paddingBottom: isScrolled || !isHomePage ? "1rem" : "1.5rem",
-        backdropFilter: isScrolled || !isHomePage ? "blur(6px)" : undefined,
+        backdropFilter: !isHomePage ? "blur(6px)" : undefined,
       }}
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
