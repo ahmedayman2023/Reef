@@ -15,8 +15,8 @@ import { SERVICES, PROJECTS } from "../constants";
 const Hero = ({ isAr }: { isAr: boolean }) => {
   const heroSlides = [
     {
-      titleAr: "الخدمات الاستشارية",
-      titleEn: "Consulting Services",
+      titleAr: "الـتصميم الـمعـماري",
+      titleEn: "Architectural Design",
       descriptionAr:
         "نساعد عملاءنا في تقديم حلول مخصصة لأهم تحديات البنية التحتية الحالية، بما في ذلك التكامل الرقمي، إدارة الأصول، وتمويل المشاريع لتحقيق قيمة مستدامة.",
       descriptionEn:
@@ -25,8 +25,8 @@ const Hero = ({ isAr }: { isAr: boolean }) => {
         "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000",
       learnMoreTo: "/services/5",
       expertiseTo: "/projects",
-      tabAr: "الخدمات الاستشارية",
-      tabEn: "Consulting Services",
+      tabAr: "التصميم المعماري",
+      tabEn: "Architectural Design",
     },
     {
       titleAr: "الهندسة والتصميم",

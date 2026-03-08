@@ -45,7 +45,6 @@ export default function Navbar({ isAr, setIsAr }: { isAr: boolean; setIsAr: (v: 
   const navLinks = [
     { key: "home", name: isAr ? "الرئيسية" : "Home", href: isHomePage ? "#home" : "/" },
     { key: "about", name: isAr ? "من نحن" : "About", href: isHomePage ? "#about" : "/#about" },
-    { key: "services", name: isAr ? "خدماتنا" : "Services", href: isHomePage ? "#services" : "/#services" },
     { key: "projects", name: isAr ? "مشاريعنا" : "Projects", href: "/projects" },
     { key: "blog", name: isAr ? "المدونة" : "Blog", href: "/blog" },
     { key: "contact", name: isAr ? "اتصل بنا" : "Contact", href: "/contact" },
