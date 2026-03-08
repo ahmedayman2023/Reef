@@ -286,7 +286,7 @@ export const PROJECTS: Project[] = [
       nameAr: "م. زكريا محمد",
       role: "Senior Architect",
       roleAr: "رئيص قسم الهندسة الكهربائية",
-      image: "https://im.ge/i/1.eg5d9ahttps://im.ge/i/2.eg5UqF",
+      image: "https://im.ge/i/eg5UqF",
       bio: "Eng. Sarah specializes in urban residential developments, focusing on community-centric design and sustainable living.",
       bioAr: "تتخصص المهندسة سارة في التطويرات السكنية الحضرية، مع التركيز على التصميم المتمحور حول المجتمع والحياة المستدامة.",
       challengesSolved: [
@@ -333,10 +333,10 @@ export const PROJECTS: Project[] = [
     statusAr: "مكتمل",
     supervisor: {
       name: "Eng. Ahmed Al-Fahad",
-      nameAr: "م. أحمد الفهد",
+      nameAr: "م. محمد الرقيعي",
       role: "Structural Engineer",
       roleAr: "مهندس إنشائي",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400",
+      image: "https://im.ge/i/WhatsApp-Image-2026-03-08-at-15-41-48.eg55FX",
       bio: "Ahmed's expertise in structural efficiency allowed for large glass facades while maintaining superior stability.",
       bioAr: "سمحت خبرة أحمد في الكفاءة الإنشائية بواجهات زجاجية كبيرة مع الحفاظ على استقرار فائق.",
       challengesSolved: [
