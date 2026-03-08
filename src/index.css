@@ -15,6 +15,7 @@
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     background-color: var(--bg);
     color: var(--text);
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   [dir="rtl"] {
@@ -23,33 +24,185 @@
 }
 
 :root {
+  /* Light Mode */
   --bg: #ffffff;
-  --text: #0f1724; /* slate-900 */
+  --bg-secondary: #f8fafc;
+  --text: #0f1724;
+  --text-secondary: #475569;
   --muted: rgba(15,23,36,0.6);
-  --accent: #10b981; /* emerald-500 */
-  --nav-bg: rgba(255,255,255,0.9);
+  --muted-light: rgba(15,23,36,0.4);
+  --accent: #10b981;
+  --accent-hover: #059669;
+  --accent-glow: rgba(16, 185, 129, 0.15);
+  
+  /* Navbar */
+  --nav-bg: rgba(255,255,255,0.85);
+  --nav-bg-solid: #ffffff;
   --nav-text: #0f1724;
+  --nav-text-secondary: #64748b;
   --nav-on-hero-text: #ffffff;
+  --nav-border: rgba(15,23,36,0.08);
+  --nav-border-light: rgba(255,255,255,0.12);
+  
+  /* Footer */
   --footer-bg: #0f1724;
-  --footer-text: #ffffff;
+  --footer-bg-light: #1e293b;
+  --footer-text: #f1f5f9;
+  --footer-muted: #94a3b8;
+  --footer-border: rgba(255,255,255,0.08);
+  
+  /* Effects */
+  --glass-bg: rgba(255,255,255,0.7);
+  --glass-border: rgba(255,255,255,0.2);
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1);
+  --shadow-emerald: 0 4px 14px rgba(16, 185, 129, 0.25);
 }
 
 .dark {
-  --bg: #071023;
-  --text: #e6eef6;
+  --bg: #030712;
+  --bg-secondary: #0f172a;
+  --text: #f1f5f9;
+  --text-secondary: #94a3b8;
   --muted: rgba(255,255,255,0.65);
+  --muted-light: rgba(255,255,255,0.45);
   --accent: #34d399;
-  --nav-bg: rgba(8,10,15,0.6);
-  --nav-text: #e6eef6;
-  --nav-on-hero-text: #e6eef6;
+  --accent-hover: #10b981;
+  --accent-glow: rgba(52, 211, 153, 0.2);
+  
+  /* Navbar */
+  --nav-bg: rgba(3, 7, 18, 0.85);
+  --nav-bg-solid: #030712;
+  --nav-text: #f1f5f9;
+  --nav-text-secondary: #94a3b8;
+  --nav-on-hero-text: #f1f5f9;
+  --nav-border: rgba(255,255,255,0.08);
+  --nav-border-light: rgba(255,255,255,0.08);
+  
+  /* Footer */
   --footer-bg: #020617;
-  --footer-text: #e6eef6;
+  --footer-bg-light: #0f172a;
+  --footer-text: #f1f5f9;
+  --footer-muted: #64748b;
+  --footer-border: rgba(255,255,255,0.06);
+  
+  /* Effects */
+  --glass-bg: rgba(3, 7, 18, 0.7);
+  --glass-border: rgba(255,255,255,0.1);
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.4);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.4);
+  --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.5);
+  --shadow-emerald: 0 4px 14px rgba(52, 211, 153, 0.25);
+}
+
+/* Glass morphism utility */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
 }
 
 .glass-card {
-  @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-xl;
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-lg);
 }
 
 .section-padding {
   @apply py-20 px-6 md:px-12 lg:px-24;
 }
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent) 0%, #22d3ee 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-secondary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
+/* Nav link underline animation */
+.nav-link-underline {
+  position: relative;
+}
+
+.nav-link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.nav-link-underline:hover::after {
+  width: 100%;
+}
+
+/* Button hover effects */
+.btn-primary {
+  background: var(--accent);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+  box-shadow: var(--shadow-emerald);
+  transform: translateY(-1px);
+}
+
+/* Footer gradient overlay */
+.footer-gradient {
+  background: linear-gradient(180deg, var(--footer-bg-light) 0%, var(--footer-bg) 100%);
+}
+
+/* Animated gradient border */
+.gradient-border {
+  position: relative;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, var(--accent), #22d3ee);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gradient-border:hover::before {
+  opacity: 1;
+}
+
