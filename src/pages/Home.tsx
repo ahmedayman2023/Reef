@@ -141,92 +141,117 @@ const Hero = ({ isAr }: { isAr: boolean }) => {
                 transition={{ type: "spring", stiffness: 120, damping: 18, mass: 0.7 }}
               >
                 <div
-                  className="absolute left-1/2 top-1/2 w-[210px] h-[58px] -translate-x-1/2 -translate-y-1/2 rounded-full"
+                  className="absolute left-1/2 top-1/2 w-[260px] h-[72px] -translate-x-1/2 -translate-y-1/2 rounded-full"
                   style={{
-                    transform: "translate(-50%, -50%) rotateX(90deg) translateZ(-78px)",
-                    background: "radial-gradient(ellipse at center, rgba(2,6,23,0.55) 0%, rgba(2,6,23,0.25) 42%, rgba(2,6,23,0) 78%)",
-                    filter: "blur(1.2px)",
+                    transform: "translate(-50%, -50%) rotateX(90deg) translateZ(-82px)",
+                    background: "radial-gradient(ellipse at center, rgba(2,6,23,0.58) 0%, rgba(2,6,23,0.28) 46%, rgba(2,6,23,0) 82%)",
+                    filter: "blur(1.4px)",
                   }}
                 />
 
                 <div
-                  className="absolute left-1/2 top-1/2 w-[336px] h-[336px] rounded-2xl border border-blue-300/20"
+                  className="absolute left-1/2 top-1/2 w-[360px] h-[360px] rounded-3xl border border-blue-200/20"
                   style={{
-                    transform: "translate(-50%, -50%) rotateX(90deg) translateZ(-75px)",
+                    transform: "translate(-50%, -50%) rotateX(90deg) translateZ(-78px)",
                     background:
-                      "linear-gradient(180deg, rgba(148,163,184,0.3) 0%, rgba(51,65,85,0.25) 42%, rgba(15,23,42,0.65) 100%), repeating-linear-gradient(90deg, rgba(148,163,184,0.08) 0 2px, rgba(15,23,42,0) 2px 18px)",
-                    boxShadow: "0 35px 60px rgba(2,6,23,0.45)",
+                      "linear-gradient(180deg, rgba(148,163,184,0.34) 0%, rgba(51,65,85,0.28) 42%, rgba(15,23,42,0.72) 100%), repeating-linear-gradient(90deg, rgba(148,163,184,0.08) 0 2px, rgba(15,23,42,0) 2px 22px)",
+                    boxShadow: "0 38px 68px rgba(2,6,23,0.48)",
                   }}
                 />
 
-                <div className="absolute left-1/2 top-1/2 w-[172px] h-[234px] -translate-x-1/2 -translate-y-1/2" style={{ transformStyle: "preserve-3d" }}>
+                <div className="absolute left-[72px] top-[60px] w-[78px] h-[184px]" style={{ transformStyle: "preserve-3d" }}>
+                  <div className="absolute inset-0 border border-slate-200/28" style={{ transform: "translateZ(39px)", background: "linear-gradient(180deg, rgba(148,163,184,0.5), rgba(51,65,85,0.7))" }} />
+                  <div className="absolute inset-0 border border-slate-200/16" style={{ transform: "rotateY(180deg) translateZ(39px)", background: "linear-gradient(180deg, rgba(100,116,139,0.42), rgba(15,23,42,0.78))" }} />
+                  <div className="absolute inset-0 border border-slate-300/20" style={{ transform: "rotateY(90deg) translateZ(39px)", background: "linear-gradient(180deg, rgba(71,85,105,0.8), rgba(30,41,59,0.92))" }} />
+                  <div className="absolute inset-0 border border-slate-300/20" style={{ transform: "rotateY(-90deg) translateZ(39px)", background: "linear-gradient(180deg, rgba(71,85,105,0.8), rgba(30,41,59,0.92))" }} />
+
+                  {[14, 44, 74, 104, 134].map((y) => (
+                    <div key={`res-window-${y}`} className="absolute left-[9px] w-[60px] h-[18px] border border-blue-100/20" style={{ top: `${y}px`, transform: "translateZ(40px)", background: "linear-gradient(170deg, rgba(191,219,254,0.36), rgba(30,58,138,0.2))" }} />
+                  ))}
+                </div>
+
+                <div className="absolute right-[72px] top-[52px] w-[84px] h-[206px]" style={{ transformStyle: "preserve-3d" }}>
+                  <div className="absolute inset-0 border border-cyan-100/26" style={{ transform: "translateZ(42px)", background: "linear-gradient(180deg, rgba(186,230,253,0.42), rgba(14,116,144,0.32), rgba(8,47,73,0.56))" }} />
+                  <div className="absolute inset-0 border border-cyan-100/16" style={{ transform: "rotateY(180deg) translateZ(42px)", background: "linear-gradient(180deg, rgba(14,165,233,0.28), rgba(8,47,73,0.5))" }} />
+                  <div className="absolute inset-0 border border-slate-300/18" style={{ transform: "rotateY(90deg) translateZ(42px)", background: "linear-gradient(180deg, rgba(15,23,42,0.86), rgba(2,6,23,0.95))" }} />
+                  <div className="absolute inset-0 border border-slate-300/18" style={{ transform: "rotateY(-90deg) translateZ(42px)", background: "linear-gradient(180deg, rgba(15,23,42,0.86), rgba(2,6,23,0.95))" }} />
+
+                  {[16, 52, 88, 124, 160].map((y) => (
+                    <div key={`hotel-window-${y}`} className="absolute left-[10px] w-[64px] h-[22px] border border-cyan-100/18" style={{ top: `${y}px`, transform: "translateZ(43px)", background: "linear-gradient(165deg, rgba(186,230,253,0.34), rgba(14,165,233,0.14), rgba(8,47,73,0.24))" }} />
+                  ))}
+                </div>
+
+                <div className="absolute left-[116px] top-[126px] w-[98px] h-[116px]" style={{ transformStyle: "preserve-3d" }}>
                   <div
                     className="absolute inset-0 border border-slate-200/35"
                     style={{
-                      transform: "translateZ(86px)",
+                      transform: "translateZ(49px)",
                       background:
-                        "linear-gradient(180deg, rgba(148,163,184,0.48) 0%, rgba(100,116,139,0.44) 34%, rgba(51,65,85,0.62) 100%), repeating-linear-gradient(90deg, rgba(226,232,240,0.12) 0 2px, rgba(255,255,255,0.02) 2px 26px)",
+                        "linear-gradient(180deg, rgba(148,163,184,0.52) 0%, rgba(100,116,139,0.44) 34%, rgba(51,65,85,0.64) 100%), repeating-linear-gradient(90deg, rgba(226,232,240,0.12) 0 2px, rgba(255,255,255,0.02) 2px 24px)",
                     }}
                   />
                   <div
                     className="absolute inset-0 border border-slate-200/25"
                     style={{
-                      transform: "rotateY(180deg) translateZ(86px)",
+                      transform: "rotateY(180deg) translateZ(49px)",
                       background:
                         "linear-gradient(180deg, rgba(100,116,139,0.52), rgba(30,41,59,0.72)), repeating-linear-gradient(90deg, rgba(226,232,240,0.08) 0 2px, rgba(255,255,255,0.01) 2px 24px)",
                     }}
                   />
-                  <div className="absolute inset-0 border border-slate-300/20" style={{ transform: "rotateY(90deg) translateZ(86px)", background: "linear-gradient(180deg, rgba(71,85,105,0.74), rgba(15,23,42,0.9))" }} />
-                  <div className="absolute inset-0 border border-slate-300/20" style={{ transform: "rotateY(-90deg) translateZ(86px)", background: "linear-gradient(180deg, rgba(71,85,105,0.74), rgba(15,23,42,0.9))" }} />
+                  <div className="absolute inset-0 border border-slate-300/20" style={{ transform: "rotateY(90deg) translateZ(49px)", background: "linear-gradient(180deg, rgba(71,85,105,0.74), rgba(15,23,42,0.9))" }} />
+                  <div className="absolute inset-0 border border-slate-300/20" style={{ transform: "rotateY(-90deg) translateZ(49px)", background: "linear-gradient(180deg, rgba(71,85,105,0.74), rgba(15,23,42,0.9))" }} />
                   <div
                     className="absolute inset-0 border border-slate-200/35"
                     style={{
-                      transform: "rotateX(90deg) translateZ(117px)",
-                      background: "linear-gradient(180deg, rgba(191,219,254,0.9), rgba(96,165,250,0.72))",
+                      transform: "rotateX(90deg) translateZ(58px)",
+                      background: "linear-gradient(180deg, rgba(191,219,254,0.92), rgba(96,165,250,0.74))",
                     }}
                   />
 
-                  <div className="absolute left-1/2 bottom-0 w-[60px] h-[122px] -translate-x-1/2" style={{ transformStyle: "preserve-3d" }}>
-                    <div className="absolute inset-0 border border-slate-300/30" style={{ transform: "translateZ(87px)", background: "linear-gradient(180deg, rgba(30,41,59,0.78), rgba(15,23,42,0.95))" }} />
-                    <div className="absolute left-1/2 top-[20px] w-[26px] h-[82px] -translate-x-1/2 border border-blue-100/25" style={{ transform: "translateZ(88px)", background: "linear-gradient(180deg, rgba(59,130,246,0.25), rgba(30,64,175,0.12))" }} />
-                    <div className="absolute left-[40px] top-[62px] w-[3px] h-[3px] rounded-full bg-slate-200/80" style={{ transform: "translateZ(89px)" }} />
+                  <div className="absolute left-1/2 bottom-0 w-[30px] h-[68px] -translate-x-1/2" style={{ transformStyle: "preserve-3d" }}>
+                    <div className="absolute inset-0 border border-slate-300/30" style={{ transform: "translateZ(50px)", background: "linear-gradient(180deg, rgba(30,41,59,0.82), rgba(15,23,42,0.95))" }} />
+                    <div className="absolute left-[22px] top-[36px] w-[2px] h-[2px] rounded-full bg-slate-200/80" style={{ transform: "translateZ(51px)" }} />
                   </div>
 
-                  <div className="absolute left-[22px] top-[38px] w-[36px] h-[52px]" style={{ transformStyle: "preserve-3d" }}>
-                    <div className="absolute inset-0 border border-slate-300/30" style={{ transform: "translateZ(88px)", background: "linear-gradient(180deg, rgba(30,41,59,0.86), rgba(15,23,42,0.94))" }} />
-                    <div className="absolute left-[5px] top-[5px] w-[26px] h-[42px] border border-blue-100/20" style={{ transform: "translateZ(89px)", background: "linear-gradient(160deg, rgba(191,219,254,0.42) 0%, rgba(96,165,250,0.16) 45%, rgba(30,58,138,0.2) 100%)" }} />
-                    <div className="absolute left-[17px] top-[5px] w-[1px] h-[42px] bg-slate-200/40" style={{ transform: "translateZ(89px)" }} />
+                  <div className="absolute left-[10px] top-[16px] w-[26px] h-[28px]" style={{ transformStyle: "preserve-3d" }}>
+                    <div className="absolute inset-0 border border-blue-100/20" style={{ transform: "translateZ(50px)", background: "linear-gradient(165deg, rgba(191,219,254,0.42), rgba(30,58,138,0.2))" }} />
                   </div>
 
-                  <div className="absolute right-[22px] top-[38px] w-[36px] h-[52px]" style={{ transformStyle: "preserve-3d" }}>
-                    <div className="absolute inset-0 border border-slate-300/30" style={{ transform: "translateZ(88px)", background: "linear-gradient(180deg, rgba(30,41,59,0.86), rgba(15,23,42,0.94))" }} />
-                    <div className="absolute left-[5px] top-[5px] w-[26px] h-[42px] border border-blue-100/20" style={{ transform: "translateZ(89px)", background: "linear-gradient(160deg, rgba(191,219,254,0.42) 0%, rgba(96,165,250,0.16) 45%, rgba(30,58,138,0.2) 100%)" }} />
-                    <div className="absolute left-[17px] top-[5px] w-[1px] h-[42px] bg-slate-200/40" style={{ transform: "translateZ(89px)" }} />
+                  <div className="absolute right-[10px] top-[16px] w-[26px] h-[28px]" style={{ transformStyle: "preserve-3d" }}>
+                    <div className="absolute inset-0 border border-blue-100/20" style={{ transform: "translateZ(50px)", background: "linear-gradient(165deg, rgba(191,219,254,0.42), rgba(30,58,138,0.2))" }} />
                   </div>
                 </div>
 
-                <div className="absolute right-[36px] top-[112px] w-[66px] h-[104px]" style={{ transformStyle: "preserve-3d" }}>
-                  <div className="absolute inset-0 border border-slate-200/24" style={{ transform: "translateZ(33px)", background: "linear-gradient(180deg, rgba(56,189,248,0.28), rgba(14,116,144,0.24))" }} />
-                  <div className="absolute inset-0 border border-slate-200/16" style={{ transform: "rotateY(180deg) translateZ(33px)", background: "linear-gradient(180deg, rgba(14,165,233,0.2), rgba(8,47,73,0.3))" }} />
-                  <div className="absolute inset-0 border border-slate-300/18" style={{ transform: "rotateY(90deg) translateZ(33px)", background: "linear-gradient(180deg, rgba(15,23,42,0.86), rgba(2,6,23,0.94))" }} />
-                  <div className="absolute inset-0 border border-slate-300/18" style={{ transform: "rotateY(-90deg) translateZ(33px)", background: "linear-gradient(180deg, rgba(15,23,42,0.86), rgba(2,6,23,0.94))" }} />
+                <div className="absolute left-[226px] top-[164px] w-[92px] h-[78px]" style={{ transformStyle: "preserve-3d" }}>
+                  <div className="absolute inset-0 border border-slate-200/24" style={{ transform: "translateZ(46px)", background: "linear-gradient(180deg, rgba(148,163,184,0.46), rgba(71,85,105,0.6))" }} />
+                  <div className="absolute inset-0 border border-slate-200/16" style={{ transform: "rotateY(180deg) translateZ(46px)", background: "linear-gradient(180deg, rgba(100,116,139,0.42), rgba(30,41,59,0.7))" }} />
+                  <div className="absolute inset-0 border border-slate-300/18" style={{ transform: "rotateY(90deg) translateZ(46px)", background: "linear-gradient(180deg, rgba(15,23,42,0.86), rgba(2,6,23,0.94))" }} />
+                  <div className="absolute inset-0 border border-slate-300/18" style={{ transform: "rotateY(-90deg) translateZ(46px)", background: "linear-gradient(180deg, rgba(15,23,42,0.86), rgba(2,6,23,0.94))" }} />
 
-                  <div className="absolute left-[8px] top-[14px] w-[50px] h-[74px] border border-cyan-100/16" style={{ transform: "translateZ(34px)", background: "linear-gradient(170deg, rgba(186,230,253,0.34), rgba(14,165,233,0.16) 44%, rgba(8,47,73,0.22) 100%)" }} />
-                  <div className="absolute left-[33px] top-[14px] w-[1px] h-[74px] bg-cyan-50/35" style={{ transform: "translateZ(34px)" }} />
+                  <div className="absolute left-[8px] top-[10px] w-[76px] h-[26px] border border-blue-100/18" style={{ transform: "translateZ(47px)", background: "linear-gradient(165deg, rgba(191,219,254,0.32), rgba(59,130,246,0.14), rgba(30,58,138,0.2))" }} />
+                  <div className="absolute left-[8px] top-[42px] w-[76px] h-[26px] border border-blue-100/18" style={{ transform: "translateZ(47px)", background: "linear-gradient(165deg, rgba(191,219,254,0.32), rgba(59,130,246,0.14), rgba(30,58,138,0.2))" }} />
+                </div>
+
+                <div className="absolute left-[26px] top-[178px] w-[102px] h-[64px]" style={{ transformStyle: "preserve-3d" }}>
+                  <div className="absolute inset-0 border border-cyan-100/22" style={{ transform: "translateZ(30px)", background: "linear-gradient(180deg, rgba(186,230,253,0.35), rgba(14,165,233,0.18), rgba(8,47,73,0.28))" }} />
+                  <div className="absolute inset-0 border border-cyan-100/14" style={{ transform: "rotateY(180deg) translateZ(30px)", background: "linear-gradient(180deg, rgba(14,165,233,0.24), rgba(8,47,73,0.32))" }} />
+                  <div className="absolute inset-0 border border-slate-300/18" style={{ transform: "rotateY(90deg) translateZ(30px)", background: "linear-gradient(180deg, rgba(15,23,42,0.88), rgba(2,6,23,0.95))" }} />
+                  <div className="absolute inset-0 border border-slate-300/18" style={{ transform: "rotateY(-90deg) translateZ(30px)", background: "linear-gradient(180deg, rgba(15,23,42,0.88), rgba(2,6,23,0.95))" }} />
+                  <div className="absolute left-[10px] top-[12px] w-[82px] h-[18px] border border-cyan-100/16" style={{ transform: "translateZ(31px)", background: "linear-gradient(165deg, rgba(186,230,253,0.34), rgba(14,165,233,0.14), rgba(8,47,73,0.22))" }} />
                 </div>
 
                 <div
-                  className="absolute left-1/2 top-[52px] w-[190px] h-[30px] -translate-x-1/2"
+                  className="absolute left-[154px] top-[100px] w-[122px] h-[20px]"
                   style={{
                     transformStyle: "preserve-3d",
-                    transform: "translateX(-50%) translateZ(22px)",
+                    transform: "translateZ(16px)",
                   }}
                 >
-                  <div className="absolute inset-0 border border-slate-100/30" style={{ transform: "translateZ(15px)", background: "linear-gradient(180deg, rgba(147,197,253,0.88), rgba(96,165,250,0.62))" }} />
-                  <div className="absolute inset-0 border border-slate-100/20" style={{ transform: "rotateY(180deg) translateZ(15px)", background: "linear-gradient(180deg, rgba(59,130,246,0.48), rgba(37,99,235,0.34))" }} />
-                  <div className="absolute inset-0 border border-slate-200/20" style={{ transform: "rotateY(90deg) translateZ(15px)", background: "linear-gradient(180deg, rgba(30,58,138,0.66), rgba(30,58,138,0.52))" }} />
-                  <div className="absolute inset-0 border border-slate-200/20" style={{ transform: "rotateY(-90deg) translateZ(15px)", background: "linear-gradient(180deg, rgba(30,58,138,0.66), rgba(30,58,138,0.52))" }} />
-                  <div className="absolute inset-0 border border-slate-100/30" style={{ transform: "rotateX(90deg) translateZ(15px)", background: "linear-gradient(180deg, rgba(186,230,253,0.95), rgba(125,211,252,0.68))" }} />
+                  <div className="absolute inset-0 border border-slate-100/26" style={{ transform: "translateZ(10px)", background: "linear-gradient(180deg, rgba(125,211,252,0.86), rgba(96,165,250,0.54))" }} />
+                  <div className="absolute inset-0 border border-slate-100/18" style={{ transform: "rotateY(180deg) translateZ(10px)", background: "linear-gradient(180deg, rgba(59,130,246,0.46), rgba(37,99,235,0.3))" }} />
+                  <div className="absolute inset-0 border border-slate-200/18" style={{ transform: "rotateY(90deg) translateZ(10px)", background: "linear-gradient(180deg, rgba(30,58,138,0.58), rgba(30,58,138,0.42))" }} />
+                  <div className="absolute inset-0 border border-slate-200/18" style={{ transform: "rotateY(-90deg) translateZ(10px)", background: "linear-gradient(180deg, rgba(30,58,138,0.58), rgba(30,58,138,0.42))" }} />
+                  <div className="absolute inset-0 border border-slate-100/28" style={{ transform: "rotateX(90deg) translateZ(10px)", background: "linear-gradient(180deg, rgba(186,230,253,0.9), rgba(125,211,252,0.62))" }} />
                 </div>
               </motion.div>
 
