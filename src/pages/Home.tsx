@@ -54,10 +54,13 @@ const Hero = ({ isAr }: { isAr: boolean }) => {
   return (
     <section id="home" className="relative h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-[#0f2f9f]"></div>
-        <div className="absolute inset-0 hero-pattern opacity-16"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_30%,rgba(191,219,254,0.16),transparent_44%),radial-gradient(circle_at_78%_38%,rgba(147,197,253,0.1),transparent_42%)]"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0b1f5f]/18 via-[#08153d]/26 to-[#020617]/54"></div>
+        <img
+          src="https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?q=80&w=710&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="City Architecture"
+          className="w-full h-full object-cover"
+          referrerPolicy="no-referrer"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0b1f5f]/28 via-[#08153d]/34 to-[#020617]/62"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
@@ -180,22 +183,6 @@ const Hero = ({ isAr }: { isAr: boolean }) => {
         @keyframes floatTag {
           0% { transform: translateY(0px); }
           100% { transform: translateY(-8px); }
-        }
-
-        .hero-pattern {
-          background-color: transparent;
-          background-image:
-            repeating-linear-gradient(45deg, rgba(219, 234, 254, 0.22) 0 20px, transparent 20px 72px),
-            repeating-linear-gradient(45deg, rgba(147, 197, 253, 0.18) 0 20px, transparent 20px 72px),
-            repeating-linear-gradient(-45deg, rgba(219, 234, 254, 0.2) 0 20px, transparent 20px 72px),
-            repeating-linear-gradient(-45deg, rgba(147, 197, 253, 0.16) 0 20px, transparent 20px 72px),
-            radial-gradient(120px 120px at 20% 20%, rgba(255,255,255,0.12) 0 2px, transparent 2px),
-            radial-gradient(120px 120px at 70% 60%, rgba(255,255,255,0.1) 0 2px, transparent 2px);
-          background-size: 560px 560px, 560px 560px, 560px 560px, 560px 560px, 520px 520px, 520px 520px;
-          background-position: 0 0, 22px 22px, 0 0, 22px 22px, 0 0, 250px 220px;
-          background-repeat: repeat;
-          filter: blur(0.2px);
-          mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.72));
         }
       `}</style>
 
