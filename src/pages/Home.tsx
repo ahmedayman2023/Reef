@@ -204,7 +204,7 @@ const About = ({ isAr }: { isAr: boolean }) => {
         <div className="relative">
           <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
             <img 
-              src="https://unsplash.com/photos/low-angle-photo-of-city-high-rise-buildings-during-daytime-PhYq704ffdA" 
+              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000" 
               alt="" 
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
