@@ -91,7 +91,7 @@ const About = ({ isAr }: { isAr: boolean }) => {
           <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
             <img 
               src="https://i.im.ge/2026/03/08/eghkF8.WhatsApp-Image-2026-02-25-at-14-05-22.jpeg" 
-              alt="Engineering Team" 
+              alt="" 
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
             />
