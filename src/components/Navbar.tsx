@@ -3,10 +3,12 @@ import { motion } from "motion/react";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import Logo from "./Logo";
+import { SERVICES, PROJECTS, BLOG_POSTS } from "../constants";
 
 export default function Navbar({ isAr, setIsAr }: { isAr: boolean; setIsAr: (v: boolean) => void }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isDark, setIsDark] = useState<boolean>(() => {
     try {
       const stored = localStorage.getItem("theme");
@@ -40,13 +42,43 @@ export default function Navbar({ isAr, setIsAr }: { isAr: boolean; setIsAr: (v: 
   }, [isDark]);
 
   const navLinks = [
-    { name: isAr ? "الرئيسية" : "Home", href: isHomePage ? "#home" : "/" },
-    { name: isAr ? "من نحن" : "About", href: isHomePage ? "#about" : "/#about" },
-    { name: isAr ? "خدماتنا" : "Services", href: isHomePage ? "#services" : "/#services" },
-    { name: isAr ? "مشاريعنا" : "Projects", href: "/projects" },
-    { name: isAr ? "المدونة" : "Blog", href: "/blog" },
-    { name: isAr ? "اتصل بنا" : "Contact", href: "/contact" },
+    { key: "home", name: isAr ? "الرئيسية" : "Home", href: isHomePage ? "#home" : "/" },
+    { key: "about", name: isAr ? "من نحن" : "About", href: isHomePage ? "#about" : "/#about" },
+    { key: "services", name: isAr ? "خدماتنا" : "Services", href: isHomePage ? "#services" : "/#services" },
+    { key: "projects", name: isAr ? "مشاريعنا" : "Projects", href: "/projects" },
+    { key: "blog", name: isAr ? "المدونة" : "Blog", href: "/blog" },
+    { key: "contact", name: isAr ? "اتصل بنا" : "Contact", href: "/contact" },
   ];
+
+  const dropdownItems: Record<string, { name: string; href: string }[]> = {
+    about: [
+      { name: isAr ? "نبذة عن الشركة" : "Company Overview", href: isHomePage ? "#about" : "/#about" },
+      { name: isAr ? "خدماتنا" : "Our Services", href: isHomePage ? "#services" : "/#services" },
+      { name: isAr ? "تواصل معنا" : "Get in Touch", href: "/contact" },
+    ],
+    services: SERVICES.slice(0, 6).map((service) => ({
+      name: isAr ? service.titleAr : service.title,
+      href: `/services/${service.id}`,
+    })),
+    projects: [
+      { name: isAr ? "جميع المشاريع" : "All Projects", href: "/projects" },
+      ...PROJECTS.slice(0, 3).map((project) => ({
+        name: isAr ? project.titleAr : project.title,
+        href: `/projects/${project.id}`,
+      })),
+    ],
+    blog: [
+      { name: isAr ? "كل المقالات" : "All Articles", href: "/blog" },
+      ...BLOG_POSTS.map((post) => ({
+        name: isAr ? post.titleAr : post.title,
+        href: `/blog/${post.id}`,
+      })),
+    ],
+    contact: [
+      { name: isAr ? "نموذج التواصل" : "Contact Form", href: "/contact" },
+      { name: isAr ? "سياسة الخصوصية" : "Privacy Policy", href: "/privacy-policy" },
+    ],
+  };
 
   const handleLinkClick = (href: string) => {
     setIsMobileMenuOpen(false);
@@ -76,33 +108,66 @@ export default function Navbar({ isAr, setIsAr }: { isAr: boolean; setIsAr: (v: 
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-4">
-          {navLinks.map((link) => (
-            link.href.startsWith("#") || (link.href.startsWith("/#") && !isHomePage) ? (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={(e) => {
-                  if (isHomePage && link.href.startsWith("#")) {
-                    e.preventDefault();
-                    handleLinkClick(link.href);
-                  }
-                }}
-                className={`text-sm font-medium transition-colors hover:text-[var(--accent)]`}
-                style={{ color: isScrolled || !isHomePage ? "var(--nav-text)" : "var(--nav-on-hero-text)" }}
+          {navLinks.map((link) => {
+            const hasDropdown = Boolean(dropdownItems[link.key]?.length);
+
+            return (
+              <div
+                key={link.key}
+                className="relative"
+                onMouseEnter={() => hasDropdown && setActiveDropdown(link.key)}
+                onMouseLeave={() => hasDropdown && setActiveDropdown(null)}
               >
-                {link.name}
-              </a>
-            ) : (
-              <Link
-                key={link.name}
-                to={link.href}
-                className={`text-sm font-medium transition-colors hover:text-[var(--accent)]`}
-                style={{ color: isScrolled || !isHomePage ? "var(--nav-text)" : "var(--nav-on-hero-text)" }}
-              >
-                {link.name}
-              </Link>
-            )
-          ))}
+                {link.href.startsWith("#") || (link.href.startsWith("/#") && !isHomePage) ? (
+                  <a
+                    href={link.href}
+                    onClick={(e) => {
+                      if (isHomePage && link.href.startsWith("#")) {
+                        e.preventDefault();
+                        handleLinkClick(link.href);
+                      }
+                    }}
+                    className={`text-sm font-medium transition-colors hover:text-[var(--accent)]`}
+                    style={{ color: isScrolled || !isHomePage ? "var(--nav-text)" : "var(--nav-on-hero-text)" }}
+                  >
+                    {link.name}
+                  </a>
+                ) : (
+                  <Link
+                    to={link.href}
+                    className={`text-sm font-medium transition-colors hover:text-[var(--accent)]`}
+                    style={{ color: isScrolled || !isHomePage ? "var(--nav-text)" : "var(--nav-on-hero-text)" }}
+                  >
+                    {link.name}
+                  </Link>
+                )}
+
+                {hasDropdown && activeDropdown === link.key && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className={`absolute top-full mt-3 min-w-56 rounded-xl border shadow-xl py-2 z-50 ${isAr ? "right-0" : "left-0"}`}
+                    style={{
+                      backgroundColor: "var(--nav-bg)",
+                      borderColor: "rgba(255,255,255,0.08)",
+                    }}
+                  >
+                    {dropdownItems[link.key].map((item) => (
+                      <Link
+                        key={`${link.key}-${item.href}-${item.name}`}
+                        to={item.href}
+                        className="block px-4 py-2 text-sm hover:text-[var(--accent)] transition-colors"
+                        style={{ color: "var(--nav-text)" }}
+                        onClick={() => setActiveDropdown(null)}
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </motion.div>
+                )}
+              </div>
+            );
+          })}
           <button
             onClick={() => setIsAr(!isAr)}
             className={`px-3 py-1 rounded-full border text-xs font-bold transition-all`}
