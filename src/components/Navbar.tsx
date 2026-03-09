@@ -54,6 +54,7 @@ export default function Navbar({ isAr, setIsAr }: { isAr: boolean; setIsAr: (v: 
   const dropdownItems: Record<string, { name: string; href: string }[]> = {
     about: [
       { name: isAr ? "نبذة عن الشركة" : "Company Overview", href: isHomePage ? "#about" : "/#about" },
+      { name: isAr ? "فريقنا" : "Our Team", href: "/team" },
       { name: isAr ? "خدماتنا" : "Our Services", href: isHomePage ? "#services" : "/#services" },
       { name: isAr ? "تواصل معنا" : "Get in Touch", href: "/contact" },
     ],

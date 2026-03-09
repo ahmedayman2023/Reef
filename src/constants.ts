@@ -8,7 +8,7 @@ import {
   Leaf,
   ClipboardCheck
 } from "lucide-react";
-import { Service, Project, BlogPost } from "./types";
+import { Service, Project, BlogPost, TeamMember } from "./types";
 
 export const SERVICES: Service[] = [
   {
@@ -504,5 +504,58 @@ export const BLOG_POSTS: BlogPost[] = [
     image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=800",
     category: "Engineering",
     categoryAr: "هندسة"
+  }
+];
+
+export const TEAM: TeamMember[] = [
+  {
+    id: 1,
+    name: "Mina Anwar",
+    nameAr: "مينا انور",
+    role: "General Manager",
+    roleAr: "المدير العام",
+    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400",
+    bio: "Leading the company with a vision for engineering excellence and sustainable growth.",
+    bioAr: "قيادة الشركة برؤية للتميز الهندسي والنمو المستدام."
+  },
+  {
+    id: 2,
+    name: "Hazem Al-Khatib",
+    nameAr: "حازم الخطيب",
+    role: "Head of Environmental Consultation Department",
+    roleAr: "رئيس قسم الاستشارات البيئية",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400",
+    bio: "Expert in environmental impact assessments and sustainable engineering solutions.",
+    bioAr: "خبير في تقييمات الأثر البيئي والحلول الهندسية المستدامة."
+  },
+  {
+    id: 3,
+    name: "Sayed Al-Azab",
+    nameAr: "سيد العزب",
+    role: "Head of Architecture Department",
+    roleAr: "رئيس قسم عمارة",
+    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400",
+    bio: "Visionary architect focused on blending modern aesthetics with functional design.",
+    bioAr: "معماري ذو رؤية يركز على مزج الجماليات الحديثة مع التصميم الوظيفي."
+  },
+  {
+    id: 4,
+    name: "Zakaria Mohammed",
+    nameAr: "زكريا محمد",
+    role: "Head of Electrical Department",
+    roleAr: "رئيس قسم الكهرباء",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400",
+    bio: "Specialist in complex electrical systems and energy-efficient building solutions.",
+    bioAr: "متخصص في الأنظمة الكهربائية المعقدة وحلول المباني الموفرة للطاقة."
+  },
+  {
+    id: 5,
+    name: "Mohammed Al-Ruqiey",
+    nameAr: "محمد الرقيعي",
+    role: "Dammam Branch Manager",
+    roleAr: "مدير فرع الدمام",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400",
+    bio: "Overseeing operations and client relations in the Dammam region with excellence.",
+    bioAr: "الإشراف على العمليات وعلاقات العملاء في منطقة الدمام بتميز."
   }
 ];

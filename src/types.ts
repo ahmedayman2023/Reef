@@ -61,3 +61,14 @@ export interface BlogPost {
   category: string;
   categoryAr: string;
 }
+
+export interface TeamMember {
+  id: number;
+  name: string;
+  nameAr: string;
+  role: string;
+  roleAr: string;
+  image: string;
+  bio?: string;
+  bioAr?: string;
+}
