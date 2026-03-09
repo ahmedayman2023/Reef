@@ -5,7 +5,8 @@ import {
   Globe, 
   Briefcase, 
   Lightbulb,
-  Leaf
+  Leaf,
+  ClipboardCheck
 } from "lucide-react";
 import { Service, Project, BlogPost } from "./types";
 
@@ -157,31 +158,31 @@ export const SERVICES: Service[] = [
   },
   {
     id: 6,
-    title: "Urban Planning",
-    titleAr: "التخطيط العمراني",
-    description: "Designing sustainable communities and urban environments for the future.",
-    descriptionAr: "تصميم مجتمعات وبيئات حضرية مستدامة للمستقبل.",
-    icon: Globe,
+    title: "Supervision & Occupancy Certificate",
+    titleAr: "الاشراف و شهادة الاشغال",
+    description: "We ensure project delivery with top quality, safety, and schedule compliance through effective site management and precise coordination.",
+    descriptionAr: "نضمن تنفيذ المشروع وفق أعلى معايير الجودة والسلامة والالتزام بالجداول الزمنية، من خلال إدارة فعالة للموقع وتنسيق دقيق بين جميع الأطراف.",
+    icon: ClipboardCheck,
     image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&q=80&w=1200",
-    longDescription: "Urban planning is about creating the framework for vibrant, sustainable, and livable communities. We take a holistic approach to urban design, considering social, economic, and environmental factors to create master plans that foster growth and well-being. Our designs prioritize connectivity, green spaces, and efficient infrastructure to build the cities of tomorrow.",
-    longDescriptionAr: "يتعلق التخطيط العمراني بإنشاء إطار عمل لمجتمعات نابضة بالحياة ومستدامة وقابلة للعيش. نحن نتبع نهجاً شاملاً للتصميم الحضري، مع مراعاة العوامل الاجتماعية والاقتصادية والبيئية لإنشاء مخططات رئيسية تعزز النمو والرفاهية. تعطي تصاميمنا الأولوية للاتصال والمساحات الخضراء والبنية التحتية الفعالة لبناء مدن الغد.",
+    longDescription: "Our supervision services ensure that your project is built exactly as designed, meeting all safety standards and quality requirements. We provide continuous site monitoring, material testing coordination, and contractor management. Once construction is complete, we handle the rigorous inspection process required to obtain the official Occupancy Certificate, ensuring your building is safe and ready for use.",
+    longDescriptionAr: "تضمن خدمات الإشراف لدينا تنفيذ مشروعك تماماً كما تم تصميمه، مع تلبية جميع معايير السلامة ومتطلبات الجودة. نحن نقدم مراقبة مستمرة للموقع، وتنسيق اختبار المواد، وإدارة المقاولين. بمجرد اكتمال البناء، نتولى عملية التفتيش الدقيقة المطلوبة للحصول على شهادة الإشغال الرسمية، مما يضمن أن مبناك آمن وجاهز للاستخدام.",
     benefits: [
-      "Sustainable and resilient community design",
-      "Enhanced urban connectivity and mobility",
-      "Integration of green spaces and public amenities",
-      "Strategic master planning for long-term growth"
+      "Strict adherence to architectural and structural designs",
+      "Rigorous quality control and material verification",
+      "Enhanced site safety and risk management",
+      "Streamlined process for obtaining Occupancy Certificates"
     ],
     benefitsAr: [
-      "تصميم مجتمعات مستدامة ومرنة",
-      "تعزيز الاتصال الحضري والتنقل",
-      "تكامل المساحات الخضراء والمرافق العامة",
-      "تخطيط رئيسي استراتيجي للنمو طويل الأجل"
+      "الالتزام الصارم بالتصاميم المعمارية والإنشائية",
+      "رقابة صارمة على الجودة والتحقق من المواد",
+      "تعزيز سلامة الموقع وإدارة المخاطر",
+      "عملية مبسطة للحصول على شهادات الإشغال"
     ],
     process: [
-      { step: 1, title: "Visioning", titleAr: "الرؤية", description: "Defining the long-term goals for the urban area.", descriptionAr: "تحديد الأهداف طويلة الأجل للمنطقة الحضرية." },
-      { step: 2, title: "Master Planning", titleAr: "التخطيط الرئيسي", description: "Developing the spatial framework and land use plans.", descriptionAr: "تطوير الإطار المكاني وخطط استخدام الأراضي." },
-      { step: 3, title: "Infrastructure Design", titleAr: "تصميم البنية التحتية", description: "Planning for utilities, transport, and services.", descriptionAr: "التخطيط للمرافق والنقل والخدمات." },
-      { step: 4, title: "Policy Development", titleAr: "تطوير السياسات", description: "Creating guidelines for sustainable development.", descriptionAr: "إنشاء مبادئ توجيهية للتنمية المستدامة." }
+      { step: 1, title: "Site Mobilization", titleAr: "تجهيز الموقع", description: "Setting up supervision protocols and coordination channels.", descriptionAr: "إعداد بروتوكولات الإشراف وقنوات التنسيق." },
+      { step: 2, title: "Construction Supervision", titleAr: "الإشراف الإنشائي", description: "Daily monitoring of construction activities and quality.", descriptionAr: "المراقبة اليومية لأنشطة البناء والجودة." },
+      { step: 3, title: "Quality Assurance", titleAr: "ضمان الجودة", description: "Verifying materials and workmanship against standards.", descriptionAr: "التحقق من المواد والمصنعية وفقاً للمعايير." },
+      { step: 4, title: "Occupancy Certification", titleAr: "شهادة الإشغال", description: "Final inspections and documentation for building handover.", descriptionAr: "عمليات التفتيش النهائية والتوثيق لتسليم المبنى." }
     ]
   },
   {
@@ -476,18 +477,18 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     id: 2,
-    title: "Smart Cities: Integrating Technology in Urban Planning",
-    titleAr: "المدن الذكية: دمج التكنولوجيا في التخطيط العمراني",
-    excerpt: "How IoT and data analytics are making our cities more efficient and livable.",
-    excerptAr: "كيف تجعل إنترنت الأشياء وتحليلات البيانات مدننا أكثر كفاءة وقابلية للعيش.",
-    content: "The concept of smart cities is rapidly evolving. By integrating technology into every facet of urban planning, from traffic management to energy distribution, we can create environments that respond dynamically to the needs of their inhabitants...",
-    contentAr: "يتطور مفهوم المدن الذكية بسرعة. من خلال دمج التكنولوجيا في كل جانب من جوانب التخطيط العمراني، من إدارة المرور إلى توزيع الطاقة، يمكننا إنشاء بيئات تستجيب ديناميكياً لاحتياجات سكانها...",
+    title: "Importance of Engineering Supervision & Occupancy Certificates",
+    titleAr: "أهمية الإشراف الهندسي وشهادات الإشغال",
+    excerpt: "How professional supervision ensures building safety and compliance with Saudi standards.",
+    excerptAr: "كيف يضمن الإشراف المهني سلامة المباني والامتثال للمعايير السعودية.",
+    content: "Engineering supervision is a critical phase in any construction project. It ensures that the execution matches the approved designs and adheres to the Saudi Building Code. Obtaining the Occupancy Certificate is the final validation that the structure is safe and ready for its intended use. Our team provides comprehensive oversight to navigate these requirements smoothly.",
+    contentAr: "يعد الإشراف الهندسي مرحلة حاسمة في أي مشروع إنشائي. فهو يضمن مطابقة التنفيذ للتصاميم المعتمدة والالتزام بكود البناء السعودي. الحصول على شهادة الإشغال هو التحقق النهائي من أن المنشأ آمن وجاهز للاستخدام المقصود. يوفر فريقنا إشرافاً شاملاً للتعامل مع هذه المتطلبات بسلاسة.",
     date: "2024-03-10",
     author: "Eng. Sarah Khalid",
     authorAr: "م. سارة خالد",
-    image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&q=80&w=800",
-    category: "Urban Planning",
-    categoryAr: "تخطيط عمراني"
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=800",
+    category: "Supervision",
+    categoryAr: "إشراف"
   },
   {
     id: 3,

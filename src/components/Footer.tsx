@@ -28,7 +28,7 @@ export default function Footer({ isAr }: { isAr: boolean }) {
     { name: isAr ? "إدارة المشاريع" : "Project Management", href: "/services/4" },
     { name: isAr ? "التصميم الداخلي" : "Interior Design", href: "/services/3" },
     { name: isAr ? "الاستشارات الفنية" : "Technical Consultation", href: "/services/5" },
-    { name: isAr ? "إشراف هندسي" : "Construction Supervision", href: "/services/6" },
+    { name: isAr ? "الاشراف و شهادة الاشغال" : "Supervision & Occupancy Certificate", href: "/services/6" },
     { name: isAr ? "الاستشارات البيئية" : "Environmental Consultation", href: "/services/7" },
   ];
 

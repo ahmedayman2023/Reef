@@ -43,8 +43,8 @@ const Hero = ({ isAr }: { isAr: boolean }) => {
       tabEn: "Structural Design",
     },
     {
-      titleAr: "الإشراف وإدارة الإنشاءات",
-      titleEn: "Supervision & Construction Management",
+      titleAr: "الاشراف و شهادة الاشغال",
+      titleEn: "Supervision & Occupancy Certificate",
       descriptionAr:
         "نضمن تنفيذ المشروع وفق أعلى معايير الجودة والسلامة والالتزام بالجداول الزمنية، من خلال إدارة فعالة للموقع وتنسيق دقيق بين جميع الأطراف.",
       descriptionEn:
@@ -53,8 +53,8 @@ const Hero = ({ isAr }: { isAr: boolean }) => {
         "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=2000",
       learnMoreTo: "/services/6",
       expertiseTo: "/projects",
-      tabAr: "الإشراف وإدارة الإنشاءات",
-      tabEn: "Supervision & Construction",
+      tabAr: "الاشراف و شهادة الاشغال",
+      tabEn: "Supervision & Occupancy",
     },
     {
       titleAr: "التصميم الداخلي",
