@@ -1,6 +1,6 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { BLOG_POSTS } from "../constants";
-import { Calendar, User, ChevronLeft, ChevronRight, ArrowLeft, ArrowRight } from "lucide-react";
+import { Calendar, User, ArrowLeft, ArrowRight, Facebook, Twitter, Linkedin, Share2 } from "lucide-react";
 import { motion } from "motion/react";
 import { useEffect } from "react";
 
@@ -9,6 +9,9 @@ export default function BlogPostPage({ isAr }: { isAr: boolean }) {
   const navigate = useNavigate();
   const post = BLOG_POSTS.find((p) => p.id === Number(id));
 
+  const shareUrl = window.location.href;
+  const shareTitle = post ? (isAr ? post.titleAr : post.title) : "";
+
   useEffect(() => {
     if (!post) {
       navigate("/blog");
@@ -16,6 +19,27 @@ export default function BlogPostPage({ isAr }: { isAr: boolean }) {
   }, [post, navigate]);
 
   if (!post) return null;
+
+  const shareLinks = [
+    {
+      name: "Facebook",
+      icon: <Facebook size={20} />,
+      url: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`,
+      color: "hover:bg-blue-600 hover:text-white",
+    },
+    {
+      name: "Twitter",
+      icon: <Twitter size={20} />,
+      url: `https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(shareTitle)}`,
+      color: "hover:bg-sky-500 hover:text-white",
+    },
+    {
+      name: "LinkedIn",
+      icon: <Linkedin size={20} />,
+      url: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`,
+      color: "hover:bg-blue-700 hover:text-white",
+    },
+  ];
 
   return (
     <div className="pt-32 pb-20 bg-white min-h-screen">
@@ -66,7 +90,6 @@ export default function BlogPostPage({ isAr }: { isAr: boolean }) {
             <div className="whitespace-pre-line">
               {isAr ? post.contentAr : post.content}
             </div>
-            {/* Adding some dummy content to make it look longer */}
             <p>
               {isAr 
                 ? "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق."
@@ -79,7 +102,7 @@ export default function BlogPostPage({ isAr }: { isAr: boolean }) {
             </p>
           </div>
 
-          <div className="mt-20 pt-10 border-t border-slate-100 flex justify-between items-center">
+          <div className="mt-20 pt-10 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center text-slate-400">
                 <User size={24} />
@@ -89,16 +112,25 @@ export default function BlogPostPage({ isAr }: { isAr: boolean }) {
                 <div className="text-sm text-slate-500">{isAr ? "مهندس استشاري" : "Consultant Engineer"}</div>
               </div>
             </div>
-            <div className="flex gap-4">
-              {/* Social Share Placeholder */}
-              <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 hover:bg-emerald-50 hover:text-emerald-600 transition-all cursor-pointer">
-                <span className="text-xs font-bold">FB</span>
-              </div>
-              <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 hover:bg-emerald-50 hover:text-emerald-600 transition-all cursor-pointer">
-                <span className="text-xs font-bold">TW</span>
-              </div>
-              <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 hover:bg-emerald-50 hover:text-emerald-600 transition-all cursor-pointer">
-                <span className="text-xs font-bold">LN</span>
+            
+            <div className="flex items-center gap-4">
+              <span className="text-sm font-bold text-slate-400 uppercase tracking-widest flex items-center gap-2">
+                <Share2 size={16} />
+                {isAr ? "مشاركة" : "Share"}
+              </span>
+              <div className="flex gap-3">
+                {shareLinks.map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`w-12 h-12 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 transition-all duration-300 ${link.color} shadow-sm`}
+                    title={link.name}
+                  >
+                    {link.icon}
+                  </a>
+                ))}
               </div>
             </div>
           </div>

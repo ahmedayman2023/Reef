@@ -71,18 +71,18 @@ const Hero = ({ isAr }: { isAr: boolean }) => {
       tabEn: "Project Management",
     },
     {
-      titleAr: "الخدمات الجيومكانية",
-      titleEn: "Geospatial Services",
+      titleAr: "الاستشارات البيئية",
+      titleEn: "Environmental Consultation",
       descriptionAr:
-        "نوفر حلولاً جيومكانية ذكية تدعم اتخاذ القرار وتسرّع التنفيذ، من خلال تحليل البيانات المكانية والنمذجة والخرائط التفاعلية.",
+        "تساعد خدمات الاستشارات البيئية لدينا العملاء على التنقل في اللوائح البيئية المعقدة مع تنفيذ ممارسات مستدامة لضمان أن تكون المشاريع مسؤولة بيئياً.",
       descriptionEn:
-        "We provide smart geospatial solutions that support decision-making and accelerate execution through spatial analytics, modeling, and interactive mapping.",
+        "Our environmental consultation services help clients navigate complex environmental regulations while implementing sustainable practices to ensure projects are environmentally responsible.",
       image:
         "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&q=80&w=2000",
       learnMoreTo: "/services/7",
       expertiseTo: "/projects",
-      tabAr: "الخدمات الجيومكانية",
-      tabEn: "Geospatial Services",
+      tabAr: "الاستشارات البيئية",
+      tabEn: "Environmental Consultation",
     },
   ];
 

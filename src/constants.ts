@@ -5,7 +5,7 @@ import {
   Globe, 
   Briefcase, 
   Lightbulb,
-  Leaf 
+  Leaf
 } from "lucide-react";
 import { Service, Project, BlogPost } from "./types";
 
@@ -188,29 +188,29 @@ export const SERVICES: Service[] = [
     id: 7,
     title: "Environmental Consultation",
     titleAr: "الاستشارات البيئية",
-    description: "Specialized guidance on sustainability, environmental impact, and green building compliance.",
-    descriptionAr: "إرشاد متخصص في الاستدامة والأثر البيئي والامتثال لمعايير البناء الأخضر.",
+    description: "Sustainable solutions that protect the environment and ensure regulatory compliance.",
+    descriptionAr: "حلول مستدامة تحمي البيئة وتضمن الامتثال للأنظمة البيئية.",
     icon: Leaf,
     image: "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&q=80&w=1200",
-    longDescription: "Our environmental consultation services help projects align with sustainability goals and environmental regulations from concept to delivery. We support impact assessments, resource efficiency strategies, and green certification pathways to reduce environmental footprint while improving long-term value.",
-    longDescriptionAr: "تساعد خدمات الاستشارات البيئية لدينا المشاريع على التوافق مع أهداف الاستدامة واللوائح البيئية من مرحلة الفكرة حتى التسليم. ندعم تقييمات الأثر البيئي واستراتيجيات كفاءة الموارد ومسارات شهادات المباني الخضراء لتقليل البصمة البيئية وتعزيز القيمة طويلة المدى.",
+    longDescription: "Our environmental consultation services help clients navigate complex environmental regulations while implementing sustainable practices. We provide comprehensive assessments, impact studies, and strategic planning to ensure projects are environmentally responsible and socially beneficial.",
+    longDescriptionAr: "تساعد خدمات الاستشارات البيئية لدينا العملاء على التنقل في اللوائح البيئية المعقدة مع تنفيذ ممارسات مستدامة. نحن نقدم تقييمات شاملة، ودراسات أثر، وتخطيطاً استراتيجياً لضمان أن تكون المشاريع مسؤولة بيئياً ومفيدة اجتماعياً.",
     benefits: [
-      "Improved compliance with environmental regulations and standards",
-      "Reduced energy, water, and material consumption",
-      "Stronger ESG profile and long-term asset value",
-      "Clear roadmap for sustainable design and operation"
+      "Compliance with environmental standards",
+      "Sustainable resource management",
+      "Environmental impact mitigation",
+      "Strategic sustainability planning"
     ],
     benefitsAr: [
-      "تعزيز الامتثال للأنظمة والمعايير البيئية",
-      "خفض استهلاك الطاقة والمياه والمواد",
-      "تحسين مؤشرات الاستدامة ورفع قيمة الأصول على المدى الطويل",
-      "خارطة طريق واضحة للتصميم والتشغيل المستدام"
+      "الامتثال للمعايير البيئية",
+      "إدارة مستدامة للموارد",
+      "تخفيف الأثر البيئي",
+      "تخطيط استراتيجي للاستدامة"
     ],
     process: [
-      { step: 1, title: "Baseline Assessment", titleAr: "التقييم الأولي", description: "Reviewing project data, site context, and environmental risks.", descriptionAr: "مراجعة بيانات المشروع وسياق الموقع والمخاطر البيئية." },
-      { step: 2, title: "Strategy Development", titleAr: "تطوير الاستراتيجية", description: "Defining sustainability targets and practical implementation plans.", descriptionAr: "تحديد أهداف الاستدامة وخطط تطبيق عملية." },
-      { step: 3, title: "Compliance & Certification", titleAr: "الامتثال والشهادات", description: "Supporting regulatory submissions and green building certification requirements.", descriptionAr: "دعم متطلبات الجهات التنظيمية وشهادات المباني الخضراء." },
-      { step: 4, title: "Monitoring", titleAr: "المتابعة", description: "Tracking performance and refining environmental measures during execution.", descriptionAr: "متابعة الأداء وتحسين الإجراءات البيئية أثناء التنفيذ." }
+      { step: 1, title: "Assessment", titleAr: "التقييم", description: "Initial environmental impact assessment.", descriptionAr: "تقييم الأثر البيئي الأولي." },
+      { step: 2, title: "Planning", titleAr: "التخطيط", description: "Developing sustainability strategies.", descriptionAr: "تطوير استراتيجيات الاستدامة." },
+      { step: 3, title: "Implementation", titleAr: "التنفيذ", description: "Applying environmental controls.", descriptionAr: "تطبيق الضوابط البيئية." },
+      { step: 4, title: "Monitoring", titleAr: "المراقبة", description: "Ongoing environmental performance tracking.", descriptionAr: "تتبع الأداء البيئي المستمر." }
     ]
   },
 ];
@@ -233,10 +233,10 @@ export const PROJECTS: Project[] = [
     statusAr: "مكتمل",
     supervisor: {
       name: "Eng. Khalid Al-Otaibi",
-      nameAr: "م. حازم الخطيب",
+      nameAr: "م. خالد العتيبي",
       role: "Lead Project Manager",
       roleAr: "مدير المشروع الرئيسي",
-      image: "https://i.im.ge/2026/03/08/eg5d9a.1.png",
+      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400",
       bio: "With over 15 years of experience in high-end residential projects, Eng. Khalid ensures every detail meets our rigorous quality standards.",
       bioAr: "مع أكثر من 15 عاماً من الخبرة في المشاريع السكنية الراقية، يضمن المهندس خالد أن كل تفصيل يلبي معايير الجودة الصارمة لدينا.",
       challengesSolved: [
@@ -283,10 +283,10 @@ export const PROJECTS: Project[] = [
     statusAr: "مكتمل",
     supervisor: {
       name: "Eng. Sarah Mansour",
-      nameAr: "م. زكريا محمد",
+      nameAr: "م. سارة منصور",
       role: "Senior Architect",
-      roleAr: "رئيص قسم الهندسة الكهربائية",
-      image: "https://im.ge/i/eg5UqF",
+      roleAr: "كبير المعماريين",
+      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400",
       bio: "Eng. Sarah specializes in urban residential developments, focusing on community-centric design and sustainable living.",
       bioAr: "تتخصص المهندسة سارة في التطويرات السكنية الحضرية، مع التركيز على التصميم المتمحور حول المجتمع والحياة المستدامة.",
       challengesSolved: [
@@ -333,10 +333,10 @@ export const PROJECTS: Project[] = [
     statusAr: "مكتمل",
     supervisor: {
       name: "Eng. Ahmed Al-Fahad",
-      nameAr: "م. محمد الرقيعي",
+      nameAr: "م. أحمد الفهد",
       role: "Structural Engineer",
       roleAr: "مهندس إنشائي",
-      image: "https://im.ge/i/WhatsApp-Image-2026-03-08-at-15-41-48.eg55FX",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400",
       bio: "Ahmed's expertise in structural efficiency allowed for large glass facades while maintaining superior stability.",
       bioAr: "سمحت خبرة أحمد في الكفاءة الإنشائية بواجهات زجاجية كبيرة مع الحفاظ على استقرار فائق.",
       challengesSolved: [
@@ -403,7 +403,7 @@ export const PROJECTS: Project[] = [
     statusAr: "مكتمل",
     supervisor: {
       name: "Eng. Layla Al-Harbi",
-      nameAr: "م. سيد العزب",
+      nameAr: "م. ليلى الحربي",
       role: "Interior Design Lead",
       roleAr: "رئيسة التصميم الداخلي",
       image: "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&q=80&w=400",
