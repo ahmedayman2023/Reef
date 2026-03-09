@@ -7,7 +7,12 @@ import {
   MapPin,
   Phone,
   Mail,
-  Leaf
+  Leaf,
+  MessageSquare,
+  Wrench,
+  Star,
+  ArrowLeft,
+  ArrowRight
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { SERVICES, PROJECTS } from "../constants";
@@ -292,6 +297,94 @@ const Services = ({ isAr }: { isAr: boolean }) => {
                 {isAr ? <ChevronLeft size={16} /> : <ChevronRight size={16} />}
               </Link>
             </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const HowWeWork = ({ isAr }: { isAr: boolean }) => {
+  const steps = [
+    {
+      number: "01",
+      titleAr: "التواصل والاستماع",
+      titleEn: "Communication & Listening",
+      descriptionAr: "نستمع لاحتياجاتكم ونفهم متطلبات مشروعكم بدقة",
+      descriptionEn: "We listen to your needs and understand your project requirements accurately",
+      icon: MessageSquare,
+    },
+    {
+      number: "02",
+      titleAr: "الدراسة والتحليل",
+      titleEn: "Study & Analysis",
+      descriptionAr: "نحلل المتطلبات ونضع الخطط الهندسية المناسبة",
+      descriptionEn: "We analyze the requirements and develop the appropriate engineering plans",
+      icon: Wrench,
+    },
+    {
+      number: "03",
+      titleAr: "التصميم و الاشراف",
+      titleEn: "Design & Supervision",
+      descriptionAr: "نصمم ونشرف بدقة عالية وفق أعلى المعايير",
+      descriptionEn: "We design and supervise with high precision according to the highest standards",
+      icon: Star,
+    },
+    {
+      number: "04",
+      titleAr: "التسليم والمتابعة",
+      titleEn: "Delivery & Follow-up",
+      descriptionAr: "نسلم المشروع ونتابع معكم لضمان رضاكم",
+      descriptionEn: "We deliver the project and follow up with you to ensure your satisfaction",
+      icon: CheckCircle2,
+    },
+  ];
+
+  return (
+    <section className="py-24 bg-white overflow-hidden" dir={isAr ? "rtl" : "ltr"}>
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center mb-20">
+          <div className="inline-block relative">
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">
+              {isAr ? "كيف نعمل" : "How We Work"}
+            </h2>
+            <div className="w-1/2 h-1 bg-[#1d4ed8] mx-auto rounded-full"></div>
+          </div>
+          <p className="text-slate-600 mt-6 text-lg">
+            {isAr 
+              ? "منهجية عمل احترافية تضمن تحقيق أهدافكم" 
+              : "A professional work methodology that ensures the achievement of your goals"}
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 relative">
+          {steps.map((step, index) => (
+            <div key={index} className="flex flex-col items-center text-center group relative transition-all duration-300">
+              {/* Icon Circle */}
+              <div className="w-20 h-20 rounded-full bg-[#1d4ed8] text-white flex items-center justify-center mb-6 relative z-10 group-hover:scale-110 transition-transform duration-300 shadow-xl shadow-primary-700/20">
+                <step.icon size={32} />
+              </div>
+
+              {/* Arrow (Desktop) */}
+              {index < steps.length - 1 && (
+                <div className={`hidden lg:block absolute top-10 ${isAr ? '-left-1/2 translate-x-10' : '-right-1/2 -translate-x-10'} z-0 text-slate-400`}>
+                  {isAr ? <ArrowLeft size={32} /> : <ArrowRight size={32} />}
+                </div>
+              )}
+
+              {/* Number */}
+              <div className="text-5xl font-bold text-slate-100 mb-4 group-hover:text-[#1d4ed8] group-hover:scale-110 transition-all duration-300 origin-center">
+                {step.number}
+              </div>
+
+              {/* Content */}
+              <h4 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-[#1d4ed8] group-hover:scale-105 transition-all duration-300">
+                {isAr ? step.titleAr : step.titleEn}
+              </h4>
+              <p className="text-slate-600 leading-relaxed max-w-[240px] group-hover:text-[#1d4ed8]/80 transition-all duration-300">
+                {isAr ? step.descriptionAr : step.descriptionEn}
+              </p>
+            </div>
           ))}
         </div>
       </div>
@@ -646,6 +739,7 @@ export default function Home({ isAr }: { isAr: boolean }) {
       <Hero isAr={isAr} />
       <About isAr={isAr} />
       <Services isAr={isAr} />
+      <HowWeWork isAr={isAr} />
       <EnvironmentalConsulting isAr={isAr} />
       <Portfolio isAr={isAr} />
     </>
