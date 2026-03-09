@@ -30,7 +30,7 @@ export default function ProjectDetail({ isAr }: { isAr: boolean }) {
           <h1 className="text-4xl font-bold text-slate-900 mb-4">
             {isAr ? "المشروع غير موجود" : "Project Not Found"}
           </h1>
-          <Link to="/projects" className="text-emerald-600 font-bold hover:underline">
+          <Link to="/projects" className="text-primary-700 font-bold hover:underline">
             {isAr ? "العودة للمشاريع" : "Back to Projects"}
           </Link>
         </div>
@@ -58,7 +58,7 @@ export default function ProjectDetail({ isAr }: { isAr: boolean }) {
             transition={{ duration: 0.8 }}
           >
             <div className="flex flex-wrap gap-3 mb-6">
-              <span className="px-3 py-1 bg-emerald-500 text-white text-xs font-bold uppercase tracking-widest rounded-full">
+              <span className="px-3 py-1 bg-primary-700 text-white text-xs font-bold uppercase tracking-widest rounded-full">
                 {isAr ? project.categoryAr : project.category}
               </span>
               <span className="px-3 py-1 bg-white/20 backdrop-blur-md text-white text-xs font-bold uppercase tracking-widest rounded-full border border-white/30">
@@ -70,15 +70,15 @@ export default function ProjectDetail({ isAr }: { isAr: boolean }) {
             </h1>
             <div className="flex flex-wrap gap-8 text-white/80">
               <div className="flex items-center gap-2">
-                <MapPin size={18} className="text-emerald-400" />
+                <MapPin size={18} className="text-primary-400" />
                 <span>{isAr ? project.locationAr : project.location}</span>
               </div>
               <div className="flex items-center gap-2">
-                <Calendar size={18} className="text-emerald-400" />
+                <Calendar size={18} className="text-primary-400" />
                 <span>{project.year}</span>
               </div>
               <div className="flex items-center gap-2">
-                <Maximize2 size={18} className="text-emerald-400" />
+                <Maximize2 size={18} className="text-primary-400" />
                 <span>{project.area}</span>
               </div>
             </div>
@@ -129,15 +129,15 @@ export default function ProjectDetail({ isAr }: { isAr: boolean }) {
                   <div className="grid sm:grid-cols-2 gap-6">
                     {project.resultsAr && isAr ? (
                       project.resultsAr.map((result, i) => (
-                        <div key={i} className="flex items-start gap-4 p-6 bg-emerald-50 rounded-2xl border border-emerald-100">
-                          <CheckCircle2 className="text-emerald-600 shrink-0 mt-1" size={24} />
+                        <div key={i} className="flex items-start gap-4 p-6 bg-primary-50 rounded-2xl border border-primary-100">
+                          <CheckCircle2 className="text-primary-700 shrink-0 mt-1" size={24} />
                           <span className="text-slate-800 font-medium">{result}</span>
                         </div>
                       ))
                     ) : (
                       project.results?.map((result, i) => (
-                        <div key={i} className="flex items-start gap-4 p-6 bg-emerald-50 rounded-2xl border border-emerald-100">
-                          <CheckCircle2 className="text-emerald-600 shrink-0 mt-1" size={24} />
+                        <div key={i} className="flex items-start gap-4 p-6 bg-primary-50 rounded-2xl border border-primary-100">
+                          <CheckCircle2 className="text-primary-700 shrink-0 mt-1" size={24} />
                           <span className="text-slate-800 font-medium">{result}</span>
                         </div>
                       ))
@@ -163,7 +163,7 @@ export default function ProjectDetail({ isAr }: { isAr: boolean }) {
                       <h4 className="text-xl font-bold text-slate-900">
                         {isAr ? project.supervisor.nameAr : project.supervisor.name}
                       </h4>
-                      <p className="text-emerald-600 font-medium text-sm">
+                      <p className="text-primary-700 font-medium text-sm">
                         {isAr ? project.supervisor.roleAr : project.supervisor.role}
                       </p>
                     </div>
@@ -176,13 +176,13 @@ export default function ProjectDetail({ isAr }: { isAr: boolean }) {
                     
                     <div>
                       <h5 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
-                        <ShieldCheck size={18} className="text-emerald-600" />
+                        <ShieldCheck size={18} className="text-primary-700" />
                         {isAr ? "التحديات التي تم حلها" : "Challenges Solved"}
                       </h5>
                       <ul className="space-y-3">
                         {(isAr ? project.supervisor.challengesSolvedAr : project.supervisor.challengesSolved)?.map((challenge, i) => (
                           <li key={i} className="flex items-start gap-3 text-sm text-slate-600">
-                            <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-1.5 shrink-0"></div>
+                            <div className="w-1.5 h-1.5 rounded-full bg-primary-400 mt-1.5 shrink-0"></div>
                             <span>{challenge}</span>
                           </li>
                         ))}
@@ -210,13 +210,13 @@ export default function ProjectDetail({ isAr }: { isAr: boolean }) {
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-white/50 text-sm">{isAr ? "الحالة" : "Status"}</span>
-                    <span className="text-emerald-400 font-bold">{isAr ? project.statusAr : project.status}</span>
+                    <span className="text-primary-400 font-bold">{isAr ? project.statusAr : project.status}</span>
                   </div>
                 </div>
                 
                 <Link 
                   to="/contact" 
-                  className="mt-8 w-full py-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-bold transition-all flex items-center justify-center gap-2 shadow-lg shadow-emerald-600/20"
+                  className="mt-8 w-full py-4 bg-primary-700 hover:bg-primary-800 text-white rounded-xl font-bold transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary-700/20"
                 >
                   {isAr ? "استفسر عن مشروع مماثل" : "Inquire About Similar Project"}
                   {isAr ? <ChevronLeft size={18} /> : <ChevronRight size={18} />}
@@ -232,7 +232,7 @@ export default function ProjectDetail({ isAr }: { isAr: boolean }) {
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           <Link 
             to="/projects" 
-            className="flex items-center gap-2 text-slate-600 font-bold hover:text-emerald-600 transition-colors"
+            className="flex items-center gap-2 text-slate-600 font-bold hover:text-primary-700 transition-colors"
           >
             {isAr ? <ArrowRight size={20} /> : <ArrowLeft size={20} />}
             {isAr ? "العودة للمشاريع" : "Back to Projects"}

@@ -35,17 +35,17 @@ export default function ProjectsPage({ isAr }: { isAr: boolean }) {
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute inset-0 bg-emerald-900/0 group-hover:bg-emerald-900/20 transition-all duration-500 flex items-center justify-center">
-                    <div className="bg-white text-emerald-600 p-4 rounded-full opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 shadow-xl">
+                  <div className="absolute inset-0 bg-primary-900/0 group-hover:bg-primary-900/20 transition-all duration-500 flex items-center justify-center">
+                    <div className="bg-white text-primary-700 p-4 rounded-full opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 shadow-xl">
                       {isAr ? <ArrowLeft size={24} /> : <ArrowRight size={24} />}
                     </div>
                   </div>
                 </div>
                 <div className="p-8">
-                  <span className="text-emerald-600 text-xs font-bold uppercase tracking-widest mb-2 block">
+                  <span className="text-primary-700 text-xs font-bold uppercase tracking-widest mb-2 block">
                     {isAr ? project.categoryAr : project.category}
                   </span>
-                  <h3 className="text-xl font-bold text-slate-900 mb-4 group-hover:text-emerald-600 transition-colors">
+                  <h3 className="text-xl font-bold text-slate-900 mb-4 group-hover:text-primary-700 transition-colors">
                     {isAr ? project.titleAr : project.title}
                   </h3>
                   <p className="text-slate-600 text-sm leading-relaxed line-clamp-2">

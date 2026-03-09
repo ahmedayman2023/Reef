@@ -98,14 +98,14 @@ export default function ContactPage({ isAr }: { isAr: boolean }) {
               
               <div className="space-y-6">
                 <div className="flex gap-6">
-                  <div className="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600 shrink-0">
+                  <div className="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center text-primary-700 shrink-0">
                     <MapPin size={24} />
                   </div>
                   <div>
                     <h4 className="font-bold text-slate-900 mb-1">{isAr ? "المواقع" : "Locations"}</h4>
                     <div className="space-y-4">
                       <div>
-                        <p className="text-xs font-bold text-emerald-600 mb-1">{isAr ? "الرياض" : "Riyadh"}</p>
+                        <p className="text-xs font-bold text-primary-700 mb-1">{isAr ? "الرياض" : "Riyadh"}</p>
                         <p className="text-slate-600 text-sm">
                           {isAr 
                             ? "ظهرة لبن – طريق نجد" 
@@ -113,7 +113,7 @@ export default function ContactPage({ isAr }: { isAr: boolean }) {
                         </p>
                       </div>
                       <div>
-                        <p className="text-xs font-bold text-emerald-600 mb-1">{isAr ? "الدمام" : "Dammam"}</p>
+                        <p className="text-xs font-bold text-primary-700 mb-1">{isAr ? "الدمام" : "Dammam"}</p>
                         <p className="text-slate-600 text-sm">
                           {isAr 
                             ? "حي البديع 3752 - شارع الملك عبدالعزيز - عمارة أبا حسين للكهرباء" 
@@ -121,7 +121,7 @@ export default function ContactPage({ isAr }: { isAr: boolean }) {
                         </p>
                       </div>
                       <div>
-                        <p className="text-xs font-bold text-emerald-600 mb-1">{isAr ? "الخبر" : "Khobar"}</p>
+                        <p className="text-xs font-bold text-primary-700 mb-1">{isAr ? "الخبر" : "Khobar"}</p>
                         <p className="text-slate-600 text-sm">
                           {isAr 
                             ? "حي الجسر – طريق مجلس التعاون – مبنى رقم 7785" 
@@ -133,7 +133,7 @@ export default function ContactPage({ isAr }: { isAr: boolean }) {
                 </div>
                 
                 <div className="flex gap-6">
-                  <div className="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600 shrink-0">
+                  <div className="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center text-primary-700 shrink-0">
                     <Phone size={24} />
                   </div>
                   <div>
@@ -146,17 +146,17 @@ export default function ContactPage({ isAr }: { isAr: boolean }) {
                 </div>
                 
                 <div className="flex gap-6">
-                  <div className="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600 shrink-0">
+                  <div className="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center text-primary-700 shrink-0">
                     <Mail size={24} />
                   </div>
                   <div>
                     <h4 className="font-bold text-slate-900 mb-1">{isAr ? "البريد الإلكتروني" : "Email"}</h4>
-                    <a href="mailto:Info@reef-consult.com" className="text-slate-600 hover:text-emerald-600 transition-colors">Info@reef-consult.com</a>
+                    <a href="mailto:Info@reef-consult.com" className="text-slate-600 hover:text-primary-700 transition-colors">Info@reef-consult.com</a>
                   </div>
                 </div>
 
                 <div className="flex gap-6">
-                  <div className="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600 shrink-0">
+                  <div className="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center text-primary-700 shrink-0">
                     <Clock size={24} />
                   </div>
                   <div>
@@ -177,7 +177,7 @@ export default function ContactPage({ isAr }: { isAr: boolean }) {
                 </div>
 
                 <div className="flex gap-6">
-                  <div className="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600 shrink-0">
+                  <div className="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center text-primary-700 shrink-0">
                     <span className="font-bold text-[10px]">VAT</span>
                   </div>
                   <div>
@@ -198,7 +198,7 @@ export default function ContactPage({ isAr }: { isAr: boolean }) {
                   animate={{ opacity: 1, scale: 1 }}
                   className="h-full flex flex-col items-center justify-center text-center space-y-4 py-6"
                 >
-                  <div className="w-16 h-16 bg-emerald-500/20 text-emerald-500 rounded-full flex items-center justify-center">
+                  <div className="w-16 h-16 bg-primary-500/20 text-primary-500 rounded-full flex items-center justify-center">
                     <CheckCircle2 size={32} />
                   </div>
                   <h4 className="text-xl font-bold">
@@ -211,7 +211,7 @@ export default function ContactPage({ isAr }: { isAr: boolean }) {
                   </p>
                   <button 
                     onClick={() => setIsSuccess(false)}
-                    className="text-emerald-400 font-bold hover:underline text-sm"
+                    className="text-primary-400 font-bold hover:underline text-sm"
                   >
                     {isAr ? "إرسال رسالة أخرى" : "Send another message"}
                   </button>
@@ -232,7 +232,7 @@ export default function ContactPage({ isAr }: { isAr: boolean }) {
                         value={formData.name}
                         onChange={handleChange}
                         placeholder={isAr ? "الاسم" : "Name"} 
-                        className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${errors.name ? 'border-red-500' : 'border-white/10'} focus:border-emerald-500 outline-none transition-all text-sm`}
+                        className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${errors.name ? 'border-red-500' : 'border-white/10'} focus:border-primary-500 outline-none transition-all text-sm`}
                       />
                       {errors.name && <p className="text-red-500 text-[10px] mt-1">{errors.name}</p>}
                     </div>
@@ -243,7 +243,7 @@ export default function ContactPage({ isAr }: { isAr: boolean }) {
                         value={formData.email}
                         onChange={handleChange}
                         placeholder={isAr ? "البريد الإلكتروني" : "Email"} 
-                        className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${errors.email ? 'border-red-500' : 'border-white/10'} focus:border-emerald-500 outline-none transition-all text-sm`}
+                        className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${errors.email ? 'border-red-500' : 'border-white/10'} focus:border-primary-500 outline-none transition-all text-sm`}
                       />
                       {errors.email && <p className="text-red-500 text-[10px] mt-1">{errors.email}</p>}
                     </div>
@@ -253,12 +253,12 @@ export default function ContactPage({ isAr }: { isAr: boolean }) {
                       onChange={handleChange}
                       rows={3} 
                       placeholder={isAr ? "رسالتك" : "Your Message"} 
-                      className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${errors.message ? 'border-red-500' : 'border-white/10'} focus:border-emerald-500 outline-none transition-all text-sm`}
+                      className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${errors.message ? 'border-red-500' : 'border-white/10'} focus:border-primary-500 outline-none transition-all text-sm`}
                     ></textarea>
                     {errors.message && <p className="text-red-500 text-[10px] mt-1">{errors.message}</p>}
                     <button 
                       disabled={isSubmitting}
-                      className={`w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-bold transition-all flex items-center justify-center gap-2 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                      className={`w-full py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-bold transition-all flex items-center justify-center gap-2 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
                     >
                       {isSubmitting ? (
                         <>

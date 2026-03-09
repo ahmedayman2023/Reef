@@ -37,7 +37,7 @@ export default function BlogList({ isAr }: { isAr: boolean }) {
               </Link>
               <div className="p-8 flex-grow flex flex-col">
                 <div className="flex items-center gap-4 text-xs text-slate-400 mb-4">
-                  <span className="bg-emerald-50 text-emerald-600 px-2 py-1 rounded font-bold uppercase tracking-wider">
+                  <span className="bg-primary-50 text-primary-700 px-2 py-1 rounded font-bold uppercase tracking-wider">
                     {isAr ? post.categoryAr : post.category}
                   </span>
                   <div className="flex items-center gap-1">
@@ -45,7 +45,7 @@ export default function BlogList({ isAr }: { isAr: boolean }) {
                     <span>{post.date}</span>
                   </div>
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-4 group-hover:text-emerald-600 transition-colors">
+                <h3 className="text-xl font-bold text-slate-900 mb-4 group-hover:text-primary-700 transition-colors">
                   <Link to={`/blog/${post.id}`}>
                     {isAr ? post.titleAr : post.title}
                   </Link>
@@ -55,12 +55,12 @@ export default function BlogList({ isAr }: { isAr: boolean }) {
                 </p>
                 <div className="flex items-center justify-between pt-6 border-t border-slate-100">
                   <div className="flex items-center gap-2 text-xs font-bold text-slate-900">
-                    <User size={14} className="text-emerald-600" />
+                    <User size={14} className="text-primary-700" />
                     <span>{isAr ? post.authorAr : post.author}</span>
                   </div>
                   <Link 
                     to={`/blog/${post.id}`} 
-                    className="text-emerald-600 font-bold text-sm flex items-center gap-2 group-hover:gap-3 transition-all"
+                    className="text-primary-700 font-bold text-sm flex items-center gap-2 group-hover:gap-3 transition-all"
                   >
                     {isAr ? "اقرأ المزيد" : "Read More"}
                     {isAr ? <ChevronLeft size={16} /> : <ChevronRight size={16} />}

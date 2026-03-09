@@ -46,7 +46,7 @@ export default function BlogPostPage({ isAr }: { isAr: boolean }) {
       <div className="max-w-4xl mx-auto px-6">
         <Link 
           to="/blog" 
-          className="inline-flex items-center gap-2 text-emerald-600 font-bold mb-8 hover:gap-3 transition-all"
+          className="inline-flex items-center gap-2 text-primary-700 font-bold mb-8 hover:gap-3 transition-all"
         >
           {isAr ? <ArrowRight size={18} /> : <ArrowLeft size={18} />}
           {isAr ? "العودة للمدونة" : "Back to Blog"}
@@ -57,7 +57,7 @@ export default function BlogPostPage({ isAr }: { isAr: boolean }) {
           animate={{ opacity: 1, y: 0 }}
         >
           <div className="flex items-center gap-4 text-sm text-slate-400 mb-6">
-            <span className="bg-emerald-50 text-emerald-600 px-3 py-1 rounded-full font-bold uppercase tracking-wider">
+            <span className="bg-primary-50 text-primary-700 px-3 py-1 rounded-full font-bold uppercase tracking-wider">
               {isAr ? post.categoryAr : post.category}
             </span>
             <div className="flex items-center gap-2">
@@ -84,7 +84,7 @@ export default function BlogPostPage({ isAr }: { isAr: boolean }) {
           </div>
 
           <div className="prose prose-lg max-w-none text-slate-700 leading-relaxed space-y-6">
-            <p className="text-xl font-medium text-slate-900 italic border-r-4 border-emerald-500 pr-6 py-2">
+            <p className="text-xl font-medium text-slate-900 italic border-r-4 border-primary-700 pr-6 py-2">
               {isAr ? post.excerptAr : post.excerpt}
             </p>
             <div className="whitespace-pre-line">

@@ -210,14 +210,14 @@ const About = ({ isAr }: { isAr: boolean }) => {
               referrerPolicy="no-referrer"
             />
           </div>
-          <div className="absolute -bottom-8 -right-8 bg-emerald-600 text-white p-8 rounded-2xl shadow-xl hidden md:block">
+          <div className="absolute -bottom-8 -right-8 bg-primary-700 text-white p-8 rounded-2xl shadow-xl hidden md:block">
             <div className="text-4xl font-bold mb-1">27+</div>
             <div className="text-sm opacity-80 uppercase tracking-widest">{isAr ? "عاماً من التميز" : "Years of Excellence"}</div>
           </div>
         </div>
 
         <div>
-          <h2 className="text-sm font-bold text-emerald-600 uppercase tracking-widest mb-4">
+          <h2 className="text-sm font-bold text-primary-700 uppercase tracking-widest mb-4">
             {isAr ? "من نحن" : "About Us"}
           </h2>
           <h3 className="text-4xl font-bold text-slate-900 mb-6 leading-tight">
@@ -237,7 +237,7 @@ const About = ({ isAr }: { isAr: boolean }) => {
               isAr ? "الشفافية والالتزام بالجداول الزمنية" : "Transparency and commitment to timelines",
             ].map((item, i) => (
               <div key={i} className="flex items-center gap-3">
-                <CheckCircle2 className="text-emerald-500 shrink-0" size={20} />
+                <CheckCircle2 className="text-primary-600 shrink-0" size={20} />
                 <span className="text-slate-700 font-medium">{item}</span>
               </div>
             ))}
@@ -260,7 +260,7 @@ const Services = ({ isAr }: { isAr: boolean }) => {
     <section id="services" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-sm font-bold text-emerald-600 uppercase tracking-widest mb-4">
+          <h2 className="text-sm font-bold text-primary-700 uppercase tracking-widest mb-4">
             {isAr ? "خدماتنا" : "Our Services"}
           </h2>
           <h3 className="text-4xl font-bold text-slate-900 mb-6">
@@ -280,14 +280,14 @@ const Services = ({ isAr }: { isAr: boolean }) => {
               whileHover={{ y: -10 }}
               className="p-8 rounded-2xl border border-slate-100 bg-slate-50 hover:bg-white hover:shadow-xl transition-all group"
             >
-              <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-emerald-600 mb-6 shadow-sm group-hover:bg-emerald-600 group-hover:text-white transition-all">
+              <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-primary-700 mb-6 shadow-sm group-hover:bg-primary-700 group-hover:text-white transition-all">
                 <service.icon size={28} />
               </div>
               <h4 className="text-xl font-bold text-slate-900 mb-4">{isAr ? service.titleAr : service.title}</h4>
               <p className="text-slate-600 leading-relaxed mb-6">
                 {isAr ? service.descriptionAr : service.description}
               </p>
-              <Link to={`/services/${service.id}`} className="text-emerald-600 font-bold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
+              <Link to={`/services/${service.id}`} className="text-primary-700 font-bold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
                 {isAr ? "اقرأ المزيد" : "Read More"}
                 {isAr ? <ChevronLeft size={16} /> : <ChevronRight size={16} />}
               </Link>
@@ -305,7 +305,7 @@ const EnvironmentalConsulting = ({ isAr }: { isAr: boolean }) => {
   if (!environmentalService) return null;
 
   return (
-    <section id="environmental-consulting" className="py-24 bg-emerald-50/40">
+    <section id="environmental-consulting" className="py-24 bg-primary-50/40">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -315,7 +315,7 @@ const EnvironmentalConsulting = ({ isAr }: { isAr: boolean }) => {
             transition={{ duration: 0.5 }}
             className="space-y-6"
           >
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 text-emerald-700 text-xs font-bold uppercase tracking-widest">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-100 text-primary-800 text-xs font-bold uppercase tracking-widest">
               <Leaf size={14} />
               {isAr ? "الاستشارات البيئية" : "Environmental Consultation"}
             </span>
@@ -330,8 +330,8 @@ const EnvironmentalConsulting = ({ isAr }: { isAr: boolean }) => {
 
             <div className="grid sm:grid-cols-2 gap-4">
               {(isAr ? environmentalService.benefitsAr : environmentalService.benefits).slice(0, 4).map((benefit, index) => (
-                <div key={index} className="flex items-start gap-3 p-4 rounded-xl bg-white border border-emerald-100">
-                  <CheckCircle2 size={18} className="text-emerald-600 mt-0.5 shrink-0" />
+                <div key={index} className="flex items-start gap-3 p-4 rounded-xl bg-white border border-primary-100">
+                  <CheckCircle2 size={18} className="text-primary-700 mt-0.5 shrink-0" />
                   <p className="text-sm text-slate-700 leading-relaxed">{benefit}</p>
                 </div>
               ))}
@@ -339,7 +339,7 @@ const EnvironmentalConsulting = ({ isAr }: { isAr: boolean }) => {
 
             <Link
               to="/services/7"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-bold transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-primary-700 hover:bg-primary-800 text-white rounded-lg font-bold transition-all"
             >
               {isAr ? "اكتشف الخدمة" : "Explore Service"}
               {isAr ? <ChevronLeft size={16} /> : <ChevronRight size={16} />}
@@ -377,7 +377,7 @@ const Portfolio = ({ isAr }: { isAr: boolean }) => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
           <div className="max-w-2xl">
-            <h2 className="text-sm font-bold text-emerald-400 uppercase tracking-widest mb-4">
+            <h2 className="text-sm font-bold text-primary-500 uppercase tracking-widest mb-4">
               {isAr ? "مشاريعنا" : "Our Projects"}
             </h2>
             <h3 className="text-4xl font-bold mb-6">
@@ -404,11 +404,11 @@ const Portfolio = ({ isAr }: { isAr: boolean }) => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-80"></div>
               <div className="absolute bottom-0 left-0 right-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform">
-                <span className="text-emerald-400 text-xs font-bold uppercase tracking-widest mb-2 block">
+                <span className="text-primary-500 text-xs font-bold uppercase tracking-widest mb-2 block">
                   {isAr ? project.categoryAr : project.category}
                 </span>
                 <h4 className="text-2xl font-bold mb-2">{isAr ? project.titleAr : project.title}</h4>
-                <div className="flex items-center gap-2 text-emerald-400 text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="flex items-center gap-2 text-primary-500 text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity">
                   <span>{isAr ? "عرض المشروع" : "View Project"}</span>
                   {isAr ? <ChevronLeft size={16} /> : <ChevronRight size={16} />}
                 </div>
@@ -498,7 +498,7 @@ const Contact = ({ isAr }: { isAr: boolean }) => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16">
           <div>
-            <h2 className="text-sm font-bold text-emerald-600 uppercase tracking-widest mb-4">
+            <h2 className="text-sm font-bold text-primary-700 uppercase tracking-widest mb-4">
               {isAr ? "اتصل بنا" : "Contact Us"}
             </h2>
             <h3 className="text-4xl font-bold text-slate-900 mb-8">
@@ -512,7 +512,7 @@ const Contact = ({ isAr }: { isAr: boolean }) => {
                 rel="noopener noreferrer"
                 className="flex gap-6 p-4 rounded-2xl hover:bg-slate-50 transition-all"
               >
-                <div className="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600 shrink-0">
+                <div className="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center text-primary-700 shrink-0">
                   <MapPin size={24} />
                 </div>
                 <div>
@@ -522,7 +522,7 @@ const Contact = ({ isAr }: { isAr: boolean }) => {
               </a>
               
               <a href="tel:+966138335851" className="flex gap-6 p-4 rounded-2xl hover:bg-slate-50 transition-all">
-                <div className="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600 shrink-0">
+                <div className="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center text-primary-700 shrink-0">
                   <Phone size={24} />
                 </div>
                 <div>
@@ -535,7 +535,7 @@ const Contact = ({ isAr }: { isAr: boolean }) => {
               </a>
               
               <a href="mailto:Info@reef-consult.com" className="flex gap-6 p-4 rounded-2xl hover:bg-slate-50 transition-all">
-                <div className="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600 shrink-0">
+                <div className="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center text-primary-700 shrink-0">
                   <Mail size={24} />
                 </div>
                 <div>
@@ -553,7 +553,7 @@ const Contact = ({ isAr }: { isAr: boolean }) => {
                 animate={{ opacity: 1, scale: 1 }}
                 className="h-full flex flex-col items-center justify-center text-center space-y-4 py-12"
               >
-                <div className="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center">
+                <div className="w-20 h-20 bg-primary-100 text-primary-700 rounded-full flex items-center justify-center">
                   <CheckCircle2 size={40} />
                 </div>
                 <h4 className="text-2xl font-bold text-slate-900">
@@ -566,7 +566,7 @@ const Contact = ({ isAr }: { isAr: boolean }) => {
                 </p>
                 <button 
                   onClick={() => setIsSuccess(false)}
-                  className="text-emerald-600 font-bold hover:underline"
+                  className="text-primary-700 font-bold hover:underline"
                 >
                   {isAr ? "إرسال رسالة أخرى" : "Send another message"}
                 </button>
@@ -581,7 +581,7 @@ const Contact = ({ isAr }: { isAr: boolean }) => {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className={`w-full px-4 py-3 rounded-lg border ${errors.name ? 'border-red-500 focus:ring-red-500' : 'border-slate-200 focus:ring-emerald-500'} outline-none transition-all`} 
+                      className={`w-full px-4 py-3 rounded-lg border ${errors.name ? 'border-red-500 focus:ring-red-500' : 'border-slate-200 focus:ring-primary-600'} outline-none transition-all`} 
                     />
                     {errors.name && <p className="text-red-500 text-xs font-medium">{errors.name}</p>}
                   </div>
@@ -592,7 +592,7 @@ const Contact = ({ isAr }: { isAr: boolean }) => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className={`w-full px-4 py-3 rounded-lg border ${errors.email ? 'border-red-500 focus:ring-red-500' : 'border-slate-200 focus:ring-emerald-500'} outline-none transition-all`} 
+                      className={`w-full px-4 py-3 rounded-lg border ${errors.email ? 'border-red-500 focus:ring-red-500' : 'border-slate-200 focus:ring-primary-600'} outline-none transition-all`} 
                     />
                     {errors.email && <p className="text-red-500 text-xs font-medium">{errors.email}</p>}
                   </div>
@@ -604,7 +604,7 @@ const Contact = ({ isAr }: { isAr: boolean }) => {
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-emerald-500 outline-none transition-all" 
+                    className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-primary-600 outline-none transition-all" 
                   />
                 </div>
                 <div className="space-y-2">
@@ -614,13 +614,13 @@ const Contact = ({ isAr }: { isAr: boolean }) => {
                     value={formData.message}
                     onChange={handleChange}
                     rows={4} 
-                    className={`w-full px-4 py-3 rounded-lg border ${errors.message ? 'border-red-500 focus:ring-red-500' : 'border-slate-200 focus:ring-emerald-500'} outline-none transition-all`}
+                    className={`w-full px-4 py-3 rounded-lg border ${errors.message ? 'border-red-500 focus:ring-red-500' : 'border-slate-200 focus:ring-primary-600'} outline-none transition-all`}
                   ></textarea>
                   {errors.message && <p className="text-red-500 text-xs font-medium">{errors.message}</p>}
                 </div>
                 <button 
                   disabled={isSubmitting}
-                  className={`w-full py-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-bold transition-all shadow-lg shadow-emerald-600/20 flex items-center justify-center gap-2 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                  className={`w-full py-4 bg-primary-700 hover:bg-primary-800 text-white rounded-lg font-bold transition-all shadow-lg shadow-primary-700/20 flex items-center justify-center gap-2 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
                 >
                   {isSubmitting ? (
                     <>

@@ -44,7 +44,7 @@ export default function Footer({ isAr }: { isAr: boolean }) {
       </div>
       
       {/* Gradient Orbs */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute top-0 left-0 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl pointer-events-none"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -68,7 +68,7 @@ export default function Footer({ isAr }: { isAr: boolean }) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="w-10 h-10 rounded-lg bg-[#1a2a42] flex items-center justify-center transition-all duration-300 hover:bg-emerald-600 hover:scale-110"
+                  className="w-10 h-10 rounded-lg bg-[#1a2a42] flex items-center justify-center transition-all duration-300 hover:bg-primary-600 hover:scale-110"
                 >
                   <social.icon size={18} />
                 </a>
@@ -78,7 +78,7 @@ export default function Footer({ isAr }: { isAr: boolean }) {
 
           {/* Column 2: Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-6 text-emerald-400">
+            <h3 className="text-lg font-semibold mb-6 text-primary-400">
               {isAr ? "روابط سريعة" : "Quick Links"}
             </h3>
             <ul className="space-y-3">
@@ -86,7 +86,7 @@ export default function Footer({ isAr }: { isAr: boolean }) {
                 <li key={index}>
                   <Link 
                     to={link.href} 
-                    className="text-gray-400 text-sm hover:text-emerald-400 transition-colors duration-300"
+                    className="text-gray-400 text-sm hover:text-primary-400 transition-colors duration-300"
                   >
                     {link.name}
                   </Link>
@@ -97,7 +97,7 @@ export default function Footer({ isAr }: { isAr: boolean }) {
 
           {/* Column 3: Our Services */}
           <div>
-            <h3 className="text-lg font-semibold mb-6 text-emerald-400">
+            <h3 className="text-lg font-semibold mb-6 text-primary-400">
               {isAr ? "خدماتنا" : "Our Services"}
             </h3>
             <ul className="space-y-3">
@@ -105,7 +105,7 @@ export default function Footer({ isAr }: { isAr: boolean }) {
                 <li key={index}>
                   <Link
                     to={service.href}
-                    className="text-gray-400 text-sm hover:text-emerald-400 transition-colors duration-300"
+                    className="text-gray-400 text-sm hover:text-primary-400 transition-colors duration-300"
                   >
                     {service.name}
                   </Link>
@@ -116,21 +116,21 @@ export default function Footer({ isAr }: { isAr: boolean }) {
 
           {/* Column 4: Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-6 text-emerald-400">
+            <h3 className="text-lg font-semibold mb-6 text-primary-400">
               {isAr ? "معلومات التواصل" : "Contact Info"}
             </h3>
             <ul className="space-y-4">
               {/* Phone */}
               <li className="flex items-start gap-3">
                 <div className="w-10 h-10 rounded-lg bg-[#1a2a42] flex items-center justify-center shrink-0">
-                  <Phone size={18} className="text-emerald-400" />
+                  <Phone size={18} className="text-primary-400" />
                 </div>
                 <div className="flex flex-col">
                   <span className="text-gray-400 text-xs">{isAr ? "الهاتف" : "Phone"}</span>
                   <a
                     href="tel:0138335851"
                     dir="ltr"
-                    className="text-white text-sm hover:text-emerald-400 transition-colors text-left"
+                    className="text-white text-sm hover:text-primary-400 transition-colors text-left"
                     style={{ unicodeBidi: "isolate" }}
                   >
                     013 833 5851
@@ -138,7 +138,7 @@ export default function Footer({ isAr }: { isAr: boolean }) {
                   <a
                     href="tel:+966509634367"
                     dir="ltr"
-                    className="text-white text-sm hover:text-emerald-400 transition-colors text-left"
+                    className="text-white text-sm hover:text-primary-400 transition-colors text-left"
                     style={{ unicodeBidi: "isolate" }}
                   >
                     +966 50 963 4367
@@ -149,11 +149,11 @@ export default function Footer({ isAr }: { isAr: boolean }) {
               {/* Email */}
               <li className="flex items-start gap-3">
                 <div className="w-10 h-10 rounded-lg bg-[#1a2a42] flex items-center justify-center shrink-0">
-                  <Mail size={18} className="text-emerald-400" />
+                  <Mail size={18} className="text-primary-400" />
                 </div>
                 <div className="flex flex-col">
                   <span className="text-gray-400 text-xs">{isAr ? "البريد الإلكتروني" : "Email"}</span>
-                  <a href="mailto:Info@reef-consult.com" className="text-white text-sm hover:text-emerald-400 transition-colors">
+                  <a href="mailto:Info@reef-consult.com" className="text-white text-sm hover:text-primary-400 transition-colors">
                     Info@reef-consult.com
                   </a>
                 </div>
@@ -162,7 +162,7 @@ export default function Footer({ isAr }: { isAr: boolean }) {
               {/* Address */}
               <li className="flex items-start gap-3">
                 <div className="w-10 h-10 rounded-lg bg-[#1a2a42] flex items-center justify-center shrink-0">
-                  <MapPin size={18} className="text-emerald-400" />
+                  <MapPin size={18} className="text-primary-400" />
                 </div>
                 <div className="flex flex-col">
                   <span className="text-gray-400 text-xs">{isAr ? "العنوان" : "Address"}</span>
@@ -186,11 +186,11 @@ export default function Footer({ isAr }: { isAr: boolean }) {
           {/* VAT and CR Numbers */}
           <div className="flex flex-wrap justify-center gap-6 text-sm">
             <span>
-              <span className="text-emerald-400 font-semibold">CR:</span>{" "}
+              <span className="text-primary-400 font-semibold">CR:</span>{" "}
               <span className="text-gray-400">7099149712</span>
             </span>
             <span>
-              <span className="text-emerald-400 font-semibold">VAT:</span>{" "}
+              <span className="text-primary-400 font-semibold">VAT:</span>{" "}
               <span className="text-gray-400">331155673920003</span>
             </span>
           </div>
@@ -209,13 +209,13 @@ export default function Footer({ isAr }: { isAr: boolean }) {
           <div className="flex gap-6">
             <Link 
               to="/privacy-policy" 
-              className="text-gray-400 text-sm hover:text-emerald-400 transition-colors duration-300"
+              className="text-gray-400 text-sm hover:text-primary-400 transition-colors duration-300"
             >
               {isAr ? "سياسة الخصوصية" : "Privacy Policy"}
             </Link>
             <Link 
               to="/terms-conditions" 
-              className="text-gray-400 text-sm hover:text-emerald-400 transition-colors duration-300"
+              className="text-gray-400 text-sm hover:text-primary-400 transition-colors duration-300"
             >
               {isAr ? "الشروط والأحكام" : "Terms & Conditions"}
             </Link>

@@ -3,6 +3,17 @@
 
 @theme {
   --font-sans: "Inter", "Cairo", ui-sans-serif, system-ui, sans-serif;
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-200: #bfdbfe;
+  --color-primary-300: #93c5fd;
+  --color-primary-400: #60a5fa;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+  --color-primary-800: #1e40af;
+  --color-primary-900: #1e3a8a;
+  --color-primary-950: #172554;
 }
 
 @layer base {
@@ -26,7 +37,7 @@
   --bg: #ffffff;
   --text: #0f1724; /* slate-900 */
   --muted: rgba(15,23,36,0.6);
-  --accent: #38bdf8; /* sky-400 - light blue */
+  --accent: #1d4ed8; /* blue-700 */
   --nav-bg: rgba(255,255,255,0.9);
   --nav-text: #0f1724;
   --nav-on-hero-text: #ffffff;
@@ -38,7 +49,7 @@
   --bg: #071023;
   --text: #e6eef6;
   --muted: rgba(255,255,255,0.65);
-  --accent: #7dd3fc; /* sky-300 - light blue */
+  --accent: #3b82f6; /* blue-500 */
   --nav-bg: rgba(8,10,15,0.6);
   --nav-text: #e6eef6;
   --nav-on-hero-text: #e6eef6;

@@ -13,7 +13,7 @@ export default function Logo({ className = "h-12 w-auto", isAr = true, tone = "b
   if (error) {
     return (
       <div className={`flex items-center ${className}`}>
-        <div className="w-12 h-12 bg-emerald-600 rounded-lg flex items-center justify-center text-white font-bold text-2xl shadow-lg">
+        <div className="w-12 h-12 bg-primary-700 rounded-lg flex items-center justify-center text-white font-bold text-2xl shadow-lg">
           R
         </div>
       </div>
