@@ -36,6 +36,9 @@ async function startServer() {
             user: smtpUser,
             pass: smtpPass,
           },
+          tls: {
+            rejectUnauthorized: false, // Allow self-signed or mismatched certificates
+          },
         });
 
         await transporter.sendMail({
