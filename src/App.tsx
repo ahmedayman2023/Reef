@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from "react-route
 import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import WhatsAppButton from "./components/WhatsAppButton";
 import Home from "./pages/Home";
 import ProjectsPage from "./pages/Projects";
 import ContactPage from "./pages/Contact";
@@ -52,6 +53,7 @@ export default function App() {
           </Routes>
         </main>
         <Footer isAr={isAr} />
+        <WhatsAppButton />
       </div>
     </Router>
   );

@@ -1,7 +1,79 @@
 import { motion } from "motion/react";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, CheckCircle2 } from "lucide-react";
+import { useState, FormEvent, ChangeEvent } from "react";
 
 export default function ContactPage({ isAr }: { isAr: boolean }) {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: ""
+  });
+  const [errors, setErrors] = useState<{ [key: string]: string }>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const validate = () => {
+    const newErrors: { [key: string]: string } = {};
+    if (!formData.name.trim()) {
+      newErrors.name = isAr ? "الاسم مطلوب" : "Name is required";
+    }
+    if (!formData.email.trim()) {
+      newErrors.email = isAr ? "البريد الإلكتروني مطلوب" : "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = isAr ? "البريد الإلكتروني غير صحيح" : "Invalid email format";
+    }
+    if (!formData.message.trim()) {
+      newErrors.message = isAr ? "الرسالة مطلوبة" : "Message is required";
+    }
+    return newErrors;
+  };
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+    if (errors[name]) {
+      setErrors(prev => {
+        const newErrors = { ...prev };
+        delete newErrors[name];
+        return newErrors;
+      });
+    }
+  };
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    const validationErrors = validate();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+    setErrors({});
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setIsSuccess(true);
+        setFormData({ name: "", email: "", subject: "", message: "" });
+        setTimeout(() => setIsSuccess(false), 5000);
+      } else {
+        console.error("Failed to send message");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="pt-32 pb-20 bg-slate-50 min-h-screen">
       <div className="max-w-7xl mx-auto px-6">
@@ -79,7 +151,7 @@ export default function ContactPage({ isAr }: { isAr: boolean }) {
                   </div>
                   <div>
                     <h4 className="font-bold text-slate-900 mb-1">{isAr ? "البريد الإلكتروني" : "Email"}</h4>
-                    <p className="text-slate-600">Info@reef-consult.com</p>
+                    <a href="mailto:Info@reef-consult.com" className="text-slate-600 hover:text-emerald-600 transition-colors">Info@reef-consult.com</a>
                   </div>
                 </div>
 
@@ -120,32 +192,86 @@ export default function ContactPage({ isAr }: { isAr: boolean }) {
             </div>
 
             <div className="bg-slate-900 p-8 rounded-2xl text-white">
-              <h3 className="text-xl font-bold mb-4">{isAr ? "هل لديك استفسار سريع؟" : "Have a quick question?"}</h3>
-              <p className="text-white/60 mb-6 text-sm">
-                {isAr 
-                  ? "فريقنا جاهز للرد على جميع تساؤلاتكم الهندسية والفنية في أسرع وقت ممكن."
-                  : "Our team is ready to answer all your engineering and technical questions as quickly as possible."}
-              </p>
-              <form className="space-y-4">
-                <input 
-                  type="text" 
-                  placeholder={isAr ? "الاسم" : "Name"} 
-                  className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 focus:border-emerald-500 outline-none transition-all text-sm"
-                />
-                <input 
-                  type="email" 
-                  placeholder={isAr ? "البريد الإلكتروني" : "Email"} 
-                  className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 focus:border-emerald-500 outline-none transition-all text-sm"
-                />
-                <textarea 
-                  rows={3} 
-                  placeholder={isAr ? "رسالتك" : "Your Message"} 
-                  className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 focus:border-emerald-500 outline-none transition-all text-sm"
-                ></textarea>
-                <button className="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-bold transition-all">
-                  {isAr ? "إرسال" : "Send"}
-                </button>
-              </form>
+              {isSuccess ? (
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="h-full flex flex-col items-center justify-center text-center space-y-4 py-6"
+                >
+                  <div className="w-16 h-16 bg-emerald-500/20 text-emerald-500 rounded-full flex items-center justify-center">
+                    <CheckCircle2 size={32} />
+                  </div>
+                  <h4 className="text-xl font-bold">
+                    {isAr ? "تم الإرسال بنجاح!" : "Sent Successfully!"}
+                  </h4>
+                  <p className="text-white/60 text-sm">
+                    {isAr 
+                      ? "شكراً لتواصلك معنا. سنقوم بالرد عليك في أقرب وقت ممكن."
+                      : "Thank you for contacting us. We will get back to you as soon as possible."}
+                  </p>
+                  <button 
+                    onClick={() => setIsSuccess(false)}
+                    className="text-emerald-400 font-bold hover:underline text-sm"
+                  >
+                    {isAr ? "إرسال رسالة أخرى" : "Send another message"}
+                  </button>
+                </motion.div>
+              ) : (
+                <>
+                  <h3 className="text-xl font-bold mb-4">{isAr ? "هل لديك استفسار سريع؟" : "Have a quick question?"}</h3>
+                  <p className="text-white/60 mb-6 text-sm">
+                    {isAr 
+                      ? "فريقنا جاهز للرد على جميع تساؤلاتكم الهندسية والفنية في أسرع وقت ممكن."
+                      : "Our team is ready to answer all your engineering and technical questions as quickly as possible."}
+                  </p>
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    <div>
+                      <input 
+                        type="text" 
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        placeholder={isAr ? "الاسم" : "Name"} 
+                        className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${errors.name ? 'border-red-500' : 'border-white/10'} focus:border-emerald-500 outline-none transition-all text-sm`}
+                      />
+                      {errors.name && <p className="text-red-500 text-[10px] mt-1">{errors.name}</p>}
+                    </div>
+                    <div>
+                      <input 
+                        type="email" 
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        placeholder={isAr ? "البريد الإلكتروني" : "Email"} 
+                        className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${errors.email ? 'border-red-500' : 'border-white/10'} focus:border-emerald-500 outline-none transition-all text-sm`}
+                      />
+                      {errors.email && <p className="text-red-500 text-[10px] mt-1">{errors.email}</p>}
+                    </div>
+                    <textarea 
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      rows={3} 
+                      placeholder={isAr ? "رسالتك" : "Your Message"} 
+                      className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${errors.message ? 'border-red-500' : 'border-white/10'} focus:border-emerald-500 outline-none transition-all text-sm`}
+                    ></textarea>
+                    {errors.message && <p className="text-red-500 text-[10px] mt-1">{errors.message}</p>}
+                    <button 
+                      disabled={isSubmitting}
+                      className={`w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-bold transition-all flex items-center justify-center gap-2 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                          {isAr ? "جاري الإرسال..." : "Sending..."}
+                        </>
+                      ) : (
+                        isAr ? "إرسال" : "Send"
+                      )}
+                    </button>
+                  </form>
+                </>
+              )}
             </div>
           </div>
 

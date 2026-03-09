@@ -23,24 +23,24 @@ const Hero = ({ isAr }: { isAr: boolean }) => {
         "We help our clients deliver tailored solutions for key infrastructure challenges, including digital integration, asset management, and project finance for lasting value.",
       image:
         "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000",
-      learnMoreTo: "/services/5",
+      learnMoreTo: "/services/1",
       expertiseTo: "/projects",
       tabAr: "التصميم المعماري",
       tabEn: "Architectural Design",
     },
     {
-      titleAr: "الهندسة والتصميم",
-      titleEn: "Engineering & Design",
+      titleAr: "التصميم الإنشائي",
+      titleEn: "Structural Design",
       descriptionAr:
-        "نترجم رؤيتنا إلى مبانٍ ومجتمعات ومساحات عامة ذات هوية متفردة، عبر حلول تصميمية متكاملة توازن بين الإبداع، الكفاءة، والاستدامة.",
+        "نقدم حلولاً إنشائية آمنة ومبتكرة تضمن استدامة وسلامة المباني، مع التركيز على كفاءة استخدام المواد وتقليل التكاليف الإنشائية.",
       descriptionEn:
-        "We translate vision into buildings, communities, and public spaces through integrated design solutions balancing creativity, efficiency, and sustainability.",
+        "We provide safe and innovative structural solutions that ensure building sustainability and safety, focusing on material efficiency and reducing construction costs.",
       image:
         "https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&q=80&w=2000",
-      learnMoreTo: "/services/1",
+      learnMoreTo: "/services/2",
       expertiseTo: "/projects",
-      tabAr: "الهندسة والتصميم",
-      tabEn: "Engineering & Design",
+      tabAr: "التصميم الإنشائي",
+      tabEn: "Structural Design",
     },
     {
       titleAr: "الإشراف وإدارة الإنشاءات",
@@ -57,18 +57,18 @@ const Hero = ({ isAr }: { isAr: boolean }) => {
       tabEn: "Supervision & Construction",
     },
     {
-      titleAr: "إدارة المشاريع الإنشائية",
-      titleEn: "Construction Project Management",
+      titleAr: "التصميم الداخلي",
+      titleEn: "Interior Design",
       descriptionAr:
-        "نقود المشاريع من التخطيط حتى التسليم عبر منهجيات إدارة احترافية تضمن ضبط الوقت والتكلفة والجودة وتحقيق مستهدفات العميل بدقة.",
+        "نصمم مساحات داخلية ملهمة تجمع بين الجمال والوظيفة، مع الاهتمام بأدق التفاصيل لتعكس هوية العميل وتوفر بيئة مريحة.",
       descriptionEn:
-        "We lead projects from planning to handover through professional management methods that control time, cost, and quality while meeting client goals.",
+        "We design inspiring interior spaces that combine beauty and function, with attention to the finest details to reflect the client's identity and provide a comfortable environment.",
       image:
-        "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=2000",
-      learnMoreTo: "/services/4",
+        "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=2000",
+      learnMoreTo: "/services/3",
       expertiseTo: "/projects",
-      tabAr: "إدارة المشاريع الإنشائية",
-      tabEn: "Project Management",
+      tabAr: "التصميم الداخلي",
+      tabEn: "Interior Design",
     },
     {
       titleAr: "الاستشارات البيئية",
@@ -125,7 +125,7 @@ const Hero = ({ isAr }: { isAr: boolean }) => {
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 pt-28 pb-28 min-h-screen flex items-center">
         <div className={`w-full max-w-2xl ${isAr ? "mr-auto text-right" : "ml-auto text-left"}`}>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-[#c0b28a] mb-6 drop-shadow-[0_2px_10px_rgba(0,0,0,0.35)]">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-[#1d4ed8] mb-6 drop-shadow-[0_2px_10px_rgba(0,0,0,0.35)]">
             {isAr ? currentSlide.titleAr : currentSlide.titleEn}
           </h1>
           <p className="text-lg sm:text-2xl text-white/95 leading-relaxed mb-8 max-w-2xl">
@@ -135,13 +135,13 @@ const Hero = ({ isAr }: { isAr: boolean }) => {
           <div className={`flex flex-wrap gap-4 ${isAr ? "justify-start" : "justify-start"}`}>
             <Link
               to={currentSlide.learnMoreTo}
-              className="px-8 py-3 rounded-md bg-[#c0b28a] text-slate-900 font-bold text-lg hover:bg-[#d2c6a2] transition-colors"
+              className="px-8 py-3 rounded-md bg-[#1d4ed8] text-white font-bold text-lg hover:bg-[#1e40af] transition-colors"
             >
               {isAr ? "تعرّف على المزيد" : "Learn More"}
             </Link>
             <Link
               to={currentSlide.expertiseTo}
-              className="px-8 py-3 rounded-md border border-[#c0b28a] text-[#c0b28a] font-bold text-lg hover:bg-[#c0b28a]/10 transition-colors"
+              className="px-8 py-3 rounded-md border border-[#1d4ed8] text-[#1d4ed8] font-bold text-lg hover:bg-[#1d4ed8]/10 transition-colors"
             >
               {isAr ? "خبراتنا" : "Our Expertise"}
             </Link>
@@ -161,7 +161,7 @@ const Hero = ({ isAr }: { isAr: boolean }) => {
                   onClick={() => setActiveSlide(index)}
                   className={`text-${isAr ? "right" : "left"} border-t pt-3 transition-colors ${
                     isActive
-                      ? "border-[#c0b28a] text-[#c0b28a]"
+                      ? "border-[#1d4ed8] text-[#1d4ed8]"
                       : "border-white/70 text-white/85 hover:text-white"
                   }`}
                   aria-label={isAr ? slide.tabAr : slide.tabEn}
@@ -448,7 +448,7 @@ const Contact = ({ isAr }: { isAr: boolean }) => {
     return newErrors;
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
@@ -458,13 +458,27 @@ const Contact = ({ isAr }: { isAr: boolean }) => {
     setErrors({});
     setIsSubmitting(true);
     
-    // Simulate API call
-    setTimeout(() => {
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setIsSuccess(true);
+        setFormData({ name: "", email: "", subject: "", message: "" });
+        setTimeout(() => setIsSuccess(false), 5000);
+      } else {
+        console.error("Failed to send message");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    } finally {
       setIsSubmitting(false);
-      setIsSuccess(true);
-      setFormData({ name: "", email: "", subject: "", message: "" });
-      setTimeout(() => setIsSuccess(false), 5000);
-    }, 1500);
+    }
   };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
