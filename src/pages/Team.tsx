@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { TEAM } from "../constants";
-import { Mail, Linkedin, Twitter } from "lucide-react";
+import { Mail } from "lucide-react";
 
 export default function Team({ isAr }: { isAr: boolean }) {
   return (
@@ -49,30 +49,18 @@ export default function Team({ isAr }: { isAr: boolean }) {
                 transition={{ delay: index * 0.1 }}
                 className="group"
               >
-                <div className="relative mb-6 overflow-hidden rounded-2xl aspect-[4/5]">
-                  <img 
-                    src={member.image} 
-                    alt={isAr ? member.nameAr : member.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    referrerPolicy="no-referrer"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-8">
-                    <div className="flex gap-4">
-                      <a href="#" className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-primary-600 transition-colors">
-                        <Linkedin size={20} />
-                      </a>
-                      <a href="#" className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-primary-600 transition-colors">
-                        <Twitter size={20} />
-                      </a>
-                      <a href="#" className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-primary-600 transition-colors">
-                        <Mail size={20} />
-                      </a>
-                    </div>
+                <div className="text-center p-8 rounded-2xl border border-slate-100 bg-slate-50/50">
+                  <div className="mb-5 flex justify-center">
+                    <a
+                      href="mailto:Info@reef-consult.com"
+                      className="w-10 h-10 rounded-full bg-primary-700 flex items-center justify-center text-white hover:bg-primary-800 transition-colors"
+                      aria-label={isAr ? "إرسال بريد إلكتروني" : "Send email"}
+                    >
+                      <Mail size={20} />
+                    </a>
                   </div>
-                </div>
-                <div className="text-center">
                   <h3 className="text-2xl font-bold text-slate-900 mb-1">
-                    {isAr ? member.nameAr : member.name}
+                    {`م. ${isAr ? member.nameAr : member.name}`}
                   </h3>
                   <p className="text-primary-700 font-bold mb-4">
                     {isAr ? member.roleAr : member.role}
